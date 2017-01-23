@@ -4,6 +4,21 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var Sequelize = require('sequelize');
+
+var sequelize = new Sequelize('TRDatabase', 'root', '4596ak96', {
+    host: '178.62.223.153',
+    port: 3306,
+    dialect: 'mysql'
+});
+sequelize.authenticate()
+    .then(function () {
+        console.log("CONNECTED! ");
+    })
+    .catch(function (err) {
+        console.log(err);
+    })
+    .done();
 
 var index = require('./routes/index');
 var users = require('./routes/users');
