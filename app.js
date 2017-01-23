@@ -6,8 +6,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var Sequelize = require('sequelize');
 
-var sequelize = new Sequelize('TRDatabase', 'root', '4596ak96', {
-    host: '178.62.223.153',
+var sequelize = new Sequelize('TRDatabase', 'root', '4596ak69', {
+    host: 'localhost',
     port: 3306,
     dialect: 'mysql'
 });
@@ -16,7 +16,7 @@ sequelize.authenticate()
         console.log("CONNECTED! ");
     })
     .catch(function (err) {
-        console.log(err);
+        console.log('not CONNECTED');
     })
     .done();
 
