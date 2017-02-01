@@ -4,24 +4,13 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var Sequelize = require('sequelize');
-
-var sequelize = new Sequelize('TRDatabase', 'root', '4596ak69', {
-    host: 'localhost',
-    port: 3306,
-    dialect: 'mysql'
-});
-sequelize.authenticate()
-    .then(function () {
-        console.log("CONNECTED! ");
-    })
-    .catch(function (err) {
-        console.log('not CONNECTED');
-    })
-    .done();
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+var form_of_drugs = require('./routes/drugmodule/form_of_drugs');
+var prescription_types = require('./routes/drugmodule/prescription_type');
+var drug_companies = require('./routes/drugmodule/drug_companies');
+var drugs = require('./routes/drugmodule/drugs');
 
 var app = express();
 
@@ -36,9 +25,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
 app.use('/', index);
 app.use('/users', users);
+app.use('/form_of_drugs',form_of_drugs);
+app.use('/prescription_type',prescription_types);
+app.use('/drug_companies',drug_companies);
+app.use('/drugs',drugs);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
