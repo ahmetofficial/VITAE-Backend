@@ -16,12 +16,10 @@ router.get('/getAllDrugs', function(req, res, next) {
 
 router.get('/getDrug', function(req, res, next) {
     models.DRUGS.findAll()
-        .then(function (PrescriptionType) {
-            res.send({data:PrescriptionType});
+        .then(function (DRUGS) {
+            res.send({data:DRUGS});
         })
 });
-
-
 
 router.post('/createDrug', function(req, res) {
     models.DRUGS.create({

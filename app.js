@@ -7,10 +7,16 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+
+//Modules
 var form_of_drugs = require('./routes/drugmodule/form_of_drugs');
 var prescription_types = require('./routes/drugmodule/prescription_type');
 var drug_companies = require('./routes/drugmodule/drug_companies');
 var drugs = require('./routes/drugmodule/drugs');
+var user= require('./routes/usermodule/users');
+
+//Associations
+
 
 var app = express();
 
@@ -31,6 +37,7 @@ app.use('/form_of_drugs',form_of_drugs);
 app.use('/prescription_type',prescription_types);
 app.use('/drug_companies',drug_companies);
 app.use('/drugs',drugs);
+app.use('/users',user);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
