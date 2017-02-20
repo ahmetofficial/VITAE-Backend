@@ -21,6 +21,7 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: false
         }
     }, {
-        tableName: 'PHOTOS'
+        tableName: 'PHOTOS',
+        underscored: true
     });
 };

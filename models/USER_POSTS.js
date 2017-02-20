@@ -1,27 +1,30 @@
 // Developer: Ahmet Kaymak
-// Date: 01.02.2017
+// Date: 18.02.2017
 
 'use strict';
 
 module.exports = function (sequelize, DataTypes) {
-    return sequelize.define('FORM_OF_DRUGS', {
-        form_id: {
+    return sequelize.define('USER_POSTS', {
+        post_id: {
             type: DataTypes.INTEGER(11),
             allowNull: false,
             primaryKey: true,
             autoIncrement: true
         },
-        form_name: {
+        user_id: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        form_description: {
+        post_text: {
             type: DataTypes.STRING,
             allowNull: false
+        },
+        url: {
+            type: DataTypes.STRING,
+            allowNull: true
         }
     }, {
-        tableName: 'FORM_OF_DRUGS',
-        underscored: true,
-        timestamps: false
+        tableName: 'USER_POSTS',
+        underscored: true
     });
 };

@@ -1,21 +1,22 @@
 // Developer: Ahmet Kaymak
-// Date: 16.02.2017
+// Date: 18.02.2017
 
 'use strict';
 
 module.exports = function (sequelize, DataTypes) {
-    return sequelize.define('USER_TYPES', {
-        user_type_id: {
+    return sequelize.define('RELATIONSHIP_STATUS', {
+        status_id: {
             type: DataTypes.INTEGER(11),
             allowNull: false,
-            primaryKey: true
+            primaryKey: true,
+            autoIncrement: true
         },
-        user_type_name: {
+        status: {
             type: DataTypes.STRING,
             allowNull: false
         }
     }, {
-        tableName: 'USER_TYPES',
+        tableName: 'RELATIONSHIP_STATUS',
         underscored: true,
         timestamps: false
     });

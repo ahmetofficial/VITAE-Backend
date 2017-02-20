@@ -1,4 +1,7 @@
-/* jshint indent: 2 */
+// Developer: Ahmet Kaymak
+// Date: 16.02.2017
+
+'use strict';
 
 module.exports = function (sequelize, DataTypes) {
     return sequelize.define('USERS', {
@@ -48,6 +51,7 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: false
         }
     }, {
-        tableName: 'USERS'
+        tableName: 'USERS',
+        underscored: true
     });
 };

@@ -77,7 +77,7 @@ router.put('/resetPassword/:user_id', function (req, res) {
             password: old_password
         }
     }).then(function (USERS) {
-        if (USERS && old_password!=new_password) {
+        if (USERS && old_password != new_password) {
             USERS.updateAttributes({
                 password: new_password
             }).then(function (USERS) {
@@ -89,13 +89,13 @@ router.put('/resetPassword/:user_id', function (req, res) {
                 res.status(500).json(error)
             });
         }
-        else if(USERS && old_password==new_password){
+        else if (USERS && old_password == new_password) {
             res.status(200).json({
                 status: 'false',
                 message: 'Please enter different password from current password'
             });
         }
-        else{
+        else {
             res.status(200).json({
                 status: 'false',
                 message: 'Password has not changed, try again!'
@@ -103,4 +103,41 @@ router.put('/resetPassword/:user_id', function (req, res) {
         }
     });
 });
+
+//changing user_id
+router.put('/resetUserId/:user_id', function (req, res) {
+    var old_user_id = req.params.user_id;
+    var new_user_id = req.body.new_user_id;
+    models.USERS.find({
+        where: {
+            user_id: new_user_id
+        }
+    }).then(function (USERS) {
+        if (isNaN(USERS) && old_user_id != new_user_id) {
+            USERS.updateAttributes({
+                user_id: new_user_id
+            }).then(function (USERS) {
+                res.status(200).json({
+                    status: 'true',
+                    message: 'User id has changed successfully'
+                });
+            }).catch(function (error) {
+                res.status(500).json(error)
+            });
+        }
+        else if (isNaN(USERS) && old_user_id == new_user_id) {
+            res.status(200).json({
+                status: 'false',
+                message: 'Please enter different user_id from current user_id'
+            });
+        }
+        else {
+            res.status(200).json({
+                status: 'false',
+                message: 'It has already taken'
+            });
+        }
+    });
+});
+
 module.exports = router;

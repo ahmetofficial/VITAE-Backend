@@ -14,9 +14,8 @@ var prescription_types = require('./routes/drugmodule/prescription_type');
 var drug_companies = require('./routes/drugmodule/drug_companies');
 var drugs = require('./routes/drugmodule/drugs');
 var user= require('./routes/usermodule/users');
-
-//Associations
-
+var posts=require('./routes/postmodule/posts');
+var relationships=require('./routes/usermodule/relationships');
 
 var app = express();
 
@@ -38,6 +37,8 @@ app.use('/prescription_type',prescription_types);
 app.use('/drug_companies',drug_companies);
 app.use('/drugs',drugs);
 app.use('/users',user);
+app.use('/post',posts);
+app.use('/relationships',relationships);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -9,18 +9,14 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.INTEGER(11),
             allowNull: false,
             primaryKey: true,
-            autoIncrement: true,
-            classMethods: {
-                associate: function (models) {
-                    DRUG_COMPANIES.hasMany(models.DRUGS);
-                }
-            }
+            autoIncrement: true
         },
         company_name: {
             type: DataTypes.STRING,
             allowNull: false
         }
     }, {
-        tableName: 'DRUG_COMPANIES'
+        tableName: 'DRUG_COMPANIES',
+        underscored: true
     });
 };

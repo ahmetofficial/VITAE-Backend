@@ -4,7 +4,10 @@
     "password": "4596ak69",
     "database": "TRDatabase",
     "host": "178.62.223.153",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "define": {
+      "underscored": true
+    }
   },
   "test": {
     "username": "root",
