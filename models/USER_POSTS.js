@@ -26,5 +26,11 @@ module.exports = function (sequelize, DataTypes) {
     }, {
         tableName: 'USER_POSTS',
         underscored: true
+    }, {
+        classMethods: {
+            associate: function (models) {
+                models.USER_POSTS.belongsTo(models.USERS, {foreignKey: 'user_id', targetKey: 'user_id'});
+            }
+        }
     });
 };

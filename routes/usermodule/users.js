@@ -8,7 +8,7 @@ var express = require('express');
 var router = express.Router();
 
 //getAllTheUserData
-router.get('/getUserData', function (req, res, next) {
+router.get('/users/getAll', function (req, res, next) {
     models.USERS.findAll()
         .then(function (USERS) {
             res.send({data: USERS});
@@ -16,7 +16,7 @@ router.get('/getUserData', function (req, res, next) {
 });
 
 //login authentication
-router.post('/login', function (req, res) {
+router.post('/users/login', function (req, res) {
     var user_id = req.body.user_id;
     var password = req.body.password;
     models.USERS.findAll({
@@ -26,8 +26,9 @@ router.post('/login', function (req, res) {
         }
     }).then(function (USERS) {
         if (isNaN(USERS)) {
-            res.status(200).json({
-                status: 'true'
+            res.send({
+                status: 'true',
+                user_id: user_id
             });
         } else {
             res.status(200).json({
@@ -40,7 +41,7 @@ router.post('/login', function (req, res) {
 });
 
 //registering new user
-router.post('/register', function (req, res) {
+router.post('/users/register', function (req, res) {
     var user_id = req.body.user_id;
     var user_name = req.body.user_name;
     var user_type_id = req.body.user_type_id;
@@ -67,8 +68,56 @@ router.post('/register', function (req, res) {
     });
 });
 
+//registering new patient
+router.post('/users/registerPatient', function (req, res) {
+    var user_id = req.body.user_id;
+    var user_name = req.body.user_name;
+    var user_type_id = 1;
+    var mail = req.body.mail;
+    var password = req.body.password;
+    var phone_number = req.body.phone_number;
+    var about_me = req.body.about_me;
+    var profile_picture_id = req.body.profile_picture_id;
+    var user_last_name = req.body.user_last_name;
+    var gender = req.body.gender;
+    var blood_type_id = req.body.blood_type_id;
+    var birthday = req.body.birthday;
+    var relationship_status_id = req.body.relationship_status_id;
+    {
+        models.USERS.create({
+            user_id: user_id,
+            user_name: user_name,
+            user_type_id: user_type_id,
+            mail: mail,
+            password: password,
+            mail_activation: false,
+            phone_number: phone_number,
+            about_me: about_me,
+            friend_count: 0,
+            is_official_user: false,
+            profile_picture_id: profile_picture_id
+        });
+        models.PATIENTS.create({
+            user_id:user_id,
+            user_last_name:user_last_name,
+            gender: gender,
+            blood_type_id:blood_type_id,
+            birthday:birthday,
+            relationship_status_id:relationship_status_id
+        }).then(function () {
+            res.status(200).json({
+                status: 'true',
+                message: 'creating a patient is succesful'
+            });
+        }).catch(function (error) {
+            res.status(500).json(error)
+        });
+
+    }
+});
+
 //changing user password
-router.put('/resetPassword/:user_id', function (req, res) {
+router.put('/users/resetPassword/:user_id', function (req, res) {
     var old_password = req.body.old_password;
     var new_password = req.body.new_password;
     models.USERS.find({
@@ -105,7 +154,7 @@ router.put('/resetPassword/:user_id', function (req, res) {
 });
 
 //changing user_id
-router.put('/resetUserId/:user_id', function (req, res) {
+router.put('/users/resetUserId/:user_id', function (req, res) {
     var old_user_id = req.params.user_id;
     var new_user_id = req.body.new_user_id;
     models.USERS.find({

@@ -3,6 +3,7 @@
 
 'use strict';
 
+var db= require('./index');
 module.exports = function (sequelize, DataTypes) {
     return sequelize.define('RELATIONSHIPS', {
         active_user_id: {
@@ -22,12 +23,5 @@ module.exports = function (sequelize, DataTypes) {
     }, {
         tableName: 'RELATIONSHIPS',
         underscored: true
-    }, {
-        classMethods: {
-            associate: function (models) {
-                models.RELATIONSHIPS.hasMany(models.USERS, {foreignKey: 'active_user_id', targetKey: 'user_id'});
-                models.RELATIONSHIPS.hasMany(models.USERS, {foreignKey: 'passive_user_id', targetKey: 'user_id'});
-            }
-        }
     });
 };

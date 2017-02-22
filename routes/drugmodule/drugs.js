@@ -7,21 +7,14 @@ var models = require('../../models');
 var express = require('express');
 var router = express.Router();
 
-router.get('/getAllDrugs', function(req, res, next) {
+router.get('/drugs/getAll', function(req, res, next) {
     models.DRUGS.findAll()
         .then(function (PrescriptionType) {
             res.send({data:PrescriptionType});
         })
 });
 
-router.get('/getDrug', function(req, res, next) {
-    models.DRUGS.findAll()
-        .then(function (DRUGS) {
-            res.send({data:DRUGS});
-        })
-});
-
-router.post('/createDrug', function(req, res) {
+router.post('/drugs/create', function(req, res) {
     models.DRUGS.create({
         commercial_name:req.body.commercial_name,
         chemical_name: req.body.chemical_name,

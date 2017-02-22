@@ -8,7 +8,7 @@ var express = require('express');
 var router = express.Router();
 
 //sending friendship/follow request to an user
-router.post('/sendFriendshipRequest', function (req, res) {
+router.post('/relationships/sendRequest', function (req, res) {
     var active_user_id = req.body.active_user_id;
     var passive_user_id = req.body.passive_user_id;
     models.RELATIONSHIPS.create({
@@ -25,7 +25,7 @@ router.post('/sendFriendshipRequest', function (req, res) {
 });
 
 //accepting friendship/follow request of an user
-router.post('/acceptFriendshipRequest', function (req, res) {
+router.post('/relationships/acceptRequest', function (req, res) {
     var active_user_id = req.body.active_user_id;
     var passive_user_id = req.body.passive_user_id;
     models.RELATIONSHIPS.create({
@@ -42,7 +42,7 @@ router.post('/acceptFriendshipRequest', function (req, res) {
 });
 
 //decline friendship/follow request of an user
-router.post('/declineFriendshipRequest', function (req, res) {
+router.post('/relationships/declineRequest', function (req, res) {
     var active_user_id = req.body.active_user_id;
     var passive_user_id = req.body.passive_user_id;
     models.RELATIONSHIPS.create({
@@ -59,8 +59,8 @@ router.post('/declineFriendshipRequest', function (req, res) {
 });
 
 //cancelling friendship/follow request of an user
-router.delete('/cancelFriendshipRequest/:user_id', function(req, res) {
-    var active_user_id=req.params.user_id;
+router.delete('/relationships/cancelRequest', function(req, res) {
+    var active_user_id=req.body.user_id;
     var passive_user_id=req.body.passive_user_id;
     models.RELATIONSHIPS.destroy({
         where: {
@@ -77,7 +77,7 @@ router.delete('/cancelFriendshipRequest/:user_id', function(req, res) {
 });
 
 //blocking an user
-router.post('/blockUser', function (req, res) {
+router.post('/relationships/block', function (req, res) {
     var active_user_id = req.body.active_user_id;
     var passive_user_id = req.body.passive_user_id;
     models.RELATIONSHIPS.create({
@@ -94,7 +94,7 @@ router.post('/blockUser', function (req, res) {
 });
 
 //seeing all friendship request
-router.get('/getAllFrienshipRequests/:user_id', function (req, res, next) {
+router.get('/relationships/getAllRequests/:user_id', function (req, res, next) {
     var passive_user_id = req.params.user_id;
     models.RELATIONSHIPS.findAll({
         where: {

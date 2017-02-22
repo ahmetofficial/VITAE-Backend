@@ -34,19 +34,21 @@ db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
 //Models
+db.BLOOD_TYPES = require('../models/BLOOD_TYPES.js')(sequelize, Sequelize);
 db.DRUG_COMPANIES = require('../models/DRUG_COMPANIES.js')(sequelize, Sequelize);
 db.DRUGS = require('../models/DRUGS.js')(sequelize, Sequelize);
 db.FORM_OF_DRUGS = require('../models/FORM_OF_DRUGS.js')(sequelize, Sequelize);
 db.GENERAL_DRUG_TYPE_GROUPS = require('../models/GENERAL_DRUG_TYPE_GROUPS.js')(sequelize, Sequelize);
+db.PATIENTS = require('../models/PATIENTS.js')(sequelize, Sequelize);
 db.PHOTOS = require('../models/PHOTOS.js')(sequelize, Sequelize);
 db.PRESCRIPTION_TYPE = require('../models/PRESCRIPTION_TYPE.js')(sequelize, Sequelize);
 db.RELATIONSHIP_STATUS = require('../models/RELATIONSHIP_STATUS.js')(sequelize, Sequelize);
 db.RELATIONSHIPS = require('../models/RELATIONSHIPS.js')(sequelize, Sequelize);
 db.TYPES_OF_DRUGS = require('../models/TYPES_OF_DRUGS.js')(sequelize, Sequelize);
-db.USERS = require('../models/USERS.js')(sequelize, Sequelize);
 db.USER_POSTS = require('../models/USER_POSTS.js')(sequelize, Sequelize);
+db.USER_RELATIONSHIP_STATUS = require('../models/USER_RELATIONSHIP_STATUS.js')(sequelize, Sequelize);
 db.USER_TYPES = require('../models/USER_TYPES.js')(sequelize, Sequelize);
-
+db.USERS = require('../models/USERS.js')(sequelize, Sequelize);
 
 ///////////////////////////////////ASSOCIATIONS///////////////////////////////////////
 
@@ -66,14 +68,15 @@ db.GENERAL_DRUG_TYPE_GROUPS.hasMany(db.TYPES_OF_DRUGS, {
     targetKey: 'prescription_type_id'
 });
 
+//PATIENTS
+db.PATIENTS.hasOne(db.DRUGS, {foreignKey: 'user_id', targetKey: 'user_id'});
 //PHOTOS
 
 //PRESCRIPTION_TYPE
 db.PRESCRIPTION_TYPE.hasMany(db.DRUGS, {foreignKey: 'prescription_type_id', targetKey: 'prescription_type_id'});
 
 //RELATIONSHIPS
-db.RELATIONSHIPS.hasMany(db.USERS, {foreignKey: 'active_user_id', targetKey: 'user_id'});
-db.RELATIONSHIPS.hasMany(db.USERS, {foreignKey: 'passive_user_id', targetKey: 'user_id'});
+
 
 //RELATIONSHIP_STATUS
 db.RELATIONSHIP_STATUS.hasMany(db.RELATIONSHIPS, {foreignKey: 'status_id', targetKey: 'status_id'});
@@ -82,6 +85,8 @@ db.RELATIONSHIP_STATUS.hasMany(db.RELATIONSHIPS, {foreignKey: 'status_id', targe
 db.TYPES_OF_DRUGS.belongsTo(db.GENERAL_DRUG_TYPE_GROUPS, {foreignKey: 'general_type_id', targetKey: 'general_type_id'});
 
 //USERS
+db.USERS.hasMany(db.RELATIONSHIPS, {foreignKey: 'active_user_id', targetKey: 'user_id'});
+db.USERS.hasMany(db.RELATIONSHIPS, {foreignKey: 'passive_user_id', targetKey: 'user_id'});
 
 //USER_POSTS
 db.USER_POSTS.belongsTo(db.USERS, {foreignKey: 'user_id', targetKey: 'user_id'});

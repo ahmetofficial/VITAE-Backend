@@ -8,7 +8,7 @@ var express = require('express');
 var router = express.Router();
 
 //getAllTheUserData (newest comes first)
-router.get('/getUserPosts/:user_id', function (req, res, next) {
+router.get('/posts/getByUserId/:user_id', function (req, res, next) {
     var user_id = req.params.user_id;
     models.USER_POSTS.findAll({
         where: {
@@ -21,15 +21,22 @@ router.get('/getUserPosts/:user_id', function (req, res, next) {
 });
 
 //live feeding user timeline
-router.get('/userTimeline/:user_id', function (req, res, next) {
+router.get('/posts/liveFeed/:user_id', function (req, res, next) {
     var user_id = req.params.user_id;
     models.USER_POSTS.findAll({
+        where:{
+            user_id:user_id
+        },
         include: [
             {
                 model: models.USERS,
                 include: [
                     {
-                        model: models.RELATIONSHIPS
+                        model: models.RELATIONSHIPS,
+                        where:{
+                            active_user_id:user_id,
+                            status_id:1
+                        }
                     }
                 ]
             }
@@ -41,7 +48,7 @@ router.get('/userTimeline/:user_id', function (req, res, next) {
 });
 
 //create a post
-router.post('/createPost/:user_id', function (req, res, next) {
+router.post('/posts/create/:user_id', function (req, res, next) {
     var user_id = req.params.user_id;
     var post_text = req.body.post_text;
     var url = req.body.url;
@@ -59,7 +66,7 @@ router.post('/createPost/:user_id', function (req, res, next) {
 });
 
 //delete the post
-router.delete('/deletePost/:user_id', function(req, res) {
+router.delete('/posts/delete/:user_id', function(req, res) {
     var user_id=req.params.user_id;
     var post_id=req.body.post_id;
     models.USER_POSTS.destroy({
