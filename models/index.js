@@ -55,40 +55,39 @@ db.USERS = require('../models/USERS.js')(sequelize, Sequelize);
 //DRUG_COMPANIES
 
 //DRUGS
-db.DRUGS.belongsTo(db.DRUGS, {foreignKey: 'company_id', targetKey: 'company_id'});//a drug can be produced by just one company
-db.DRUGS.belongsTo(db.FORM_OF_DRUGS, {foreignKey: 'form_id', targetKey: 'form_id'});
-db.DRUGS.belongsTo(db.PRESCRIPTION_TYPE, {foreignKey: 'prescription_type_id', targetKey: 'prescription_type_id'});
-db.DRUGS.belongsTo(db.TYPES_OF_DRUGS, {foreignKey: 'type_id', targetKey: 'type_id'});
 
 //FORM_OF_DRUGS
 
 //GENERAL_DRUG_TYPE_GROUPS
-db.GENERAL_DRUG_TYPE_GROUPS.hasMany(db.TYPES_OF_DRUGS, {
-    foreignKey: 'prescription_type_id',
-    targetKey: 'prescription_type_id'
-});
 
 //PATIENTS
-db.PATIENTS.hasOne(db.DRUGS, {foreignKey: 'user_id', targetKey: 'user_id'});
+db.PATIENTS.belongsTo(db.PATIENTS, {foreignKey: 'user_id', targetKey: 'user_id'});
+db.PATIENTS.hasMany(db.USER_POSTS,{foreignKey: 'user_id', targetKey: 'user_id'});
+db.PATIENTS.hasMany(db.RELATIONSHIPS, {foreignKey: 'active_user_id', targetKey: 'user_id'});
+db.PATIENTS.hasMany(db.RELATIONSHIPS, {foreignKey: 'passive_user_id', targetKey: 'user_id'});
+
 //PHOTOS
 
 //PRESCRIPTION_TYPE
-db.PRESCRIPTION_TYPE.hasMany(db.DRUGS, {foreignKey: 'prescription_type_id', targetKey: 'prescription_type_id'});
 
 //RELATIONSHIPS
-
+db.RELATIONSHIPS.belongsTo(db.USERS, {foreignKey: 'active_user_id', targetKey: 'user_id'});
+db.RELATIONSHIPS.belongsTo(db.USERS, {foreignKey: 'passive_user_id', targetKey: 'user_id'});
+db.RELATIONSHIPS.belongsTo(db.PATIENTS, {foreignKey: 'active_user_id', targetKey: 'user_id'});
+db.RELATIONSHIPS.belongsTo(db.PATIENTS, {foreignKey: 'passive_user_id', targetKey: 'user_id'});
 
 //RELATIONSHIP_STATUS
-db.RELATIONSHIP_STATUS.hasMany(db.RELATIONSHIPS, {foreignKey: 'status_id', targetKey: 'status_id'});
 
 //TYPES_OF_DRUGS
-db.TYPES_OF_DRUGS.belongsTo(db.GENERAL_DRUG_TYPE_GROUPS, {foreignKey: 'general_type_id', targetKey: 'general_type_id'});
 
 //USERS
 db.USERS.hasMany(db.RELATIONSHIPS, {foreignKey: 'active_user_id', targetKey: 'user_id'});
 db.USERS.hasMany(db.RELATIONSHIPS, {foreignKey: 'passive_user_id', targetKey: 'user_id'});
+db.USERS.hasMany(db.USER_POSTS,{foreignKey: 'user_id', targetKey: 'user_id'});
+db.USERS.hasMany(db.PATIENTS,{foreignKey: 'user_id', targetKey: 'user_id'});
 
 //USER_POSTS
 db.USER_POSTS.belongsTo(db.USERS, {foreignKey: 'user_id', targetKey: 'user_id'});
+db.USER_POSTS.belongsTo(db.PATIENTS, {foreignKey: 'user_id', targetKey: 'user_id'});
 
 module.exports = db;
