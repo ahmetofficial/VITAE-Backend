@@ -43,7 +43,7 @@ router.get('/posts/liveFeed/:user_id', function (req, res, next) {
         ],
         order: [['created_at', 'DESC']]
     }).then(function (USER_POSTS) {
-        res.send(USER_POSTS);
+        res.send({posts:USER_POSTS});
     });
 });
 
