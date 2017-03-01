@@ -16,7 +16,7 @@ router.get('/posts/getByUserId/:user_id', function (req, res, next) {
         },
         order: [['created_at', 'DESC']]
     }).then(function (USER_POSTS) {
-        res.send({data: USER_POSTS});
+        res.send({posts: USER_POSTS});
     })
 });
 
