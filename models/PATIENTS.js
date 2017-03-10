@@ -10,14 +10,6 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: false,
             primaryKey: true
         },
-        user_name: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        user_last_name: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
         gender: {
             type: DataTypes.STRING,
             allowNull: false
@@ -28,10 +20,6 @@ module.exports = function (sequelize, DataTypes) {
         },
         birthday: {
             type: DataTypes.DATE,
-            allowNull: false
-        },
-        relationship_status_id: {
-            type: DataTypes.INTEGER(11),
             allowNull: false
         }
     }, {

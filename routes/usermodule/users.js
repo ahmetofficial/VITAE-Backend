@@ -78,11 +78,9 @@ router.post('/users/registerPatient', function (req, res) {
     var phone_number = req.body.phone_number;
     var about_me = req.body.about_me;
     var profile_picture_id = req.body.profile_picture_id;
-    var user_last_name = req.body.user_last_name;
     var gender = req.body.gender;
     var blood_type_id = req.body.blood_type_id;
     var birthday = req.body.birthday;
-    var relationship_status_id = req.body.relationship_status_id;
     {
         models.USERS.create({
             user_id: user_id,
@@ -99,11 +97,9 @@ router.post('/users/registerPatient', function (req, res) {
         });
         models.PATIENTS.create({
             user_id:user_id,
-            user_last_name:user_last_name,
             gender: gender,
             blood_type_id:blood_type_id,
-            birthday:birthday,
-            relationship_status_id:relationship_status_id
+            birthday:birthday
         }).then(function () {
             res.status(200).json({
                 status: 'true',
