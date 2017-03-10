@@ -14,8 +14,8 @@ router.get('/bloodTypes/getAll', function (req, res, next) {
         })
 });
 
-router.get('/bloodTypes/getBloodById/:bloodTypeId', function (req, res) {
-    var blood_type_id = req.params.blood_type_id;
+router.get('/bloodTypes/getBloodType', function (req, res) {
+    var blood_type_id = req.body.blood_type_id;
     models.BLOOD_TYPES.findById(blood_type_id, {}).then(function (PrescriptionType) {
         res.send({bloodType: PrescriptionType});
     })

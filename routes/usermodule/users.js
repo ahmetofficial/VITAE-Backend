@@ -106,7 +106,11 @@ router.post('/users/registerPatient', function (req, res) {
                 message: 'creating a patient is succesful'
             });
         }).catch(function (error) {
-            res.status(500).json(error)
+            //noinspection JSAnnotator
+            res.status(500).json({
+                status: 'false',
+                error
+            })
         });
 
     }
