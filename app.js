@@ -15,6 +15,7 @@ var drugs = require('./routes/drugmodule/drugs');
 var form_of_drugs = require('./routes/drugmodule/form_of_drugs');
 var prescription_types = require('./routes/drugmodule/prescription_type');
 var user= require('./routes/usermodule/users');
+var patients= require('./routes/usermodule/patients');
 var posts=require('./routes/postmodule/posts');
 var relationships=require('./routes/usermodule/relationships');
 
@@ -32,15 +33,17 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
-app.use('/userModule', users);
-app.use('/drugModule',form_of_drugs);
-app.use('/drugModule',prescription_types);
+
+
+app.use('/generalHealthModule',blood_types);
 app.use('/drugModule',drug_companies);
 app.use('/drugModule',drugs);
+app.use('/drugModule',form_of_drugs);
+app.use('/drugModule',prescription_types);
 app.use('/userModule',user);
+app.use('/userModule',patients);
 app.use('/postModule',posts);
 app.use('/userModule',relationships);
-app.use('/generalHealthModule',blood_types);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
