@@ -15,6 +15,29 @@ router.get('/users/getAll', function (req, res, next) {
         })
 });
 
+//get patient profile data data
+
+router.get('/users/getPatientProfile/:user_id', function (req, res, next) {
+    var user_id = req.params.user_id;
+    models.USERS.findById(user_id, {
+        attributes: ['user_id','user_name','about_me','friend_count','is_official_user','is_official_user','profile_picture_id'],
+        model: models.USERS,
+        include:[
+            {
+                attributes: ['birthday'],
+                model: models.PATIENTS,
+                where: {
+                    user_id:user_id
+                }
+            }
+        ]
+    }).then(function (USERS) {
+        res.send(USERS);
+    }).catch(function (error) {
+        res.status(500).json(error)
+    });
+});
+
 //login authentication
 router.post('/users/login', function (req, res) {
     var user_id = req.body.user_id;
@@ -96,10 +119,10 @@ router.post('/users/registerPatient', function (req, res) {
             profile_picture_id: profile_picture_id
         });
         models.PATIENTS.create({
-            user_id:user_id,
+            user_id: user_id,
             gender: gender,
-            blood_type_id:blood_type_id,
-            birthday:birthday
+            blood_type_id: blood_type_id,
+            birthday: birthday
         }).then(function () {
             res.status(200).json({
                 status: 'true',
