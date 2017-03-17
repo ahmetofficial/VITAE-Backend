@@ -28,7 +28,7 @@ router.get('/posts/liveFeed/:user_id', function (req, res, next) {
             {
                 attributes: ['user_name'],
                 model: models.USERS,
-                include:[
+                include: [
                     {
                         attributes: [],
                         model: models.RELATIONSHIPS,

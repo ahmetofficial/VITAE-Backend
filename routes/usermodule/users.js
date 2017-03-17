@@ -100,7 +100,13 @@ router.post('/users/registerPatient', function (req, res) {
             gender: gender,
             blood_type_id: blood_type_id,
             birthday: birthday
-        }).then(function () {
+        });
+        models.RELATIONSHIPS.create({
+            active_user_id: user_id,
+            passive_user_id: user_id,
+            status_id: 1
+        })
+        .then(function () {
             res.status(200).json({
                 status: 'true',
                 message: 'creating a patient is succesful'

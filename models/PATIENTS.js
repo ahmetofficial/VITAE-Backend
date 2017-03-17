@@ -11,7 +11,7 @@ module.exports = function (sequelize, DataTypes) {
             primaryKey: true
         },
         gender: {
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER(2),
             allowNull: false
         },
         blood_type_id: {
