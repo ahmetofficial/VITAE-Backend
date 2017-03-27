@@ -35,21 +35,37 @@ db.Sequelize = Sequelize;
 
 //Models
 db.BLOOD_TYPES = require('../models/BLOOD_TYPES.js')(sequelize, Sequelize);
+db.BODY_SYSTEM = require('../models/BODY_SYSTEMS')(sequelize,Sequelize);
+db.DISEASE_PRIOR_REASON = require('../models/DISEASE_PRIOR_REASON')(sequelize,Sequelize);
+db.DISEASES = require('../models/DISEASES')(sequelize,Sequelize);
 db.DRUG_COMPANIES = require('../models/DRUG_COMPANIES.js')(sequelize, Sequelize);
+db.DRUG_DOSE_AMOUNT_HISTORY = require('../models/DRUG_DOSE_AMOUNT_HISTORY.js')(sequelize, Sequelize);
+db.DRUG_USAGE_GAP_PERIODS = require('../models/DRUG_USAGE_GAP_PERIODS.js')(sequelize, Sequelize);
+db.DRUG_USAGE_STATE_HISTORY = require('../models/DRUG_USAGE_STATE_HISTORY.js')(sequelize, Sequelize);
 db.DRUGS = require('../models/DRUGS.js')(sequelize, Sequelize);
 db.FORM_OF_DRUGS = require('../models/FORM_OF_DRUGS.js')(sequelize, Sequelize);
 db.GENERAL_DRUG_TYPE_GROUPS = require('../models/GENERAL_DRUG_TYPE_GROUPS.js')(sequelize, Sequelize);
+db.ORGANS = require('../models/ORGANS.js')(sequelize, Sequelize);
 db.PATIENTS = require('../models/PATIENTS.js')(sequelize, Sequelize);
 db.PHOTOS = require('../models/PHOTOS.js')(sequelize, Sequelize);
 db.PRESCRIPTION_TYPE = require('../models/PRESCRIPTION_TYPE.js')(sequelize, Sequelize);
 db.RELATIONSHIP_STATUS = require('../models/RELATIONSHIP_STATUS.js')(sequelize, Sequelize);
 db.RELATIONSHIPS = require('../models/RELATIONSHIPS.js')(sequelize, Sequelize);
+db.TREATMENT_GAP_PERIODS = require('../models/TREATMENT_GAP_PERIODS.js')(sequelize, Sequelize);
+db.TREATMENT_STATE_HISTORY = require('../models/TREATMENT_STATE_HISTORY.js')(sequelize, Sequelize);
+db.TREATMENTS = require('../models/TREATMENTS.js')(sequelize, Sequelize);
 db.TYPES_OF_DRUGS = require('../models/TYPES_OF_DRUGS.js')(sequelize, Sequelize);
+db.USER_DISEASE_HISTORY = require('../models/USER_DISEASE_HISTORY.js')(sequelize, Sequelize);
+db.USER_DRUG_USAGE_HISTORY = require('../models/USER_DRUG_USAGE_HISTORY.js')(sequelize, Sequelize);
 db.USER_POSTS = require('../models/USER_POSTS.js')(sequelize, Sequelize);
+db.USER_TREATMENT_HISTORY = require('../models/USER_TREATMENT_HISTORY.js')(sequelize, Sequelize);
 db.USER_TYPES = require('../models/USER_TYPES.js')(sequelize, Sequelize);
 db.USERS = require('../models/USERS.js')(sequelize, Sequelize);
 
 ///////////////////////////////////ASSOCIATIONS///////////////////////////////////////
+
+//DISEASES
+db.DISEASES.hasMany(db.USER_DISEASE_HISTORY,{foreignKey: 'disease_id', targetKey: 'disease_id'});
 
 //DRUG_COMPANIES
 
@@ -74,11 +90,16 @@ db.RELATIONSHIPS.belongsTo(db.USERS, {foreignKey: 'passive_user_id', targetKey: 
 
 //TYPES_OF_DRUGS
 
+//USER_DISEASE_HISTORY
+db.USER_DISEASE_HISTORY.belongsTo(db.USERS, {foreignKey: 'user_id', targetKey: 'user_id'});
+db.USER_DISEASE_HISTORY.belongsTo(db.DISEASES, {foreignKey: 'disease_id', targetKey: 'disease_id'});
+
 //USERS
 db.USERS.hasMany(db.RELATIONSHIPS, {foreignKey: 'active_user_id', targetKey: 'user_id'});
 db.USERS.hasMany(db.RELATIONSHIPS, {foreignKey: 'passive_user_id', targetKey: 'user_id'});
 db.USERS.hasMany(db.USER_POSTS,{foreignKey: 'user_id', targetKey: 'user_id'});
 db.USERS.hasMany(db.PATIENTS,{foreignKey: 'user_id', targetKey: 'user_id'});
+db.USERS.hasMany(db.USER_DISEASE_HISTORY,{foreignKey: 'user_id', targetKey: 'user_id'});
 db.USERS.belongsTo(db.USER_TYPES, {foreignKey: 'user_type_id', targetKey: 'user_type_id'});
 
 //USER_POSTS

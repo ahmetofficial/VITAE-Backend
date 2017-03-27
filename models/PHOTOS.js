@@ -1,4 +1,8 @@
-/* jshint indent: 2 */
+// Developer: Ahmet Kaymak
+// Date: 25.03.2017
+
+'use strict';
+
 
 module.exports = function (sequelize, DataTypes) {
     return sequelize.define('PHOTOS', {
