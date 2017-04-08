@@ -27,7 +27,7 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.INTEGER(11),
             allowNull: false
         },
-        avarage_succes_rate: {
+        average_succes_rate: {
             type: "DOUBLE(10,5)",
             allowNull: true
         }

@@ -20,6 +20,7 @@ var posts = require('./routes/postmodule/posts');
 var relationships = require('./routes/usermodule/relationships');
 var user_disease_history = require('./routes/generalhealthmodule/user_disease_history');
 var user_drug_usage_history = require('./routes/generalhealthmodule/user_drug_usage_history');
+var user_treatment_history = require('./routes/generalhealthmodule/user_treatment_history');
 var diseases = require('./routes/diseasemodule/diseases');
 
 var app = express();
@@ -46,6 +47,7 @@ app.use('/diseaseModule', diseases);
 app.use('/generalHealthModule', blood_types);
 app.use('/generalHealthModule', user_disease_history);
 app.use('/generalHealthModule', user_drug_usage_history);
+app.use('/generalHealthModule',user_treatment_history);
 app.use('/userModule', user);
 app.use('/userModule', patients);
 app.use('/userModule', relationships);

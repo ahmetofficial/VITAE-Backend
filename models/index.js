@@ -67,10 +67,12 @@ db.USERS = require('../models/USERS.js')(sequelize, Sequelize);
 //DISEASES
 db.DISEASES.hasMany(db.USER_DISEASE_HISTORY,{foreignKey: 'disease_id', targetKey: 'disease_id'});
 db.DISEASES.hasMany(db.USER_DRUG_USAGE_HISTORY,{foreignKey: 'disease_id', targetKey: 'disease_id'});
+db.DISEASES.hasMany(db.USER_TREATMENT_HISTORY,{foreignKey: 'disease_id', targetKey: 'disease_id'});
 
 //DRUG_COMPANIES
 
 //DRUGS
+db.DISEASES.hasMany(db.USER_DRUG_USAGE_HISTORY,{foreignKey: 'drug_id', targetKey: 'drug_id'});
 
 //FORM_OF_DRUGS
 
@@ -91,6 +93,9 @@ db.RELATIONSHIPS.belongsTo(db.USERS, {foreignKey: 'passive_user_id', targetKey: 
 
 //TYPES_OF_DRUGS
 
+//TREATMENTS
+db.TREATMENTS.hasMany(db.USER_TREATMENT_HISTORY,{foreignKey: 'treatment_id', targetKey: 'treatment_id'});
+
 //USER_DISEASE_HISTORY
 db.USER_DISEASE_HISTORY.belongsTo(db.USERS, {foreignKey: 'user_id', targetKey: 'user_id'});
 db.USER_DISEASE_HISTORY.belongsTo(db.DISEASES, {foreignKey: 'disease_id', targetKey: 'disease_id'});
@@ -98,6 +103,13 @@ db.USER_DISEASE_HISTORY.belongsTo(db.DISEASES, {foreignKey: 'disease_id', target
 //USER_DRUG_USAGE_HISTORY
 db.USER_DRUG_USAGE_HISTORY.belongsTo(db.USERS, {foreignKey: 'user_id', targetKey: 'user_id'});
 db.USER_DRUG_USAGE_HISTORY.belongsTo(db.DISEASES, {foreignKey: 'disease_id', targetKey: 'disease_id'});
+db.USER_DRUG_USAGE_HISTORY.belongsTo(db.TREATMENTS, {foreignKey: 'treatment_id', targetKey: 'treatment_id'});
+db.USER_DRUG_USAGE_HISTORY.belongsTo(db.DRUGS, {foreignKey: 'drug_id', targetKey: 'drug_id'});
+
+//USER_TREATMENT_HISTORY
+db.USER_TREATMENT_HISTORY.belongsTo(db.USERS, {foreignKey: 'user_id', targetKey: 'user_id'});
+db.USER_TREATMENT_HISTORY.belongsTo(db.DISEASES, {foreignKey: 'disease_id', targetKey: 'disease_id'});
+db.USER_TREATMENT_HISTORY.belongsTo(db.TREATMENTS, {foreignKey: 'treatment_id', targetKey: 'treatment_id'});
 
 //USERS
 db.USERS.hasMany(db.RELATIONSHIPS, {foreignKey: 'active_user_id', targetKey: 'user_id'});
@@ -106,6 +118,7 @@ db.USERS.hasMany(db.USER_POSTS,{foreignKey: 'user_id', targetKey: 'user_id'});
 db.USERS.hasMany(db.PATIENTS,{foreignKey: 'user_id', targetKey: 'user_id'});
 db.USERS.hasMany(db.USER_DISEASE_HISTORY,{foreignKey: 'user_id', targetKey: 'user_id'});
 db.USERS.hasMany(db.USER_DRUG_USAGE_HISTORY,{foreignKey: 'user_id', targetKey: 'user_id'});
+db.USERS.hasMany(db.USER_TREATMENT_HISTORY,{foreignKey: 'user_id', targetKey: 'user_id'});
 db.USERS.belongsTo(db.USER_TYPES, {foreignKey: 'user_type_id', targetKey: 'user_type_id'});
 
 //USER_POSTS
