@@ -54,8 +54,8 @@ router.get('/userDrugUsageHistory/getHistory/:user_id', function (req, res, next
         ]
     }).then(function (result) {
         res.send({
-                user_treatment_history: result.rows,
-                treatment_count: result.count
+                user_drug_usage_history: result.rows,
+                drug_count: result.count
             }
         )
     }).catch(function (error) {
