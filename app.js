@@ -13,6 +13,7 @@ var blood_types = require('./routes/generalhealthmodule/blood_types');
 var drug_companies = require('./routes/drugmodule/drug_companies');
 var drugs = require('./routes/drugmodule/drugs');
 var form_of_drugs = require('./routes/drugmodule/form_of_drugs');
+var hospitals = require('./routes/hospitalmodule/hospitals');
 var prescription_types = require('./routes/drugmodule/prescription_type');
 var user = require('./routes/usermodule/users');
 var patients = require('./routes/usermodule/patients');
@@ -52,6 +53,7 @@ app.use('/userModule', user);
 app.use('/userModule', patients);
 app.use('/userModule', relationships);
 app.use('/postModule', posts);
+app.use('/hospitalModule', hospitals);
 
 
 // catch 404 and forward to error handler
