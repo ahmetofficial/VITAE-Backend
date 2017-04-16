@@ -24,4 +24,13 @@ router.post('/hospitals/searchByHospitalName', function (req, res, next) {
     });
 });
 
+//get hospital infos by hospital id
+router.get('/hospitals/getHospitalById/:hospital_id', function (req, res, next) {
+    var hospital_id = req.params.hospital_id;
+    models.HOSPITALS.findById(hospital_id)
+        .then(function (USERS) {
+            res.send({data: USERS});
+        })
+});
+
 module.exports = router;
