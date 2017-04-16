@@ -16,7 +16,7 @@ var sequelize = new Sequelize(config.database, config.username, config.password,
 //full text search by hospital id
 router.post('/hospitals/searchByHospitalName', function (req, res, next) {
     var hospital_name = req.body.hospital_name;
-    sequelize.query('SELECT hospital_name, hospital_type, overall_score FROM HOSPITALS WHERE MATCH(hospital_name) AGAINST("'+hospital_name+'"IN NATURAL LANGUAGE MODE);'
+    sequelize.query('SELECT hospital_id, hospital_name, hospital_type, overall_score FROM HOSPITALS WHERE MATCH(hospital_name) AGAINST("'+hospital_name+'"IN NATURAL LANGUAGE MODE);'
     ).then(function (HOSPITALS) {
         res.send({hospitals: HOSPITALS[0]});
     }).catch(function (error) {
