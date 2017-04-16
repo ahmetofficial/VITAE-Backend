@@ -29,7 +29,7 @@ router.get('/hospitals/getHospitalById/:hospital_id', function (req, res, next) 
     var hospital_id = req.params.hospital_id;
     models.HOSPITALS.findById(hospital_id)
         .then(function (USERS) {
-            res.send({data: USERS});
+            res.send(USERS);
         })
 });
 
