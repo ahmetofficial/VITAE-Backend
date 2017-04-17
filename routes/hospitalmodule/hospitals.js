@@ -28,8 +28,8 @@ router.post('/hospitals/searchByHospitalName', function (req, res, next) {
 router.get('/hospitals/getHospitalById/:hospital_id', function (req, res, next) {
     var hospital_id = req.params.hospital_id;
     models.HOSPITALS.findById(hospital_id)
-        .then(function (USERS) {
-            res.send(USERS);
+        .then(function (HOSPITALS) {
+            res.send({hospital:HOSPITALS});
         })
 });
 
