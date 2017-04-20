@@ -23,11 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="hospitals.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="hospitals.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/hospitalmodule/hospitals.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="31" column="41" lean-forward="false" selection-start-line="31" selection-start-column="41" selection-end-line="31" selection-end-column="41" />
+            <state relative-caret-position="119">
+              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="12" selection-end-column="89" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -35,12 +35,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="USERS.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/models/USERS.js">
+      <file leaf-file-name="users.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/routes/usermodule/users.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="799">
-              <caret line="48" column="26" lean-forward="false" selection-start-line="48" selection-start-column="8" selection-end-line="48" selection-end-column="26" />
-              <folding />
+            <state relative-caret-position="231">
+              <caret line="204" column="96" lean-forward="false" selection-start-line="204" selection-start-column="96" selection-end-line="204" selection-end-column="96" />
+              <folding>
+                <element signature="e#510#621#0" expanded="false" />
+                <element signature="e#696#1237#0" expanded="false" />
+                <element signature="e#1315#2079#0" expanded="false" />
+                <element signature="e#2167#3729#0" expanded="false" />
+                <element signature="e#3822#4927#0" expanded="false" />
+                <element signature="e#5012#6057#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -75,7 +82,6 @@
         <option value="$PROJECT_DIR$/routes/usermodule/patient.js" />
         <option value="$PROJECT_DIR$/routes/usermodule/patients.js" />
         <option value="$PROJECT_DIR$/routes/postmodule/posts.js" />
-        <option value="$PROJECT_DIR$/routes/usermodule/users.js" />
         <option value="$PROJECT_DIR$/models/PATIENTS.js" />
         <option value="$PROJECT_DIR$/models/DISEASE_HAVE_THREATMENT.js" />
         <option value="$PROJECT_DIR$/models/PHOTOS.js" />
@@ -111,6 +117,7 @@
         <option value="$PROJECT_DIR$/config/config.json" />
         <option value="$PROJECT_DIR$/models/HOSPITALS.js" />
         <option value="$PROJECT_DIR$/routes/hospitalmodule/hospitals.js" />
+        <option value="$PROJECT_DIR$/routes/usermodule/users.js" />
       </list>
     </option>
   </component>
@@ -146,8 +153,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -188,7 +193,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="usermodule" />
+              <option name="myItemId" value="hospitalmodule" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -222,6 +227,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -372,11 +379,13 @@
       <workItem from="1492345303339" duration="1867000" />
       <workItem from="1492374387208" duration="1160000" />
       <workItem from="1492452712141" duration="687000" />
+      <workItem from="1492619780994" duration="2801000" />
+      <workItem from="1492728205189" duration="741000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="165323000" />
+    <option name="totallyTimeSpent" value="168865000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1612" height="876" extended-state="0" />
@@ -384,10 +393,10 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23746867" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39686683" sideWeight="0.5119048" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39817232" sideWeight="0.5169173" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39817232" sideWeight="0.4830615" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39817232" sideWeight="0.4830827" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40208876" sideWeight="0.5169385" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -727,13 +736,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/usermodule/users.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="15" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/usermodule/patients.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -743,8 +745,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/hospitalmodule/hospitals.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="41" lean-forward="false" selection-start-line="31" selection-start-column="41" selection-end-line="31" selection-end-column="41" />
+        <state relative-caret-position="119">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="12" selection-end-column="89" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
@@ -753,9 +755,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/models/USERS.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
+        <state relative-caret-position="314">
           <caret line="48" column="26" lean-forward="false" selection-start-line="48" selection-start-column="8" selection-end-line="48" selection-end-column="26" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/usermodule/users.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="204" column="96" lean-forward="false" selection-start-line="204" selection-start-column="96" selection-end-line="204" selection-end-column="96" />
+          <folding>
+            <element signature="e#510#621#0" expanded="false" />
+            <element signature="e#696#1237#0" expanded="false" />
+            <element signature="e#1315#2079#0" expanded="false" />
+            <element signature="e#2167#3729#0" expanded="false" />
+            <element signature="e#3822#4927#0" expanded="false" />
+            <element signature="e#5012#6057#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

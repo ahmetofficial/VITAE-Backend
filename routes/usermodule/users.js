@@ -6,6 +6,11 @@
 var models = require('../../models');
 var express = require('express');
 var router = express.Router();
+var fs = require('fs');
+var Sequelize = require('sequelize');
+var env = process.env.NODE_ENV || 'development';
+var config = require(__dirname + '/../../config/config.json')[env];
+var sequelize = new Sequelize(config.database, config.username, config.password, config);
 
 //getAllTheUserData
 router.get('/users/getAll', function (req, res, next) {
@@ -192,6 +197,16 @@ router.put('/users/resetUserId/:user_id', function (req, res) {
                 message: 'It has already taken'
             });
         }
+    });
+});
+
+router.post('/users/searchByUserInfo', function (req, res, next) {
+    var search_text = req.body.search_text;
+    sequelize.query('SELECT user_id,user_name, user_type_id, is_official_user,profile_picture_id FROM USERS WHERE MATCH(user_name) AGAINST("'+search_text+'"IN NATURAL LANGUAGE MODE);'
+    ).then(function (USERS) {
+        res.send({users: USERS[0]});
+    }).catch(function (error) {
+        res.status(500).json(error)
     });
 });
 
