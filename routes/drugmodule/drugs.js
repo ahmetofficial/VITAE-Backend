@@ -27,4 +27,18 @@ router.post('/drugs/create', function(req, res) {
         res.json(DRUGS);
     });
 });
+
+router.post('/drugs/getDrugByName', function (req, res) {
+    var commercial_name = req.body.search_text;
+    models.DRUGS.findAll({
+        attributes: ['drug_id', 'commercial_name'],
+        where:{
+            commercial_name: {
+                $like: "%"+commercial_name+"%"
+            }
+        }
+    }).then(function (DRUGS) {
+        res.send({drug_list: DRUGS});
+    })
+});
 module.exports = router;

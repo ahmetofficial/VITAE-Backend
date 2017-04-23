@@ -19,6 +19,7 @@ var user = require('./routes/usermodule/users');
 var patients = require('./routes/usermodule/patients');
 var posts = require('./routes/postmodule/posts');
 var relationships = require('./routes/usermodule/relationships');
+var treatments = require('./routes/treatmentmodule/treatments');
 var user_disease_history = require('./routes/generalhealthmodule/user_disease_history');
 var user_drug_usage_history = require('./routes/generalhealthmodule/user_drug_usage_history');
 var user_treatment_history = require('./routes/generalhealthmodule/user_treatment_history');
@@ -49,11 +50,12 @@ app.use('/generalHealthModule', blood_types);
 app.use('/generalHealthModule', user_disease_history);
 app.use('/generalHealthModule', user_drug_usage_history);
 app.use('/generalHealthModule',user_treatment_history);
+app.use('/hospitalModule', hospitals);
+app.use('/treatmentModule', treatments);
 app.use('/userModule', user);
 app.use('/userModule', patients);
 app.use('/userModule', relationships);
 app.use('/postModule', posts);
-app.use('/hospitalModule', hospitals);
 
 
 // catch 404 and forward to error handler

@@ -11,12 +11,25 @@ var router = express.Router();
 
 router.get('/diseases/getAll', function (req, res, next) {
     models.DISEASES.findAll({
-        attributes: ['disease_id','disease_name']
+        attributes: ['disease_id', 'disease_name']
     })
-        .then(function (PrescriptionType) {
-            {}
-            res.send({data: PrescriptionType});
+        .then(function (DISEASES) {
+            res.send({data: DISEASES});
         })
+});
+
+router.post('/diseases/getDiseaseByName', function (req, res) {
+    var disease_name = req.body.search_text;
+    models.DISEASES.findAll({
+        attributes: ['disease_id', 'disease_name'],
+        where:{
+            disease_name: {
+                $like: "%"+disease_name+"%"
+            }
+        }
+    }).then(function (DISEASES) {
+        res.send({disease_list: DISEASES});
+    })
 });
 
 module.exports = router;
