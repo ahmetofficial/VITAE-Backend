@@ -36,8 +36,8 @@
       <file leaf-file-name="diseases.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/diseasemodule/diseases.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="21" column="43" lean-forward="false" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
+            <state relative-caret-position="187">
+              <caret line="12" column="29" lean-forward="true" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -60,8 +60,8 @@
       <file leaf-file-name="treatments.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/treatmentmodule/treatments.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+            <state relative-caret-position="340">
+              <caret line="20" column="27" lean-forward="false" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -143,8 +143,8 @@
         <option value="$PROJECT_DIR$/routes/diseasemodule/diseases.js" />
         <option value="$PROJECT_DIR$/routes/drugmodule/drugs.js" />
         <option value="$PROJECT_DIR$/routes/treatmentmodule.js" />
-        <option value="$PROJECT_DIR$/routes/treatmentmodule/treatments.js" />
         <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/routes/treatmentmodule/treatments.js" />
       </list>
     </option>
   </component>
@@ -411,12 +411,12 @@
       <workItem from="1492728205189" duration="957000" />
       <workItem from="1492784774211" duration="111000" />
       <workItem from="1492887847639" duration="599000" />
-      <workItem from="1492955390817" duration="4697000" />
+      <workItem from="1492955390817" duration="4909000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="174488000" />
+    <option name="totallyTimeSpent" value="174700000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -743,26 +743,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/diseasemodule/diseases.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="21" column="43" lean-forward="false" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/drugmodule/drugs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="43" column="24" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="43" selection-end-column="24" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#220#352#0" expanded="false" />
-            <element signature="e#404#824#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/TREATMENTS.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -811,10 +791,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/routes/drugmodule/drugs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="43" column="24" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="43" selection-end-column="24" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#220#352#0" expanded="false" />
+            <element signature="e#404#824#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/diseasemodule/diseases.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="12" column="29" lean-forward="true" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/routes/treatmentmodule/treatments.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+        <state relative-caret-position="340">
+          <caret line="20" column="27" lean-forward="false" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>

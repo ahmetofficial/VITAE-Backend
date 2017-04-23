@@ -18,7 +18,7 @@ router.post('/treatments/getTreatmenyByName', function (req, res) {
             }
         }
     }).then(function (TREATMENTS) {
-        res.send({drug_list: TREATMENTS});
+        res.send({treatment_list: TREATMENTS});
     })
 });
 module.exports = router;
