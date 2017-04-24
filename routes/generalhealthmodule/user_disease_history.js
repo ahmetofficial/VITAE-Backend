@@ -19,7 +19,9 @@ router.post('/userDiseaseHistory/create', function (req, res, next) {
         disease_id: disease_id,
         disease_start_date: disease_start_date,
         disease_level_id: disease_level_id,
-        disease_state_id: disease_state_id
+        disease_state_id: disease_state_id,
+        count_of_drugs:0,
+        count_of_treatments:0
     }).then(function () {
         res.status(200).json({
             status: 'true'
