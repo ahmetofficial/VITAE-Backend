@@ -13,13 +13,11 @@ router.post('/userTreatmentHistory/create', function (req, res, next) {
     var disease_id = req.body.disease_id;
     var treatment_id = req.body.treatment_id;
     var disease_start_date = req.body.disease_start_date;
-    var disease_effect_on_disease = req.body.disease_effect_on_disease;
     models.USER_TREATMENT_HISTORY.create({
         user_id: user_id,
         disease_id: disease_id,
         treatment_id: treatment_id,
-        disease_start_date: disease_start_date,
-        disease_effect_on_disease: disease_effect_on_disease
+        disease_start_date: disease_start_date
     }).then(function () {
         res.status(200).json({
             status: 'true'
@@ -29,7 +27,7 @@ router.post('/userTreatmentHistory/create', function (req, res, next) {
     });
 });
 
-//get user disease history
+//get user treatment history
 router.get('/userTreatmentHistory/getHistory/:user_id', function (req, res, next) {
     var user_id = req.params.user_id;
     models.USER_TREATMENT_HISTORY.findAndCountAll({
