@@ -6,6 +6,11 @@
 var models = require('../../models');
 var express = require('express');
 var router = express.Router();
+var fs = require('fs');
+var Sequelize = require('sequelize');
+var env = process.env.NODE_ENV || 'development';
+var config = require(__dirname + '/../../config/config.json')[env];
+var sequelize = new Sequelize(config.database, config.username, config.password, config);
 
 //create user disease history
 router.post('/userTreatmentHistory/create', function (req, res, next) {
@@ -17,7 +22,8 @@ router.post('/userTreatmentHistory/create', function (req, res, next) {
         user_id: user_id,
         disease_id: disease_id,
         treatment_id: treatment_id,
-        disease_start_date: disease_start_date
+        treatment_start_date: disease_start_date,
+        count_of_drugs: 0
     }).then(function () {
         res.status(200).json({
             status: 'true'
@@ -48,6 +54,27 @@ router.get('/userTreatmentHistory/getHistory/:user_id', function (req, res, next
                 treatment_count: result.count
             }
         )
+    }).catch(function (error) {
+        res.status(500).json(error)
+    });
+});
+
+//update count_of_drugs
+router.post('/userTreatmentHistory/updateDrugCount', function (req, res, next) {
+    var user_id = req.body.user_id;
+    var disease_id = req.body.disease_id;
+    models.USER_TREATMENT_HISTORY.update(
+        {count_of_drugs: sequelize.literal('count_of_drugs + 1')},
+        {
+            fields: ['count_of_drugs'],
+            where: {
+                user_id: user_id,
+                disease_id: disease_id
+            }
+        }).then(function () {
+        res.status(200).json({
+            status: 'true'
+        });
     }).catch(function (error) {
         res.status(500).json(error)
     });

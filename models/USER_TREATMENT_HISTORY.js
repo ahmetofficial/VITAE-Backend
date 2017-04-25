@@ -26,7 +26,7 @@ module.exports = function (sequelize, DataTypes) {
         },
         treatment_finish_date: {
             type: DataTypes.DATE,
-            allowNull: false
+            allowNull: true
         },
         treatment_effect_on_disease: {
             type: DataTypes.INTEGER(11),
