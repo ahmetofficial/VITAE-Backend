@@ -17,12 +17,12 @@ router.post('/userTreatmentHistory/create', function (req, res, next) {
     var user_id = req.body.user_id;
     var disease_id = req.body.disease_id;
     var treatment_id = req.body.treatment_id;
-    var disease_start_date = req.body.disease_start_date;
+    var treatment_start_date = req.body.treatment_start_date;
     models.USER_TREATMENT_HISTORY.create({
         user_id: user_id,
         disease_id: disease_id,
         treatment_id: treatment_id,
-        treatment_start_date: disease_start_date,
+        treatment_start_date: treatment_start_date,
         count_of_drugs: 0
     }).then(function () {
         res.status(200).json({
