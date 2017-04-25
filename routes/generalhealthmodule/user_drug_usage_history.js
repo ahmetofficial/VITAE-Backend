@@ -14,16 +14,12 @@ router.post('/userDrugUsageHistory/create', function (req, res, next) {
     var treatment_id = req.body.treatment_id;
     var drug_id = req.body.drug_id;
     var drug_usage_start_date = req.body.drug_usage_start_date;
-    var drug_usage_finish_date = req.body.drug_usage_finish_date;
-    var drug_effect_on_disease = req.body.drug_effect_on_disease;
     models.USER_DRUG_USAGE_HISTORY.create({
         user_id: user_id,
         disease_id: disease_id,
         treatment_id: treatment_id,
         drug_id: drug_id,
         drug_usage_start_date: drug_usage_start_date,
-        drug_usage_finish_date: drug_usage_finish_date,
-        drug_effect_on_disease: drug_effect_on_disease
     }).then(function () {
         res.status(200).json({
             status: 'true'

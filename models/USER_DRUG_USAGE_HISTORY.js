@@ -35,7 +35,7 @@ module.exports = function (sequelize, DataTypes) {
         },
         drug_effect_on_disease: {
             type: DataTypes.INTEGER(11),
-            allowNull: false
+            allowNull: true
         }
     }, {
         tableName: 'USER_DRUG_USAGE_HISTORY',

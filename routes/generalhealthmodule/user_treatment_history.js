@@ -63,13 +63,15 @@ router.get('/userTreatmentHistory/getHistory/:user_id', function (req, res, next
 router.post('/userTreatmentHistory/updateDrugCount', function (req, res, next) {
     var user_id = req.body.user_id;
     var disease_id = req.body.disease_id;
+    var treatment_id = req.body.treatment_id;
     models.USER_TREATMENT_HISTORY.update(
         {count_of_drugs: sequelize.literal('count_of_drugs + 1')},
         {
             fields: ['count_of_drugs'],
             where: {
                 user_id: user_id,
-                disease_id: disease_id
+                disease_id: disease_id,
+                treatment_id: treatment_id
             }
         }).then(function () {
         res.status(200).json({
