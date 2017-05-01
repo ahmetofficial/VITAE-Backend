@@ -33,7 +33,7 @@ router.post('/userTreatmentHistory/create', function (req, res, next) {
     });
 });
 
-//get user treatment history
+//get user disease treatment history
 router.get('/userTreatmentHistory/getHistory/:user_id', function (req, res, next) {
     var user_id = req.params.user_id;
     models.USER_TREATMENT_HISTORY.findAndCountAll({
@@ -46,6 +46,30 @@ router.get('/userTreatmentHistory/getHistory/:user_id', function (req, res, next
             {
                 attributes: ['disease_id','disease_name'],
                 model: models.DISEASES
+            }
+        ]
+    }).then(function (result) {
+        res.send({
+                user_treatment_history: result.rows,
+                treatment_count: result.count
+            }
+        )
+    }).catch(function (error) {
+        res.status(500).json(error)
+    });
+});
+
+//get user's disease treatment history
+router.get('/userTreatmentHistory/getDiseaseTreatmentHistory/:user_id/:disease_id', function (req, res, next) {
+    var user_id = req.params.user_id;
+    var disease_id = req.params.disease_id;
+
+    models.USER_TREATMENT_HISTORY.findAndCountAll({
+        where: {user_id: user_id,disease_id:disease_id},
+        include: [
+            {
+                attributes: ['treatment_id','treatment_name'],
+                model: models.TREATMENTS
             }
         ]
     }).then(function (result) {

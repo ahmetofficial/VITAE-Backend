@@ -59,4 +59,29 @@ router.get('/userDrugUsageHistory/getHistory/:user_id', function (req, res, next
     });
 });
 
+//get user treatment drug usage history
+router.get('/userDrugUsageHistory/getTreatmentDrugUsageHistory/:user_id/:disease_id/:treatment_id', function (req, res, next) {
+    var user_id = req.params.user_id;
+    var disease_id = req.params.disease_id;
+    var treatment_id = req.params.treatment_id;
+
+    models.USER_DRUG_USAGE_HISTORY.findAndCountAll({
+        where: {user_id: user_id,disease_id:disease_id,treatment_id:treatment_id},
+        include: [
+            {
+                attributes: ['drug_id', 'commercial_name'],
+                model: models.DRUGS
+            }
+        ]
+    }).then(function (result) {
+        res.send({
+                user_drug_usage_history: result.rows,
+                drug_count: result.count
+            }
+        )
+    }).catch(function (error) {
+        res.status(500).json(error)
+    });
+});
+
 module.exports = router;
