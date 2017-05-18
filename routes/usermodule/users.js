@@ -20,6 +20,29 @@ router.get('/users/getAll', function (req, res, next) {
         })
 });
 
+//get users friends
+router.get('/users/getFriends/:user_id', function (req, res, next) {
+    var user_id = req.params.user_id;
+    models.USERS.findAll({
+        attributes: ['user_id','user_name'],
+        include: [
+            {
+                attributes: [],
+                model: models.RELATIONSHIPS,
+                where: {
+                    active_user_id: user_id,
+                    passive_user_id: { $ne: user_id },
+                    status_id: 1
+                }
+            }
+        ],
+        order: [['user_name', 'ASC']]
+    }).then(function (USERS) {
+        res.send({users: USERS});
+    });
+});
+
+
 //login authentication
 router.post('/users/login', function (req, res) {
     var user_id = req.body.user_id;
@@ -111,12 +134,12 @@ router.post('/users/registerPatient', function (req, res) {
             passive_user_id: user_id,
             status_id: 1
         })
-        .then(function () {
-            res.status(200).json({
-                status: 'true',
-                message: 'creating a patient is succesful'
-            });
-        }).catch(function (error) {
+            .then(function () {
+                res.status(200).json({
+                    status: 'true',
+                    message: 'creating a patient is succesful'
+                });
+            }).catch(function (error) {
             //noinspection JSAnnotator
             res.status(500).json({
                 status: 'false',
@@ -202,7 +225,7 @@ router.put('/users/resetUserId/:user_id', function (req, res) {
 
 router.post('/users/searchByUserInfo', function (req, res, next) {
     var search_text = req.body.search_text;
-    sequelize.query('SELECT user_id,user_name, user_type_id, is_official_user,profile_picture_id FROM USERS WHERE MATCH(user_name) AGAINST("'+search_text+'"IN NATURAL LANGUAGE MODE);'
+    sequelize.query('SELECT user_id,user_name, user_type_id, is_official_user,profile_picture_id FROM USERS WHERE MATCH(user_name) AGAINST("' + search_text + '"IN NATURAL LANGUAGE MODE);'
     ).then(function (USERS) {
         res.send({users: USERS[0]});
     }).catch(function (error) {
