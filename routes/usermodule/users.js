@@ -24,14 +24,14 @@ router.get('/users/getAll', function (req, res, next) {
 router.get('/users/getFriends/:user_id', function (req, res, next) {
     var user_id = req.params.user_id;
     models.USERS.findAll({
-        attributes: ['user_id','user_name'],
+        attributes: ['user_id', 'user_name'],
         include: [
             {
                 attributes: [],
                 model: models.RELATIONSHIPS,
                 where: {
                     active_user_id: user_id,
-                    passive_user_id: { $ne: user_id },
+                    passive_user_id: {$ne: user_id},
                     status_id: 1
                 }
             }
@@ -39,6 +39,20 @@ router.get('/users/getFriends/:user_id', function (req, res, next) {
         order: [['user_name', 'ASC']]
     }).then(function (USERS) {
         res.send({users: USERS});
+    });
+});
+
+router.post('/users/areUsersFriends', function (req, res, next) {
+    var active_user_id = req.body.active_user_id;
+    var passive_user_id = req.body.passive_user_id;
+    models.RELATIONSHIPS.findAll({
+        where: {
+            active_user_id: active_user_id,
+            passive_user_id: passive_user_id,
+            status_id: 1
+        }
+    }).then(function (RELATIONSHIPS) {
+        res.send({relationship: RELATIONSHIPS});
     });
 });
 
