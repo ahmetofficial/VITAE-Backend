@@ -42,6 +42,26 @@ router.get('/users/getFriends/:user_id', function (req, res, next) {
     });
 });
 
+//update user about me
+router.post('/users/updateUserAboutMe', function (req, res, next) {
+    var user_id = req.body.user_id;
+    var about_me = req.body.about_me;
+    models.USERS.update(
+        {about_me: about_me},
+        {
+            fields: ['about_me'],
+            where: {
+                user_id: user_id
+            }
+        }).then(function () {
+        res.status(200).json({
+            status: 'true'
+        });
+    }).catch(function (error) {
+        res.status(500).json(error)
+    });
+});
+
 
 //login authentication
 router.post('/users/login', function (req, res) {
