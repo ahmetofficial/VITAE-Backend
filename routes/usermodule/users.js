@@ -42,6 +42,7 @@ router.get('/users/getFriends/:user_id', function (req, res, next) {
     });
 });
 
+//controlling id users are friends
 router.post('/users/areUsersFriends', function (req, res, next) {
     var active_user_id = req.body.active_user_id;
     var passive_user_id = req.body.passive_user_id;
@@ -55,6 +56,40 @@ router.post('/users/areUsersFriends', function (req, res, next) {
         res.send({relationship: RELATIONSHIPS});
     });
 });
+
+//unfollowed users
+router.delete('/users/unfollow', function (req, res) {
+    var active_user_id = req.body.active_user_id;
+    var passive_user_id = req.body.passive_user_id;
+    models.RELATIONSHIPS.destroy({
+        where: {
+            active_user_id: active_user_id,
+            passive_user_id: passive_user_id
+        }
+    }).then(function () {
+        res.status(200).json({
+            status: 'true'
+        });
+    })
+});
+
+//follow user
+router.post('/users/follow', function (req, res) {
+    var active_user_id = req.body.active_user_id;
+    var passive_user_id = req.body.passive_user_id;
+    models.RELATIONSHIPS.create({
+        active_user_id: active_user_id,
+        passive_user_id: passive_user_id,
+        status_id: 1
+    }).then(function () {
+        res.status(200).json({
+            status: 'true'
+        });
+    }).catch(function (error) {
+        res.status(500).json(error)
+    });
+});
+
 
 //update user about me
 router.post('/users/updateUserAboutMe', function (req, res, next) {
