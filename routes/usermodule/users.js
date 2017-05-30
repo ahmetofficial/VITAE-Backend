@@ -90,6 +90,42 @@ router.post('/users/follow', function (req, res) {
     });
 });
 
+//user follower number
+router.get('/users/followerCount/:passive_user_id', function (req, res, next) {
+    var passive_user_id = req.params.passive_user_id;
+    models.RELATIONSHIPS.count({
+        where: {
+            passive_user_id: passive_user_id,
+            status_id:1
+        }
+    }).then(function (result) {
+        res.send({
+                follower_number: result-1
+            }
+        )
+    }).catch(function (error) {
+        res.status(500).json(error)
+    });
+});
+
+//user follow number
+router.get('/users/followCount/:active_user_id', function (req, res, next) {
+    var active_user_id = req.params.active_user_id;
+    models.RELATIONSHIPS.count({
+        where: {
+            active_user_id: active_user_id,
+            status_id:1
+        }
+    }).then(function (result) {
+        res.send({
+                follow_number: result-1
+            }
+        )
+    }).catch(function (error) {
+        res.status(500).json(error)
+    });
+});
+
 
 //update user about me
 router.post('/users/updateUserAboutMe', function (req, res, next) {

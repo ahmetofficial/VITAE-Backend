@@ -5,6 +5,9 @@
     "database": "TRDatabase",
     "host": "178.62.223.153",
     "dialect": "mysql",
+    "dialect_options":{
+      "multipleStatements": true
+    },
     "define": {
       "underscored": true
     }
