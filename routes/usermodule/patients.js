@@ -83,7 +83,7 @@ router.post('/patients/searchSimilarPatient', function (req, res) {
         ' INNER JOIN USERS ON USERS.user_id=SIMILARITYTABLE.user_id',
         { type: sequelize.QueryTypes.SELECT}
     ).then(function (USERS) {
-        res.send({similar_users: USERS[0]});
+        res.send({similar_users: USERS});
     }).catch(function (error) {
         res.status(500).json(error)
     });
