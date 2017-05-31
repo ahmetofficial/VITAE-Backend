@@ -40,6 +40,7 @@ router.post('/patients/searchSimilarPatient', function (req, res) {
     var search_text = req.body.search_text;
     var user_id = req.body.user_id;
     sequelize.query(
+        ' SELECT USERS.user_id,USERS.user_name,USERS.user_type_id,USERS.mail,similarity_count FROM'+
         ' (SELECT user_id, SUM(similarity_count) AS similarity_count FROM'+
         ' ((SELECT user_id, COUNT(disease_id) AS similarity_count FROM USER_DISEASE_HISTORY'+
         ' WHERE disease_id IN (SELECT disease_id FROM USER_DISEASE_HISTORY'+
@@ -78,10 +79,11 @@ router.post('/patients/searchSimilarPatient', function (req, res) {
         ' (SELECT user_id FROM USERS'+
         ' WHERE MATCH (user_name) AGAINST (\''+search_text+'\' IN NATURAL LANGUAGE MODE))'+
         ' GROUP BY user_id'+
-        ' ORDER BY similarity_count DESC);',
+        ' ORDER BY similarity_count DESC)SIMILARITYTABLE'+
+        ' INNER JOIN USERS ON USERS.user_id=SIMILARITYTABLE.user_id',
         { type: sequelize.QueryTypes.SELECT}
     ).then(function (USERS) {
-        res.send({users: USERS[0]});
+        res.send({similar_users: USERS[0]});
     }).catch(function (error) {
         res.status(500).json(error)
     });
