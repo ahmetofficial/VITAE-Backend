@@ -49,6 +49,17 @@ module.exports = function (sequelize, DataTypes) {
         mail: {
             type: DataTypes.STRING,
             allowNull: true
+        },
+        adress: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        latitude: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },longitude: {
+            type: DataTypes.STRING,
+            allowNull: true
         }
     }, {
         tableName: 'HOSPITALS',
