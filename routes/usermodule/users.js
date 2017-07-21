@@ -43,7 +43,7 @@ router.get('/users/getFriends/:user_id', function (req, res, next) {
 });
 
 //controlling id users are friends
-router.post('/users/areUsersAreConnected', function (req, res, next) {
+router.post('/users/areUsersConnected', function (req, res, next) {
     var active_user_id = req.body.active_user_id;
     var passive_user_id = req.body.passive_user_id;
     models.RELATIONSHIPS.findAll({
