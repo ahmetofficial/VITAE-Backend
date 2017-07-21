@@ -19,7 +19,7 @@ router.post('/userDrugUsageHistory/create', function (req, res, next) {
         disease_id: disease_id,
         treatment_id: treatment_id,
         drug_id: drug_id,
-        drug_usage_start_date: drug_usage_start_date,
+        drug_usage_start_date: drug_usage_start_date
     }).then(function () {
         res.status(200).json({
             status: 'true'

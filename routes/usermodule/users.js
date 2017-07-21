@@ -43,14 +43,22 @@ router.get('/users/getFriends/:user_id', function (req, res, next) {
 });
 
 //controlling id users are friends
-router.post('/users/areUsersFriends', function (req, res, next) {
+router.post('/users/areUsersAreConnected', function (req, res, next) {
     var active_user_id = req.body.active_user_id;
     var passive_user_id = req.body.passive_user_id;
     models.RELATIONSHIPS.findAll({
         where: {
-            active_user_id: active_user_id,
-            passive_user_id: passive_user_id,
-            status_id: 1
+            $or: [
+                {
+                    active_user_id: active_user_id,
+                    passive_user_id: passive_user_id,
+                    status_id: 1
+                }, {
+                    active_user_id: passive_user_id,
+                    passive_user_id: active_user_id,
+                    status_id: 1
+                }
+            ]
         }
     }).then(function (RELATIONSHIPS) {
         res.send({relationship: RELATIONSHIPS});
@@ -96,11 +104,11 @@ router.get('/users/followerCount/:passive_user_id', function (req, res, next) {
     models.RELATIONSHIPS.count({
         where: {
             passive_user_id: passive_user_id,
-            status_id:1
+            status_id: 1
         }
     }).then(function (result) {
         res.send({
-                follower_number: result-1
+                follower_number: result - 1
             }
         )
     }).catch(function (error) {
@@ -114,11 +122,11 @@ router.get('/users/followCount/:active_user_id', function (req, res, next) {
     models.RELATIONSHIPS.count({
         where: {
             active_user_id: active_user_id,
-            status_id:1
+            status_id: 1
         }
     }).then(function (result) {
         res.send({
-                follow_number: result-1
+                follow_number: result - 1
             }
         )
     }).catch(function (error) {
