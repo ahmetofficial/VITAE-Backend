@@ -42,29 +42,6 @@ router.get('/users/getFriends/:user_id', function (req, res, next) {
     });
 });
 
-//controlling are users connected
-router.post('/users/areUsersConnected', function (req, res, next) {
-    var active_user_id = req.body.active_user_id;
-    var passive_user_id = req.body.passive_user_id;
-    models.RELATIONSHIPS.findAll({
-        where: {
-            $or: [
-                {
-                    active_user_id: active_user_id,
-                    passive_user_id: passive_user_id,
-                    status_id: 1
-                }, {
-                    active_user_id: passive_user_id,
-                    passive_user_id: active_user_id,
-                    status_id: 1
-                }
-            ]
-        }
-    }).then(function (RELATIONSHIPS) {
-        res.send({relationship: RELATIONSHIPS});
-    });
-});
-
 //user follower number
 router.get('/users/followerCount/:passive_user_id', function (req, res, next) {
     var passive_user_id = req.params.passive_user_id;

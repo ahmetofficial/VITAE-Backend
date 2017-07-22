@@ -41,4 +41,18 @@ router.post('/users/follow', function (req, res) {
     });
 });
 
+//controlling are users connected
+router.post('/users/areUsersConnected', function (req, res, next) {
+    var active_user_id = req.body.active_user_id;
+    var passive_user_id = req.body.passive_user_id;
+    models.USER_CONNECTIONS.findAll({
+        where: {
+            active_user_id: active_user_id,
+            passive_user_id: passive_user_id
+        }
+    }).then(function (RELATIONSHIPS) {
+        res.send({relationship: RELATIONSHIPS});
+    });
+});
+
 module.exports = router;
