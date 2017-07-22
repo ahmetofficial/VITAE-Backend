@@ -31,10 +31,9 @@ router.get('/posts/liveFeed/:user_id', function (req, res, next) {
                 include: [
                     {
                         attributes: [],
-                        model: models.RELATIONSHIPS,
+                        model: models.USER_CONNECTIONS,
                         where: {
-                            active_user_id: user_id,
-                            status_id: 1
+                            active_user_id: user_id
                         }
                     }
                 ]
