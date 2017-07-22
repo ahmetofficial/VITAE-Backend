@@ -7,62 +7,11 @@ var models = require('../../models');
 var express = require('express');
 var router = express.Router();
 
-//sending friendship/follow request to an user
-router.post('/relationships/sendRequest', function (req, res) {
+//unfollowing the user
+router.delete('/users/unfollow', function (req, res) {
     var active_user_id = req.body.active_user_id;
     var passive_user_id = req.body.passive_user_id;
-    models.RELATIONSHIPS.create({
-        active_user_id: active_user_id,
-        passive_user_id: passive_user_id,
-        status_id: 1
-    }).then(function (RELATIONSHIPS) {
-        res.status(200).json({
-            status: 'true'
-        });
-    }).catch(function (error) {
-        res.status(500).json(error)
-    });
-});
-
-//accepting friendship/follow request of an user
-router.post('/relationships/acceptRequest', function (req, res) {
-    var active_user_id = req.body.active_user_id;
-    var passive_user_id = req.body.passive_user_id;
-    models.RELATIONSHIPS.create({
-        active_user_id: active_user_id,
-        passive_user_id: passive_user_id,
-        status_id: 2
-    }).then(function (RELATIONSHIPS) {
-        res.status(200).json({
-            status: 'true'
-        });
-    }).catch(function (error) {
-        res.status(500).json(error)
-    });
-});
-
-//decline friendship/follow request of an user
-router.post('/relationships/declineRequest', function (req, res) {
-    var active_user_id = req.body.active_user_id;
-    var passive_user_id = req.body.passive_user_id;
-    models.RELATIONSHIPS.create({
-        active_user_id: active_user_id,
-        passive_user_id: passive_user_id,
-        status_id: 3
-    }).then(function (RELATIONSHIPS) {
-        res.status(200).json({
-            status: 'true'
-        });
-    }).catch(function (error) {
-        res.status(500).json(error)
-    });
-});
-
-//cancelling friendship/follow request of an user
-router.delete('/relationships/cancelRequest', function(req, res) {
-    var active_user_id=req.body.user_id;
-    var passive_user_id=req.body.passive_user_id;
-    models.RELATIONSHIPS.destroy({
+    models.USER_CONNECTIONS.destroy({
         where: {
             active_user_id: active_user_id,
             passive_user_id: passive_user_id
@@ -76,34 +25,20 @@ router.delete('/relationships/cancelRequest', function(req, res) {
     });
 });
 
-//blocking an user
-router.post('/relationships/block', function (req, res) {
+//following the user
+router.post('/users/follow', function (req, res) {
     var active_user_id = req.body.active_user_id;
     var passive_user_id = req.body.passive_user_id;
-    models.RELATIONSHIPS.create({
+    models.USER_CONNECTIONS.create({
         active_user_id: active_user_id,
-        passive_user_id: passive_user_id,
-        status_id: 4
-    }).then(function (RELATIONSHIPS) {
+        passive_user_id: passive_user_id
+    }).then(function () {
         res.status(200).json({
             status: 'true'
         });
     }).catch(function (error) {
         res.status(500).json(error)
     });
-});
-
-//seeing all friendship request
-router.get('/relationships/getAllRequests/:user_id', function (req, res, next) {
-    var passive_user_id = req.params.user_id;
-    models.RELATIONSHIPS.findAll({
-        where: {
-            passive_user_id: passive_user_id
-        },
-        order: [['created_at', 'DESC']]
-    }).then(function (RELATIONSHIPS) {
-        res.send({data: RELATIONSHIPS});
-    })
 });
 
 module.exports = router;

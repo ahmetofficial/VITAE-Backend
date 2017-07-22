@@ -5,7 +5,7 @@
 
 var db= require('./index');
 module.exports = function (sequelize, DataTypes) {
-    return sequelize.define('RELATIONSHIPS', {
+    return sequelize.define('USER_BLOCKED_USERS', {
         active_user_id: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -15,13 +15,9 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false,
             primaryKey: true
-        },
-        status_id: {
-            type: DataTypes.INTEGER(11),
-            allowNull: false
         }
     }, {
-        tableName: 'RELATIONSHIPS',
+        tableName: 'USER_BLOCKED_USERS',
         underscored: true
     });
 };
