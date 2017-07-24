@@ -24,7 +24,7 @@ var user_disease_history = require('./routes/generalhealthmodule/user_disease_hi
 var user_drug_usage_history = require('./routes/generalhealthmodule/user_drug_usage_history');
 var user_treatment_history = require('./routes/generalhealthmodule/user_treatment_history');
 var diseases = require('./routes/diseasemodule/diseases');
-var image_input = require('./routes/imageIO/image_input');
+var image_input = require('./routes/imagemodule/image_input');
 
 var app = express();
 
