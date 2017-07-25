@@ -33,7 +33,7 @@ function addPhotoToDb(photo_id,owner_id,description) {
         photo_id: photo_id,
         description: description,
         owner_id: owner_id,
-        location_path: 'uploads/' + photo_id + '.jpg'
+        location_path: './uploads/' + photo_id + '.jpg'
     })
 }
 
