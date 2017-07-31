@@ -40,8 +40,6 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
-
-
 app.use('/drugModule', drug_companies);
 app.use('/drugModule', drugs);
 app.use('/drugModule', form_of_drugs);
@@ -59,6 +57,7 @@ app.use('/userModule', relationships);
 app.use('/postModule', posts);
 app.use('/imageModule', image_input);
 
+app.use('/images', express.static(path.join(__dirname, 'uploads')));
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
