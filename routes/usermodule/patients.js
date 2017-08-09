@@ -12,8 +12,29 @@ var env = process.env.NODE_ENV || 'development';
 var config = require(__dirname + '/../../config/config.json')[env];
 var sequelize = new Sequelize(config.database, config.username, config.password, config);
 
-//get patient profile data data
 
+//get users friends
+router.get('/patients/getFriends/:user_id', function (req, res, next) {
+    var user_id = req.params.user_id;
+    models.USERS.findAll({
+        attributes: ['user_id', 'user_name'],
+        include: [
+            {
+                attributes: [],
+                model: models.USER_CONNECTIONS,
+                where: {
+                    active_user_id: user_id,
+                    passive_user_id: {$ne: user_id}
+                }
+            }
+        ],
+        order: [['user_name', 'ASC']]
+    }).then(function (USERS) {
+        res.send({users: USERS});
+    });
+});
+
+//get patient profile data data
 router.get('/patients/getPatientProfile/:user_id', function (req, res, next) {
     var user_id = req.params.user_id;
     models.USERS.findById(user_id, {

@@ -48,7 +48,7 @@ var storage = multer.diskStorage({
         });
 
         cb(null, photo_id + '.jpg');
-        addPhotoAsProfilePhoto(photo_id, owner_id);
+        addPhotoAsProfilePhoto(photo_id, owner_id, directory);
         updateUserProfilePicture(owner_id, photo_id,directory);
         changePhotoDirectory(photo_id,directory);
     }
