@@ -4,12 +4,12 @@
 'use strict';
 
 module.exports = function (sequelize, DataTypes) {
-    return sequelize.define('USER_POSTS', {
+    return sequelize.define('USER_POST', {
         post_id: {
-            type: DataTypes.INTEGER(11),
+            type: DataTypes.UUID,
+            defaultValue: DataTypes.UUIDV1,
             allowNull: false,
-            primaryKey: true,
-            autoIncrement: true
+            primaryKey: true
         },
         user_id: {
             type: DataTypes.STRING,
@@ -19,17 +19,29 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false
         },
+        like_count: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        comment_count: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
         url: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        user_ip: {
             type: DataTypes.STRING,
             allowNull: true
         }
     }, {
-        tableName: 'USER_POSTS',
+        tableName: 'USER_POST',
         underscored: true
     }, {
         classMethods: {
             associate: function (models) {
-                models.USER_POSTS.belongsTo(models.USERS, {foreignKey: 'user_id', targetKey: 'user_id'});
+                models.USER_POST.belongsTo(models.USERS, {foreignKey: 'user_id', targetKey: 'user_id'});
             }
         }
     });

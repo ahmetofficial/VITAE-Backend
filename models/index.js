@@ -35,11 +35,11 @@ db.Sequelize = Sequelize;
 
 //Models
 db.BLOOD_TYPES = require('../models/BLOOD_TYPES.js')(sequelize, Sequelize);
-db.BODY_SYSTEM = require('../models/BODY_SYSTEMS')(sequelize,Sequelize);
-db.CITIES = require('../models/CITIES')(sequelize,Sequelize);
-db.COUNTRIES = require('../models/COUNTRIES')(sequelize,Sequelize);
-db.DISEASE_PRIOR_REASON = require('../models/DISEASE_PRIOR_REASON')(sequelize,Sequelize);
-db.DISEASES = require('../models/DISEASES')(sequelize,Sequelize);
+db.BODY_SYSTEM = require('../models/BODY_SYSTEMS')(sequelize, Sequelize);
+db.CITIES = require('../models/CITIES')(sequelize, Sequelize);
+db.COUNTRIES = require('../models/COUNTRIES')(sequelize, Sequelize);
+db.DISEASE_PRIOR_REASON = require('../models/DISEASE_PRIOR_REASON')(sequelize, Sequelize);
+db.DISEASES = require('../models/DISEASES')(sequelize, Sequelize);
 db.DRUG_COMPANIES = require('../models/DRUG_COMPANIES.js')(sequelize, Sequelize);
 db.DRUG_DOSE_AMOUNT_HISTORY = require('../models/DRUG_DOSE_AMOUNT_HISTORY.js')(sequelize, Sequelize);
 db.DRUG_USAGE_GAP_PERIODS = require('../models/DRUG_USAGE_GAP_PERIODS.js')(sequelize, Sequelize);
@@ -47,8 +47,8 @@ db.DRUG_USAGE_STATE_HISTORY = require('../models/DRUG_USAGE_STATE_HISTORY.js')(s
 db.DRUGS = require('../models/DRUGS.js')(sequelize, Sequelize);
 db.FORM_OF_DRUGS = require('../models/FORM_OF_DRUGS.js')(sequelize, Sequelize);
 db.GENERAL_DRUG_TYPE_GROUPS = require('../models/GENERAL_DRUG_TYPE_GROUPS.js')(sequelize, Sequelize);
-db.HOSPITALS = require('../models/HOSPITALS')(sequelize,Sequelize);
-db.NEIGHBORHOODS = require('../models/NEIGHBORHOODS')(sequelize,Sequelize);
+db.HOSPITALS = require('../models/HOSPITALS')(sequelize, Sequelize);
+db.NEIGHBORHOODS = require('../models/NEIGHBORHOODS')(sequelize, Sequelize);
 db.ORGANS = require('../models/ORGANS.js')(sequelize, Sequelize);
 db.PATIENTS = require('../models/PATIENTS.js')(sequelize, Sequelize);
 db.PHOTOS = require('../models/PHOTOS.js')(sequelize, Sequelize);
@@ -65,7 +65,9 @@ db.USER_CONNECTION_REQUESTS = require('../models/USER_CONNECTION_REQUESTS.js')(s
 db.USER_CONNECTIONS = require('../models/USER_CONNECTIONS.js')(sequelize, Sequelize);
 db.USER_DISEASE_HISTORY = require('../models/USER_DISEASE_HISTORY.js')(sequelize, Sequelize);
 db.USER_DRUG_USAGE_HISTORY = require('../models/USER_DRUG_USAGE_HISTORY.js')(sequelize, Sequelize);
-db.USER_POSTS = require('../models/USER_POSTS.js')(sequelize, Sequelize);
+db.USER_POST = require('../models/USER_POST.js')(sequelize, Sequelize);
+db.USER_POST_COMMENT = require('../models/USER_POST_COMMENT')(sequelize, Sequelize);
+db.USER_POST_LIKE = require('../models/USER_POST_LIKE')(sequelize, Sequelize);
 db.USER_TREATMENT_HISTORY = require('../models/USER_TREATMENT_HISTORY.js')(sequelize, Sequelize);
 db.USER_TYPES = require('../models/USER_TYPES.js')(sequelize, Sequelize);
 db.USERS = require('../models/USERS.js')(sequelize, Sequelize);
@@ -73,21 +75,21 @@ db.USERS = require('../models/USERS.js')(sequelize, Sequelize);
 ///////////////////////////////////ASSOCIATIONS///////////////////////////////////////
 
 //DISEASES
-db.DISEASES.hasMany(db.USER_DISEASE_HISTORY,{foreignKey: 'disease_id', targetKey: 'disease_id'});
-db.DISEASES.hasMany(db.USER_DRUG_USAGE_HISTORY,{foreignKey: 'disease_id', targetKey: 'disease_id'});
-db.DISEASES.hasMany(db.USER_TREATMENT_HISTORY,{foreignKey: 'disease_id', targetKey: 'disease_id'});
+db.DISEASES.hasMany(db.USER_DISEASE_HISTORY, {foreignKey: 'disease_id', targetKey: 'disease_id'});
+db.DISEASES.hasMany(db.USER_DRUG_USAGE_HISTORY, {foreignKey: 'disease_id', targetKey: 'disease_id'});
+db.DISEASES.hasMany(db.USER_TREATMENT_HISTORY, {foreignKey: 'disease_id', targetKey: 'disease_id'});
 
 //DRUG_COMPANIES
 
 //DRUGS
-db.DISEASES.hasMany(db.USER_DRUG_USAGE_HISTORY,{foreignKey: 'drug_id', targetKey: 'drug_id'});
+db.DISEASES.hasMany(db.USER_DRUG_USAGE_HISTORY, {foreignKey: 'drug_id', targetKey: 'drug_id'});
 
 //FORM_OF_DRUGS
 
 //GENERAL_DRUG_TYPE_GROUPS
 
 //PATIENTS
-db.PATIENTS.hasMany(db.USER_POSTS,{foreignKey: 'user_id', targetKey: 'user_id'});
+db.PATIENTS.hasMany(db.USER_POST, {foreignKey: 'user_id', targetKey: 'user_id'});
 
 //PHOTOS
 
@@ -98,7 +100,7 @@ db.PATIENTS.hasMany(db.USER_POSTS,{foreignKey: 'user_id', targetKey: 'user_id'})
 //TYPES_OF_DRUGS
 
 //TREATMENTS
-db.TREATMENTS.hasMany(db.USER_TREATMENT_HISTORY,{foreignKey: 'treatment_id', targetKey: 'treatment_id'});
+db.TREATMENTS.hasMany(db.USER_TREATMENT_HISTORY, {foreignKey: 'treatment_id', targetKey: 'treatment_id'});
 
 //USER_CONNECTIONS
 db.USER_BLOCKED_USERS.belongsTo(db.USERS, {foreignKey: 'active_user_id', targetKey: 'user_id'});
@@ -134,16 +136,29 @@ db.USERS.hasMany(db.USER_CONNECTION_REQUESTS, {foreignKey: 'active_user_id', tar
 db.USERS.hasMany(db.USER_CONNECTION_REQUESTS, {foreignKey: 'passive_user_id', targetKey: 'user_id'});
 db.USERS.hasMany(db.USER_CONNECTIONS, {foreignKey: 'active_user_id', targetKey: 'user_id'});
 db.USERS.hasMany(db.USER_CONNECTIONS, {foreignKey: 'passive_user_id', targetKey: 'user_id'});
-db.USERS.hasMany(db.USER_POSTS,{foreignKey: 'user_id', targetKey: 'user_id'});
-db.USERS.hasMany(db.PATIENTS,{foreignKey: 'user_id', targetKey: 'user_id'});
-db.USERS.hasMany(db.USER_DISEASE_HISTORY,{foreignKey: 'user_id', targetKey: 'user_id'});
-db.USERS.hasMany(db.USER_DRUG_USAGE_HISTORY,{foreignKey: 'user_id', targetKey: 'user_id'});
-db.USERS.hasMany(db.USER_TREATMENT_HISTORY,{foreignKey: 'user_id', targetKey: 'user_id'});
+db.USERS.hasMany(db.USER_POST, {foreignKey: 'user_id', targetKey: 'user_id'});
+db.USERS.hasMany(db.USER_POST_COMMENT, {foreignKey: 'user_id', targetKey: 'user_id'});
+db.USERS.hasMany(db.USER_POST_LIKE, {foreignKey: 'user_id', targetKey: 'user_id'});
+db.USERS.hasMany(db.PATIENTS, {foreignKey: 'user_id', targetKey: 'user_id'});
+db.USERS.hasMany(db.USER_DISEASE_HISTORY, {foreignKey: 'user_id', targetKey: 'user_id'});
+db.USERS.hasMany(db.USER_DRUG_USAGE_HISTORY, {foreignKey: 'user_id', targetKey: 'user_id'});
+db.USERS.hasMany(db.USER_TREATMENT_HISTORY, {foreignKey: 'user_id', targetKey: 'user_id'});
 db.USERS.belongsTo(db.USER_TYPES, {foreignKey: 'user_type_id', targetKey: 'user_type_id'});
 
-//USER_POSTS
-db.USER_POSTS.belongsTo(db.USERS, {foreignKey: 'user_id', targetKey: 'user_id'});
-db.USER_POSTS.belongsTo(db.PATIENTS, {foreignKey: 'user_id', targetKey: 'user_id'});
+//USER_POST
+db.USER_POST.belongsTo(db.USERS, {foreignKey: 'user_id', targetKey: 'user_id'});
+db.USER_POST.belongsTo(db.PATIENTS, {foreignKey: 'user_id', targetKey: 'user_id'});
+db.USER_POST.hasMany(db.USER_POST_COMMENT, {foreignKey: 'post_id', targetKey: 'post_id'});
+db.USER_POST.hasMany(db.USER_POST_LIKE, {foreignKey: 'post_id', targetKey: 'post_id'});
+
+
+//USER_POST_COMMENT
+db.USER_POST_COMMENT.belongsTo(db.USERS, {foreignKey: 'user_id', targetKey: 'user_id'});
+db.USER_POST_COMMENT.belongsTo(db.USER_POST, {foreignKey: 'post_id', targetKey: 'post_id'});
+
+//USER_POST_LIKE
+db.USER_POST_LIKE.belongsTo(db.USERS, {foreignKey: 'user_id', targetKey: 'user_id'});
+db.USER_POST_LIKE.belongsTo(db.USER_POST, {foreignKey: 'post_id', targetKey: 'post_id'});
 
 //USER_TYPES
 db.USER_TYPES.hasMany(db.USERS, {foreignKey: 'user_type_id', targetKey: 'user_type_id'});
