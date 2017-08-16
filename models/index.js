@@ -48,6 +48,8 @@ db.DRUGS = require('../models/DRUGS.js')(sequelize, Sequelize);
 db.FORM_OF_DRUGS = require('../models/FORM_OF_DRUGS.js')(sequelize, Sequelize);
 db.GENERAL_DRUG_TYPE_GROUPS = require('../models/GENERAL_DRUG_TYPE_GROUPS.js')(sequelize, Sequelize);
 db.HOSPITALS = require('../models/HOSPITALS')(sequelize, Sequelize);
+db.MESSAGE_CONVERSATION = require('../models/MESSAGE_CONVERSATION')(sequelize, Sequelize);
+db.MESSAGES = require('../models/MESSAGES')(sequelize, Sequelize);
 db.NEIGHBORHOODS = require('../models/NEIGHBORHOODS')(sequelize, Sequelize);
 db.ORGANS = require('../models/ORGANS.js')(sequelize, Sequelize);
 db.PATIENTS = require('../models/PATIENTS.js')(sequelize, Sequelize);
@@ -87,6 +89,16 @@ db.DISEASES.hasMany(db.USER_DRUG_USAGE_HISTORY, {foreignKey: 'drug_id', targetKe
 //FORM_OF_DRUGS
 
 //GENERAL_DRUG_TYPE_GROUPS
+
+//MESSAGES
+db.MESSAGES.belongsTo(db.USERS, {foreignKey: 'sender_id', targetKey: 'user_id'});
+db.MESSAGES.belongsTo(db.USERS, {foreignKey: 'receiver_id', targetKey: 'user_id'});
+db.MESSAGES.belongsTo(db.MESSAGE_CONVERSATION, {foreignKey: 'conversation_id', targetKey: 'conversation_id'});
+
+//MESSAGE_CONVERSATION
+db.MESSAGE_CONVERSATION.belongsTo(db.USERS, {foreignKey: 'sender_id', targetKey: 'user_id'});
+db.MESSAGE_CONVERSATION.belongsTo(db.USERS, {foreignKey: 'receiver_id', targetKey: 'user_id'});
+db.MESSAGE_CONVERSATION.hasMany(db.MESSAGES, {foreignKey: 'conversation_id', targetKey: 'conversation_id'});
 
 //PATIENTS
 db.PATIENTS.hasMany(db.USER_POST, {foreignKey: 'user_id', targetKey: 'user_id'});
@@ -143,6 +155,10 @@ db.USERS.hasMany(db.PATIENTS, {foreignKey: 'user_id', targetKey: 'user_id'});
 db.USERS.hasMany(db.USER_DISEASE_HISTORY, {foreignKey: 'user_id', targetKey: 'user_id'});
 db.USERS.hasMany(db.USER_DRUG_USAGE_HISTORY, {foreignKey: 'user_id', targetKey: 'user_id'});
 db.USERS.hasMany(db.USER_TREATMENT_HISTORY, {foreignKey: 'user_id', targetKey: 'user_id'});
+db.USERS.hasMany(db.MESSAGES, {foreignKey: 'sender_id', targetKey: 'user_id'});
+db.USERS.hasMany(db.MESSAGES, {foreignKey: 'receiver_id', targetKey: 'user_id'});
+db.USERS.hasMany(db.MESSAGE_CONVERSATION, {foreignKey: 'receiver_id', targetKey: 'user_id'});
+db.USERS.hasMany(db.MESSAGE_CONVERSATION, {foreignKey: 'receiver_id', targetKey: 'user_id'});
 db.USERS.belongsTo(db.USER_TYPES, {foreignKey: 'user_type_id', targetKey: 'user_type_id'});
 
 //USER_POST

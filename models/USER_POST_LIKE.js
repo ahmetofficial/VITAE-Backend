@@ -5,20 +5,16 @@
 
 module.exports = function (sequelize, DataTypes) {
     return sequelize.define('USER_POST_LIKE', {
-        post_like_id: {
+        post_id: {
             type: DataTypes.UUID,
             defaultValue: DataTypes.UUIDV1,
             allowNull: false,
             primaryKey: true
         },
-        post_id: {
-            type: DataTypes.UUID,
-            defaultValue: DataTypes.UUIDV1,
-            allowNull: false
-        },
         user_id: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
+            primaryKey: true
         },
         user_ip: {
             type: DataTypes.STRING,

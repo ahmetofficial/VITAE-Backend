@@ -12,7 +12,7 @@ var config = require(__dirname + '/../../config/config.json')[env];
 var sequelize = new Sequelize(config.database, config.username, config.password, config);
 var uuidv1 = require('uuid/v1');
 
-//getAllTheUserData (newest comes first)
+//get user posts
 router.get('/posts/getByUserId/:user_id', function (req, res, next) {
     var user_id = req.params.user_id;
     models.USER_POST.findAll({
@@ -23,6 +23,24 @@ router.get('/posts/getByUserId/:user_id', function (req, res, next) {
     }).then(function (USER_POSTS) {
         res.send({posts: USER_POSTS});
     })
+});
+
+//delete the post
+router.delete('/posts/delete/:user_id', function (req, res) {
+    var user_id = req.params.user_id;
+    var post_id = req.body.post_id;
+    models.USER_POST.destroy({
+        where: {
+            user_id: user_id,
+            post_id: post_id
+        }
+    }).then(function () {
+        res.status(200).json({
+            status: 'true'
+        });
+    }).catch(function (error) {
+        res.status(500).json(error)
+    });
 });
 
 //live feeding user timeline
@@ -41,7 +59,12 @@ router.get('/posts/liveFeed/:user_id', function (req, res, next) {
                             active_user_id: user_id
                         }
                     }
-                ]
+                ],
+                $and: {user_id: user_id}
+            },
+            {
+                attributes: ['post_id', 'user_id', 'created_at'],
+                model: models.USER_POST_LIKE
             }
         ],
         order: [['created_at', 'DESC']]
@@ -73,7 +96,45 @@ router.post('/posts/createPost/:user_id', function (req, res, next) {
     });
 });
 
-//create a post comment
+
+//////////////////////////////////////////////////POST COMMENTS/////////////////////////////////////////////////////////
+
+function increasePostCommentCount(post_id, res) {
+    models.USER_POST.update(
+        {comment_count: sequelize.literal('comment_count + 1')},
+        {
+            fields: ['comment_count'],
+            where: {
+                post_id: post_id
+            }
+        })
+}
+function decreasePostCommentCount(post_id, res) {
+    models.USER_POST.update(
+        {comment_count: sequelize.literal('comment_count - 1')},
+        {
+            fields: ['comment_count'],
+            where: {
+                post_id: post_id
+            }
+        })
+}
+
+//get post comments
+router.get('/posts/getPostCommentsByPostId/:post_id', function (req, res, next) {
+    var post_id = req.params.post_id;
+    models.USER_POST_COMMENT.findAll({
+        where: {
+            post_id: post_id
+        }
+    }).then(function () {
+        res.send({post_comments: USER_POSTS});
+    }).catch(function (error) {
+        res.status(500).json(error)
+    });
+});
+
+//create post comment
 router.post('/posts/createPostComment', function (req, res, next) {
     var post_id = req.body.post_id;
     var user_id = req.body.user_id;
@@ -86,95 +147,101 @@ router.post('/posts/createPostComment', function (req, res, next) {
         comment_text: comment_text,
         user_ip: user_ip
     }).then(function () {
-        updatePostCommentCount(post_id);
+        increasePostCommentCount(post_id);
+        res.send({status: true});
     }).catch(function (error) {
         res.status(500).json(error)
     });
 });
 
-function updatePostCommentCount(post_id, res) {
-    models.USER_POST.find({
+//delete post like
+router.post('/posts/deletePostComment', function (req, res, next) {
+    var post_comment_id = req.body.post_comment_id;
+    var post_id = req.body.post_id;
+    var user_id = req.body.user_id;
+    models.USER_POST_COMMENT.destroy({
+        where: {
+            post_comment_id: post_comment_id,
+            post_id: post_id,
+            user_id: user_id
+        }
+    }).then(function () {
+        decreasePostCommentCount(post_id, res);
+        res.send({status: true});
+    }).catch(function (error) {
+        res.status(500).json(error)
+    });
+});
+
+////////////////////////////////////////////////////POST LIKES//////////////////////////////////////////////////////////
+
+function increasePostLikeCount(post_id, res) {
+    models.USER_POST.update(
+        {like_count: sequelize.literal('like_count + 1')},
+        {
+            fields: ['like_count'],
+            where: {
+                post_id: post_id
+            }
+        })
+}
+function decreasePostLikeCount(post_id, res) {
+    models.USER_POST.update(
+        {like_count: sequelize.literal('like_count - 1')},
+        {
+            fields: ['like_count'],
+            where: {
+                post_id: post_id
+            }
+        })
+}
+
+//get post likes
+router.get('/posts/getPostLikesByPostId/:post_id', function (req, res, next) {
+    var post_id = req.params.post_id;
+    models.USER_POST_COMMENT.findAll({
         where: {
             post_id: post_id
         }
-    }).then(function (USER_POST) {
-        USER_POST.update(
-            {comment_count: sequelize.literal('comment_count + 1')},
-            {
-                fields: ['comment_count'],
-                where: {
-                    post_id: post_id
-                }
-            }).then(function () {
-            res.status(200).json({
-                status: 'true'
-            })
-        }).catch(function (error) {
-            res.status(500).json(error)
-        });
+    }).then(function () {
+        res.send({post_comments: USER_POSTS});
+    }).catch(function (error) {
+        res.status(500).json(error)
     });
-}
+});
 
-
-//create a post like
+//create post like
 router.post('/posts/createPostLike', function (req, res, next) {
     var post_id = req.body.post_id;
     var user_id = req.body.user_id;
     var user_ip = req.body.user_ip;
     models.USER_POST_LIKE.create({
-        post_comment_id: uuidv1(),
         post_id: post_id,
         user_id: user_id,
         user_ip: user_ip
     }).then(function () {
-        updatePostLikeCount(post_id, res);
+        increasePostLikeCount(post_id, res);
+        res.send({status: true});
     }).catch(function (error) {
         res.status(500).json(error)
     });
 });
 
-function updatePostLikeCount(post_id, res) {
-    models.USER_POST.find({
-        where: {
-            post_id: post_id
-        }
-    }).then(function (USER_POST) {
-        USER_POST.update(
-            {like_count: sequelize.literal('like_count + 1')},
-            {
-                fields: ['like_count'],
-                where: {
-                    post_id: post_id
-                }
-            }).then(function () {
-            res.status(200).json({
-                status: 'true'
-
-            })
-        }).catch(function (error) {
-            res.status(500).json(error)
-        });
-    });
-}
-
-
-//delete the post
-router.delete('/posts/delete/:user_id', function (req, res) {
-    var user_id = req.params.user_id;
+//delete post like
+router.post('/posts/deletePostLike', function (req, res, next) {
     var post_id = req.body.post_id;
-    models.USER_POST.destroy({
+    var user_id = req.body.user_id;
+    models.USER_POST_LIKE.destroy({
         where: {
-            user_id: user_id,
-            post_id: post_id
+            post_id: post_id,
+            user_id: user_id
         }
     }).then(function () {
-        res.status(200).json({
-            status: 'true'
-        });
+        decreasePostLikeCount(post_id, res);
+        res.send({status: true});
     }).catch(function (error) {
         res.status(500).json(error)
     });
 });
-
 
 module.exports = router;

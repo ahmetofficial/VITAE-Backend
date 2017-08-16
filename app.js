@@ -4,9 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
-var index = require('./routes/index');
-var users = require('./routes/users');
+var app = express();
 
 //Modules
 var blood_types = require('./routes/generalhealthmodule/blood_types');
@@ -25,8 +23,8 @@ var user_drug_usage_history = require('./routes/generalhealthmodule/user_drug_us
 var user_treatment_history = require('./routes/generalhealthmodule/user_treatment_history');
 var diseases = require('./routes/diseasemodule/diseases');
 var image_input = require('./routes/imagemodule/image_input');
-
-var app = express();
+var message = require('./routes/messagemodule/message');
+var conversation = require('./routes/messagemodule/conversation');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -39,7 +37,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use('/', index);
 app.use('/drugModule', drug_companies);
 app.use('/drugModule', drugs);
 app.use('/drugModule', form_of_drugs);
@@ -56,6 +53,8 @@ app.use('/userModule', patients);
 app.use('/userModule', relationships);
 app.use('/postModule', posts);
 app.use('/imageModule', image_input);
+app.use('/messageModule', message);
+app.use('/messageModule', conversation);
 
 app.use('/images', express.static(path.join(__dirname, 'uploads')));
 
