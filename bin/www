@@ -9,6 +9,12 @@ var debug = require('debug')('vitae-test:server');
 var http = require('http');
 var models = require('../models');
 
+var Sequelize = require('sequelize');
+var env = process.env.NODE_ENV || 'development';
+var config = require(__dirname + '/../config/config.json')[env];
+var sequelize = new Sequelize(config.database, config.username, config.password, config);
+var uuidv1 = require('uuid/v1');
+
 /**
  * Get port from environment and store in Express.
  */
@@ -21,6 +27,56 @@ app.set('port', port);
  */
 
 var server = http.createServer(app);
+var io = require('socket.io')(server);
+
+/**
+ * Socket IO
+ */
+
+io.on('connection', function(socket){
+    socket.on('chat message', function(msg){
+        io.emit('chat message', msg);
+        var conversation_id = '7052d4e0-81e5-11e7-a20f-0fdc9d1ce251';
+        var sender_id = 'ahmetkaymak';
+        var receiver_id = 'alinizam';
+        var message_text = msg;
+        var sender_ip = '4.32.322.2';
+        models.MESSAGES.create({
+            conversation_id:conversation_id,
+            sender_id:sender_id,
+            receiver_id:receiver_id,
+            message_id: uuidv1(),
+            sender_ip:sender_ip,
+            message_text: message_text,
+            status:0,
+            message_active_for_sender:1,
+            message_active_for_receiver:1
+        });
+    });
+});
+
+socket.on('new message', function (data) {
+    socket.broadcast.emit('new message', {
+        username: socket.username,
+        message: data
+    });
+    var conversation_id = data.conversation_id;
+    var sender_id = data.sender_id;
+    var receiver_id = data.receiver_id;
+    var message_text = data.message_text;
+    var sender_ip = data.sender_ip;
+    models.MESSAGES.create({
+        conversation_id:conversation_id,
+        sender_id:sender_id,
+        receiver_id:receiver_id,
+        message_id: uuidv1(),
+        sender_ip:sender_ip,
+        message_text: message_text,
+        status:0,
+        message_active_for_sender:1,
+        message_active_for_receiver:1
+    });
+});
 
 models.sequelize.sync().then(function() {
   /**

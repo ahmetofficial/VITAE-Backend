@@ -4,7 +4,9 @@
 'use strict';
 
 var models = require('../../models');
-var express = require('express');
+var express = require('express'),
+    fs = require('fs'),
+    path=require('path');
 var router = express.Router();
 var Sequelize = require('sequelize');
 var env = process.env.NODE_ENV || 'development';
@@ -38,5 +40,10 @@ router.post('/message/createMessage', function (req, res, next) {
     });
 });
 
+/*
+router.get('/', function(req, res){
+    res.sendFile(__dirname + '/index.html');
+});
+*/
 
 module.exports = router;
