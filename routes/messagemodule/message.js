@@ -14,36 +14,28 @@ var config = require(__dirname + '/../../config/config.json')[env];
 var sequelize = new Sequelize(config.database, config.username, config.password, config);
 var uuidv1 = require('uuid/v1');
 
-//create message
-router.post('/message/createMessage', function (req, res, next) {
+//get user messages
+router.post('/message/getMessages', function (req, res, next) {
     var conversation_id = req.body.conversation_id;
     var sender_id = req.body.sender_id;
     var receiver_id = req.body.receiver_id;
-    var message_text = req.body.message_text;
-    var sender_ip = req.body.sender_ip;
-    models.USER_POST.create({
-        conversation_id:conversation_id,
-        sender_id:sender_id,
-        receiver_id:receiver_id,
-        message_id: uuidv1(),
-        sender_ip:sender_ip,
-        message_text: message_text,
-        status:0,
-        message_active_for_sender:1,
-        message_active_for_receiver:1
-    }).then(function () {
-        res.status(200).json({
-            status: 'true'
-        });
+    models.MESSAGES.findAll({
+        attributes:['conversation_id','sender_id','receiver_id','message_id','message_text',
+            'status','message_active_for_sender','message_active_for_receiver','created_at'],
+        where:{
+            conversation_id:conversation_id
+        }
+    }).then(function (MESSAGES) {
+        res.send({messages: MESSAGES});
     }).catch(function (error) {
         res.status(500).json(error)
     });
 });
 
-/*
+
 router.get('/', function(req, res){
     res.sendFile(__dirname + '/index.html');
 });
-*/
+
 
 module.exports = router;

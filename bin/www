@@ -34,13 +34,13 @@ var io = require('socket.io')(server);
  */
 
 io.on('connection', function(socket){
-    socket.on('chat message', function(msg){
-        io.emit('chat message', msg);
-        var conversation_id = '7052d4e0-81e5-11e7-a20f-0fdc9d1ce251';
-        var sender_id = 'ahmetkaymak';
-        var receiver_id = 'alinizam';
-        var message_text = msg;
-        var sender_ip = '4.32.322.2';
+    socket.on('new message', function(message){
+        io.emit('new message', message.message_text,message.sender_id);
+        var conversation_id = message.conversation_id;
+        var sender_id = message.sender_id;
+        var receiver_id = message.receiver_id;
+        var message_text = message.message_text;
+        var sender_ip = message.sender_ip;
         models.MESSAGES.create({
             conversation_id:conversation_id,
             sender_id:sender_id,
