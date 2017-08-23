@@ -7,7 +7,7 @@ var models = require('../../models');
 var express = require('express');
 var router = express.Router();
 
-//unfollowing the user
+//create connection
 router.delete('/users/unfollow', function (req, res) {
     var active_user_id = req.body.active_user_id;
     var passive_user_id = req.body.passive_user_id;
@@ -25,7 +25,7 @@ router.delete('/users/unfollow', function (req, res) {
     });
 });
 
-//following the user
+//delete connection
 router.post('/users/follow', function (req, res) {
     var active_user_id = req.body.active_user_id;
     var passive_user_id = req.body.passive_user_id;
@@ -54,5 +54,12 @@ router.post('/users/areUsersConnected', function (req, res, next) {
         res.send({relationship: RELATIONSHIPS});
     });
 });
+
+function createConnection(user_id, res) {
+    models.USER_CONNECTIONS.create({
+        active_user_id: user_id,
+        passive_user_id: user_id
+    });
+}
 
 module.exports = router;
