@@ -47,25 +47,31 @@ router.delete('/posts/delete/:user_id', function (req, res) {
 router.get('/posts/liveFeed/:user_id', function (req, res, next) {
     var user_id = req.params.user_id;
     models.USER_POST.findAll({
-        include: [
-            {
-                attributes: ['user_name'],
-                model: models.USERS,
-                include: [
-                    {
-                        attributes: [],
-                        model: models.USER_CONNECTIONS,
-                        where: {
-                            active_user_id: user_id
-                        }
-                    }
-                ],
-                $and: {user_id: user_id}
-            },
-            {
-                attributes: ['post_id', 'user_id', 'created_at'],
-                model: models.USER_POST_LIKE
+        $or: [{
+            where: {
+                user_id: user_id
             }
+        },{
+            include: [
+                {
+                    attributes: ['user_name'],
+                    model: models.USERS,
+                    include: [
+                        {
+                            attributes: [],
+                            model: models.USER_CONNECTIONS,
+                            where: {
+                                active_user_id: user_id
+                            }
+                        }
+                    ]
+                },
+                {
+                    attributes: ['post_id', 'user_id', 'created_at'],
+                    model: models.USER_POST_LIKE
+                }
+            ]
+        }
         ],
         order: [['created_at', 'DESC']]
     }).then(function (USER_POSTS) {
