@@ -16,6 +16,12 @@ var uuidv1 = require('uuid/v1');
 router.get('/posts/getByUserId/:user_id', function (req, res, next) {
     var user_id = req.params.user_id;
     models.USER_POST.findAll({
+        include: [
+            {
+                attributes: ['post_id', 'user_id', 'created_at'],
+                model: models.USER_POST_LIKE
+            }
+        ],
         where: {
             user_id: user_id
         },
@@ -66,11 +72,8 @@ router.get('/posts/liveFeed/:user_id', function (req, res, next) {
                 model: models.USER_POST_LIKE
             }
         ],
-        order
-    :
-    [['created_at', 'DESC']]
-}).
-    then(function (USER_POSTS) {
+        order: [['created_at', 'DESC']]
+    }).then(function (USER_POSTS) {
         res.send({posts: USER_POSTS});
     });
 });

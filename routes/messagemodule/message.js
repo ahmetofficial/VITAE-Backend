@@ -24,7 +24,8 @@ router.post('/message/getMessages', function (req, res, next) {
             'status','message_active_for_sender','message_active_for_receiver','created_at'],
         where:{
             conversation_id:conversation_id
-        }
+        },
+        order:[['created_at', 'ASC']]
     }).then(function (MESSAGES) {
         res.send({messages: MESSAGES});
     }).catch(function (error) {
