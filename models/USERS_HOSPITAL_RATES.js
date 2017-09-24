@@ -7,18 +7,21 @@ module.exports = function (sequelize, DataTypes) {
     return sequelize.define('USERS_HOSPITAL_RATES', {
         user_id: {
             type: DataTypes.STRING,
-            allowNull: false
-        },
-        user_rate: {
-            type: DataTypes.INTEGER(11),
-            allowNull: false
+            allowNull: false,
+            primaryKey: true
         },
         hospital_id: {
             type: DataTypes.INTEGER(11),
-            allowNull: false
+            allowNull: false,
+            primaryKey: true
         },
-        clinic_id: {
-            type: DataTypes.INTEGER(11),
+        disease_id: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            primaryKey: true
+        },
+        user_rate: {
+            type: "DOUBLE(2,1)",
             allowNull: false
         },
         user_comment: {
@@ -26,7 +29,7 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: true
         }
     }, {
-        tableName: 'USERS_HOSPITAL_RATES',
+        tableName: 'USER_HOSPITAL_RATES',
         underscored: true
     });
 };

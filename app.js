@@ -25,6 +25,7 @@ var diseases = require('./routes/diseasemodule/diseases');
 var image_input = require('./routes/imagemodule/image_input');
 var message = require('./routes/messagemodule/message');
 var conversation = require('./routes/messagemodule/conversation');
+var user_hospital_rates = require('./routes/hospitalmodule/user_hospital_rates');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -47,6 +48,7 @@ app.use('/generalHealthModule', user_disease_history);
 app.use('/generalHealthModule', user_drug_usage_history);
 app.use('/generalHealthModule',user_treatment_history);
 app.use('/hospitalModule', hospitals);
+app.use('/hospitalModule', user_hospital_rates);
 app.use('/treatmentModule', treatments);
 app.use('/userModule', user);
 app.use('/userModule', patients);

@@ -73,6 +73,7 @@ db.USER_POST_LIKE = require('../models/USER_POST_LIKE')(sequelize, Sequelize);
 db.USER_TREATMENT_HISTORY = require('../models/USER_TREATMENT_HISTORY.js')(sequelize, Sequelize);
 db.USER_TYPES = require('../models/USER_TYPES.js')(sequelize, Sequelize);
 db.USERS = require('../models/USERS.js')(sequelize, Sequelize);
+db.USER_HOSPITAL_RATES = require('../models/USERS_HOSPITAL_RATES')(sequelize, Sequelize);
 
 ///////////////////////////////////ASSOCIATIONS///////////////////////////////////////
 
@@ -80,6 +81,7 @@ db.USERS = require('../models/USERS.js')(sequelize, Sequelize);
 db.DISEASES.hasMany(db.USER_DISEASE_HISTORY, {foreignKey: 'disease_id', targetKey: 'disease_id'});
 db.DISEASES.hasMany(db.USER_DRUG_USAGE_HISTORY, {foreignKey: 'disease_id', targetKey: 'disease_id'});
 db.DISEASES.hasMany(db.USER_TREATMENT_HISTORY, {foreignKey: 'disease_id', targetKey: 'disease_id'});
+db.DISEASES.hasMany(db.USER_HOSPITAL_RATES, {foreignKey: 'disease_id', targetKey: 'disease_id'});
 
 //DRUG_COMPANIES
 
@@ -178,5 +180,8 @@ db.USER_POST_LIKE.belongsTo(db.USER_POST, {foreignKey: 'post_id', targetKey: 'po
 
 //USER_TYPES
 db.USER_TYPES.hasMany(db.USERS, {foreignKey: 'user_type_id', targetKey: 'user_type_id'});
+
+//USER_HOSPITAL_RATES
+db.USER_HOSPITAL_RATES.belongsTo(db.DISEASES, {foreignKey: 'disease_id', targetKey: 'disease_id'});
 
 module.exports = db;
