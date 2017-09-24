@@ -30,10 +30,6 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.INTEGER(11),
             allowNull: false
         },
-        overall_score: {
-            type: "DOUBLE(10,5)",
-            allowNull: false
-        },
         is_active: {
             type: DataTypes.INTEGER(1),
             allowNull: false
