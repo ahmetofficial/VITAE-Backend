@@ -48,7 +48,7 @@
       <file leaf-file-name="HOSPITALS.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/HOSPITALS.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
+            <state relative-caret-position="374">
               <caret line="28" column="25" lean-forward="false" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="25" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
@@ -87,7 +87,6 @@
         <option value="$PROJECT_DIR$/models/STATES.js" />
         <option value="$PROJECT_DIR$/models/TOWNS.js" />
         <option value="$PROJECT_DIR$/models/NEIGHBORHOODS.js" />
-        <option value="$PROJECT_DIR$/routes/hospitalmodule/hospitals.js" />
         <option value="$PROJECT_DIR$/routes/diseasemodule/diseases.js" />
         <option value="$PROJECT_DIR$/routes/drugmodule/drugs.js" />
         <option value="$PROJECT_DIR$/routes/treatmentmodule.js" />
@@ -131,6 +130,7 @@
         <option value="$PROJECT_DIR$/models/USERS_HOSPITAL_RATES.js" />
         <option value="$PROJECT_DIR$/models/HOSPITALS.js" />
         <option value="$PROJECT_DIR$/routes/hospitalmodule/user_hospital_rates.js" />
+        <option value="$PROJECT_DIR$/routes/hospitalmodule/hospitals.js" />
       </list>
     </option>
   </component>
@@ -208,6 +208,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="postmodule" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="VITAE-Backend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="VITAE-Backend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="routes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hospitalmodule" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -460,12 +478,12 @@
       <workItem from="1503507545230" duration="3701000" />
       <workItem from="1503746975765" duration="598000" />
       <workItem from="1504026663493" duration="1094000" />
-      <workItem from="1506273096043" duration="11179000" />
+      <workItem from="1506273096043" duration="11565000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="398436000" />
+    <option name="totallyTimeSpent" value="398822000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -759,14 +777,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/hospitalmodule/hospitals.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="35" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/USER_TREATMENT_HISTORY.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -835,11 +845,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/models/HOSPITALS.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
+        <state relative-caret-position="374">
           <caret line="28" column="25" lean-forward="false" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="25" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/hospitalmodule/hospitals.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="17" column="101" lean-forward="false" selection-start-line="17" selection-start-column="101" selection-end-line="17" selection-end-column="101" />
+          <folding />
         </state>
       </provider>
     </entry>
