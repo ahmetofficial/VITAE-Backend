@@ -26,7 +26,7 @@
       <file leaf-file-name="conversation.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/messagemodule/conversation.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
+            <state relative-caret-position="901">
               <caret line="54" column="55" lean-forward="false" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="55" />
               <folding />
             </state>
@@ -36,8 +36,8 @@
       <file leaf-file-name="user_hospital_rates.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/hospitalmodule/user_hospital_rates.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="42" column="54" lean-forward="false" selection-start-line="42" selection-start-column="54" selection-end-line="42" selection-end-column="54" />
+            <state relative-caret-position="552">
+              <caret line="54" column="36" lean-forward="true" selection-start-line="54" selection-start-column="36" selection-end-line="54" selection-end-column="36" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -45,10 +45,20 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="posts.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/postmodule/posts.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="211">
+              <caret line="130" column="37" lean-forward="false" selection-start-line="130" selection-start-column="37" selection-end-line="134" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="HOSPITALS.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/HOSPITALS.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
+            <state relative-caret-position="476">
               <caret line="28" column="25" lean-forward="false" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="25" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
@@ -129,8 +139,8 @@
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/models/USERS_HOSPITAL_RATES.js" />
         <option value="$PROJECT_DIR$/models/HOSPITALS.js" />
-        <option value="$PROJECT_DIR$/routes/hospitalmodule/user_hospital_rates.js" />
         <option value="$PROJECT_DIR$/routes/hospitalmodule/hospitals.js" />
+        <option value="$PROJECT_DIR$/routes/hospitalmodule/user_hospital_rates.js" />
       </list>
     </option>
   </component>
@@ -166,7 +176,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -229,22 +238,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="VITAE-Backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="VITAE-Backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -478,12 +474,13 @@
       <workItem from="1503507545230" duration="3701000" />
       <workItem from="1503746975765" duration="598000" />
       <workItem from="1504026663493" duration="1094000" />
-      <workItem from="1506273096043" duration="11565000" />
+      <workItem from="1506273096043" duration="11801000" />
+      <workItem from="1506628009007" duration="803000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="398822000" />
+    <option name="totallyTimeSpent" value="399861000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -494,7 +491,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39817232" sideWeight="0.5195214" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39817232" sideWeight="0.47921914" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39817232" sideWeight="0.47921914" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39817232" sideWeight="0.5025" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -744,7 +741,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="680">
           <caret line="40" column="7" lean-forward="false" selection-start-line="40" selection-start-column="7" selection-end-line="40" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -773,7 +769,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="17" column="63" lean-forward="false" selection-start-line="17" selection-start-column="63" selection-end-line="17" selection-end-column="63" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -781,7 +776,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="10" column="12" lean-forward="false" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -789,7 +783,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="263">
           <caret line="50" column="46" lean-forward="false" selection-start-line="50" selection-start-column="46" selection-end-line="50" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -797,7 +790,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="976">
           <caret line="108" column="22" lean-forward="false" selection-start-line="108" selection-start-column="19" selection-end-line="108" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -805,7 +797,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2057">
           <caret line="122" column="21" lean-forward="false" selection-start-line="122" selection-start-column="21" selection-end-line="122" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -813,17 +804,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="23" column="27" lean-forward="false" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/postmodule/posts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="108" column="42" lean-forward="true" selection-start-line="108" selection-start-column="42" selection-end-line="108" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -831,13 +811,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/messagemodule/conversation.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
+        <state relative-caret-position="901">
           <caret line="54" column="55" lean-forward="false" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="55" />
           <folding />
         </state>
@@ -845,7 +824,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/models/HOSPITALS.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
+        <state relative-caret-position="476">
           <caret line="28" column="25" lean-forward="false" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="25" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
@@ -857,14 +836,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="93">
           <caret line="17" column="101" lean-forward="false" selection-start-line="17" selection-start-column="101" selection-end-line="17" selection-end-column="101" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/postmodule/posts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="130" column="37" lean-forward="false" selection-start-line="130" selection-start-column="37" selection-end-line="134" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/hospitalmodule/user_hospital_rates.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="42" column="54" lean-forward="false" selection-start-line="42" selection-start-column="54" selection-end-line="42" selection-end-column="54" />
+        <state relative-caret-position="552">
+          <caret line="54" column="36" lean-forward="true" selection-start-line="54" selection-start-column="36" selection-end-line="54" selection-end-column="36" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>

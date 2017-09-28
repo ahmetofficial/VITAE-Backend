@@ -50,8 +50,11 @@ function updateHospitalTotalRatingParameter(hospital_id, new_vote, res) {
 //hospital rates by hospital_id
 router.get('/hospitals/getUserHospitalRates/:hospital_id', function (req, res, next) {
     var hospital_id = req.params.hospital_id;
-    models.USER_HOSPITAL_RATES.findById(hospital_id)
-        .then(function (HOSPITALS) {
+    models.USER_HOSPITAL_RATES.findAll({
+        where: {
+            hospital_id: hospital_id
+        }
+    }).then(function (HOSPITALS) {
             res.send({rates: HOSPITALS});
         }).catch(function (error) {
         res.status(500).json(error)
