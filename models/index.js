@@ -90,6 +90,9 @@ db.DISEASES.hasMany(db.USER_DRUG_USAGE_HISTORY, {foreignKey: 'drug_id', targetKe
 
 //FORM_OF_DRUGS
 
+//HOSPITAL
+db.HOSPITALS.hasMany(db.USER_HOSPITAL_RATES, {foreignKey: 'hospital_id', targetKey: 'hospital_id'});
+
 //GENERAL_DRUG_TYPE_GROUPS
 
 //MESSAGES
@@ -151,6 +154,7 @@ db.USERS.hasMany(db.USER_CONNECTION_REQUESTS, {foreignKey: 'passive_user_id', ta
 db.USERS.hasMany(db.USER_CONNECTIONS, {foreignKey: 'active_user_id', targetKey: 'user_id'});
 db.USERS.hasMany(db.USER_CONNECTIONS, {foreignKey: 'passive_user_id', targetKey: 'user_id'});
 db.USERS.hasMany(db.USER_POST, {foreignKey: 'user_id', targetKey: 'user_id'});
+db.USERS.hasMany(db.USER_HOSPITAL_RATES, {foreignKey: 'user_id', targetKey: 'user_id'});
 db.USERS.hasMany(db.USER_POST_COMMENT, {foreignKey: 'user_id', targetKey: 'user_id'});
 db.USERS.hasMany(db.USER_POST_LIKE, {foreignKey: 'user_id', targetKey: 'user_id'});
 db.USERS.hasMany(db.PATIENTS, {foreignKey: 'user_id', targetKey: 'user_id'});
@@ -183,5 +187,6 @@ db.USER_TYPES.hasMany(db.USERS, {foreignKey: 'user_type_id', targetKey: 'user_ty
 
 //USER_HOSPITAL_RATES
 db.USER_HOSPITAL_RATES.belongsTo(db.DISEASES, {foreignKey: 'disease_id', targetKey: 'disease_id'});
+db.USER_HOSPITAL_RATES.belongsTo(db.HOSPITALS, {foreignKey: 'hospital_id', targetKey: 'hospital_id'});
 
 module.exports = db;

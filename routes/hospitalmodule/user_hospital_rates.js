@@ -61,4 +61,27 @@ router.get('/hospitals/getUserHospitalRates/:hospital_id', function (req, res, n
     });
 });
 
+//hospital ranking by a diseaase
+router.get('/hospitals/getHospitalRankingByDiseaseId/:disease_id', function (req, res, next) {
+    var disease_id = req.params.disease_id;
+    models.USER_HOSPITAL_RATES.findAll({
+        attributes: ['hospital_id',[models.sequelize.fn('AVG', models.sequelize.col('user_rate')), 'hospital_overal_score']],
+        where: {
+            disease_id: disease_id
+        },
+        group: 'hospital_id',
+        order: [[models.sequelize.fn('AVG', models.sequelize.col('user_rate')), 'DESC']],
+        include:[
+            {
+                attributes: ['hospital_id', 'hospital_name','hospital_type','latitude','longitude'],
+                model:models.HOSPITALS
+            }
+        ]
+    }).then(function (HOSPITALS) {
+        res.send({rates: HOSPITALS});
+    }).catch(function (error) {
+        res.status(500).json(error)
+    });
+});
+
 module.exports = router;
