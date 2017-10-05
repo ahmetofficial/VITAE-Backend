@@ -55,7 +55,7 @@ router.get('/posts/liveFeed/:user_id', function (req, res, next) {
     models.USER_POST.findAll({
         include: [
             {
-                attributes: ['user_name'],
+                attributes: ['user_name','profile_picture_id'],
                 model: models.USERS,
                 include: [
                     {
