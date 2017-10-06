@@ -36,8 +36,8 @@
       <file leaf-file-name="posts.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/postmodule/posts.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="118" column="7" lean-forward="false" selection-start-line="118" selection-start-column="7" selection-end-line="118" selection-end-column="7" />
+            <state relative-caret-position="255">
+              <caret line="114" column="0" lean-forward="true" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -46,16 +46,27 @@
       <file leaf-file-name="image_input.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/imagemodule/image_input.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="686">
-              <caret line="143" column="23" lean-forward="false" selection-start-line="143" selection-start-column="23" selection-end-line="143" selection-end-column="23" />
+            <state relative-caret-position="185">
+              <caret line="56" column="44" lean-forward="false" selection-start-line="56" selection-start-column="44" selection-end-line="56" selection-end-column="44" />
               <folding>
-                <element signature="e#530#1938#0" expanded="false" />
                 <element signature="e#574#610#0" expanded="false" />
-                <element signature="n#!!block;n#addPhotoAsProfilePhoto#0" expanded="false" />
+                <element signature="e#651#1925#0" expanded="false" />
+                <element signature="e#1974#3338#0" expanded="false" />
                 <element signature="n#!!block;n#updateUserProfilePicture#0" expanded="false" />
                 <element signature="n#!!block;n#changePhotoDirectory#0" expanded="false" />
-                <element signature="e#4400#4477#0" expanded="false" />
+                <element signature="e#4308#4518#0" expanded="false" />
+                <element signature="e#4430#4507#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="USER_POST_HAVE_PHOTOS.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/USER_POST_HAVE_PHOTOS.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -500,12 +511,12 @@
       <workItem from="1507053439492" duration="1420000" />
       <workItem from="1507112418448" duration="1689000" />
       <workItem from="1507243501712" duration="774000" />
-      <workItem from="1507298565900" duration="3928000" />
+      <workItem from="1507298565900" duration="6018000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="417327000" />
+    <option name="totallyTimeSpent" value="419417000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1604" height="876" extended-state="0" />
@@ -832,14 +843,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/USER_POST_HAVE_PHOTOS.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -866,23 +869,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/postmodule/posts.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="118" column="7" lean-forward="false" selection-start-line="118" selection-start-column="7" selection-end-line="118" selection-end-column="7" />
+        <state relative-caret-position="255">
+          <caret line="114" column="0" lean-forward="true" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/USER_POST_HAVE_PHOTOS.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/imagemodule/image_input.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="686">
-          <caret line="143" column="23" lean-forward="false" selection-start-line="143" selection-start-column="23" selection-end-line="143" selection-end-column="23" />
+        <state relative-caret-position="185">
+          <caret line="56" column="44" lean-forward="false" selection-start-line="56" selection-start-column="44" selection-end-line="56" selection-end-column="44" />
           <folding>
-            <element signature="e#530#1938#0" expanded="false" />
             <element signature="e#574#610#0" expanded="false" />
-            <element signature="n#!!block;n#addPhotoAsProfilePhoto#0" expanded="false" />
+            <element signature="e#651#1925#0" expanded="false" />
+            <element signature="e#1974#3338#0" expanded="false" />
             <element signature="n#!!block;n#updateUserProfilePicture#0" expanded="false" />
             <element signature="n#!!block;n#changePhotoDirectory#0" expanded="false" />
-            <element signature="e#4400#4477#0" expanded="false" />
+            <element signature="e#4308#4518#0" expanded="false" />
+            <element signature="e#4430#4507#0" expanded="false" />
           </folding>
         </state>
       </provider>

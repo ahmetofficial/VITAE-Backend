@@ -49,7 +49,7 @@ var storage = multer.diskStorage({
         });
 
         cb(null, photo_id + '.jpg');
-        addPhotoAsProfilePhoto(photo_id, owner_id, directory);
+        createPhoto(photo_id, owner_id, directory);
         updateUserProfilePicture(owner_id, photo_id,directory);
         changePhotoDirectory(photo_id,directory);
     }
@@ -84,11 +84,12 @@ var storagePostPicture = multer.diskStorage({
             }
         });
         cb(null, photo_id + '.jpg');
+        createPhoto(photo_id, owner_id, directory);
         changePhotoDirectory(photo_id,directory);
     }
 });
 
-function addPhotoAsProfilePhoto(photo_id, owner_id,directory) {
+function createPhoto(photo_id, owner_id,directory) {
     models.PHOTOS.create({
         photo_id: photo_id,
         owner_id: owner_id,
