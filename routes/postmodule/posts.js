@@ -11,6 +11,7 @@ var env = process.env.NODE_ENV || 'development';
 var config = require(__dirname + '/../../config/config.json')[env];
 var sequelize = new Sequelize(config.database, config.username, config.password, config);
 var uuidv1 = require('uuid/v1');
+var multer = require('multer');
 
 //get user posts
 router.get('/posts/getByUserId/:user_id', function (req, res, next) {
@@ -55,7 +56,7 @@ router.get('/posts/liveFeed/:user_id', function (req, res, next) {
     models.USER_POST.findAll({
         include: [
             {
-                attributes: ['user_name','profile_picture_id'],
+                attributes: ['user_name', 'profile_picture_id'],
                 model: models.USERS,
                 include: [
                     {
@@ -101,6 +102,37 @@ router.post('/posts/createPost/:user_id', function (req, res, next) {
     });
 });
 
+//////////////////////////////////////////////////POST WITH PHOTOS//////////////////////////////////////////////////////
+
+//create a post with Photos
+router.post('/posts/createPost/:user_id/:photo_id', function (req, res, next) {
+    var user_id = req.params.user_id;
+    var photo_id = req.params.photo_id;
+    var post_text = req.body.post_text;
+    var url = req.body.url;
+    var user_ip = req.body.user_ip;
+    var post_id = uuidv1();
+
+    models.USER_POST_HAVE_PHOTOS.create({
+        photo_id: photo_id,
+        post_id: post_id
+    });
+    models.USER_POST.create({
+        post_id: post_id,
+        user_id: user_id,
+        post_text: post_text,
+        user_ip: user_ip,
+        like_count: 0,
+        comment_count: 0,
+        url: url
+    }).then(function () {
+        res.status(200).json({
+            status: 'true'
+        });
+    }).catch(function (error) {
+        res.status(500).json(error)
+    });
+});
 
 //////////////////////////////////////////////////POST COMMENTS/////////////////////////////////////////////////////////
 

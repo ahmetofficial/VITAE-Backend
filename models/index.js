@@ -69,6 +69,7 @@ db.USER_DISEASE_HISTORY = require('../models/USER_DISEASE_HISTORY.js')(sequelize
 db.USER_DRUG_USAGE_HISTORY = require('../models/USER_DRUG_USAGE_HISTORY.js')(sequelize, Sequelize);
 db.USER_POST = require('../models/USER_POST.js')(sequelize, Sequelize);
 db.USER_POST_COMMENT = require('../models/USER_POST_COMMENT')(sequelize, Sequelize);
+db.USER_POST_HAVE_PHOTOS = require('../models/USER_POST_HAVE_PHOTOS')(sequelize, Sequelize);
 db.USER_POST_LIKE = require('../models/USER_POST_LIKE')(sequelize, Sequelize);
 db.USER_TREATMENT_HISTORY = require('../models/USER_TREATMENT_HISTORY.js')(sequelize, Sequelize);
 db.USER_TYPES = require('../models/USER_TYPES.js')(sequelize, Sequelize);
@@ -109,6 +110,7 @@ db.MESSAGE_CONVERSATION.hasMany(db.MESSAGES, {foreignKey: 'conversation_id', tar
 db.PATIENTS.hasMany(db.USER_POST, {foreignKey: 'user_id', targetKey: 'user_id'});
 
 //PHOTOS
+db.PHOTOS.hasMany(db.USER_POST_HAVE_PHOTOS, {foreignKey: 'photo_id', targetKey: 'photo_id'});
 
 //PRESCRIPTION_TYPE
 
@@ -172,11 +174,15 @@ db.USER_POST.belongsTo(db.USERS, {foreignKey: 'user_id', targetKey: 'user_id'});
 db.USER_POST.belongsTo(db.PATIENTS, {foreignKey: 'user_id', targetKey: 'user_id'});
 db.USER_POST.hasMany(db.USER_POST_COMMENT, {foreignKey: 'post_id', targetKey: 'post_id'});
 db.USER_POST.hasMany(db.USER_POST_LIKE, {foreignKey: 'post_id', targetKey: 'post_id'});
-
+db.USER_POST.hasMany(db.USER_POST_HAVE_PHOTOS, {foreignKey: 'post_id', targetKey: 'post_id'});
 
 //USER_POST_COMMENT
 db.USER_POST_COMMENT.belongsTo(db.USERS, {foreignKey: 'user_id', targetKey: 'user_id'});
 db.USER_POST_COMMENT.belongsTo(db.USER_POST, {foreignKey: 'post_id', targetKey: 'post_id'});
+
+//USER_POST_HAVE_PHOTOS
+db.USER_POST_HAVE_PHOTOS.belongsTo(db.PHOTOS, {foreignKey: 'photo_id', targetKey: 'photo_id'});
+db.USER_POST_HAVE_PHOTOS.belongsTo(db.USER_POST, {foreignKey: 'post_id', targetKey: 'post_id'});
 
 //USER_POST_LIKE
 db.USER_POST_LIKE.belongsTo(db.USERS, {foreignKey: 'user_id', targetKey: 'user_id'});
