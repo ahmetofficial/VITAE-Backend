@@ -71,6 +71,10 @@ router.get('/posts/liveFeed/:user_id', function (req, res, next) {
             {
                 attributes: ['post_id', 'user_id', 'created_at'],
                 model: models.USER_POST_LIKE
+            },
+            {
+                attributes: ['post_id', 'photo_id'],
+                model: models.USER_POST_HAVE_PHOTOS
             }
         ],
         order: [['created_at', 'DESC']]
