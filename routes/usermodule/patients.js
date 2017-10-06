@@ -17,7 +17,7 @@ var sequelize = new Sequelize(config.database, config.username, config.password,
 router.get('/patients/getFriends/:user_id', function (req, res, next) {
     var user_id = req.params.user_id;
     models.USERS.findAll({
-        attributes: ['user_id', 'user_name'],
+        attributes: ['user_id', 'user_name','profile_picture_id'],
         include: [
             {
                 attributes: [],
@@ -61,7 +61,7 @@ router.post('/patients/searchSimilarPatient', function (req, res) {
     var search_text = req.body.search_text;
     var user_id = req.body.user_id;
     sequelize.query(
-        ' SELECT USERS.user_id,USERS.user_name,USERS.user_type_id,USERS.mail,similarity_count FROM'+
+        ' SELECT USERS.user_id,USERS.user_name,USERS.user_type_id,USERS.mail,USERS.profile_picture_id,similarity_count FROM'+
         ' (SELECT user_id, SUM(similarity_count) AS similarity_count FROM'+
         ' ((SELECT user_id, COUNT(disease_id) AS similarity_count FROM USER_DISEASE_HISTORY'+
         ' WHERE disease_id IN (SELECT disease_id FROM USER_DISEASE_HISTORY'+
