@@ -133,7 +133,7 @@ router.post('/uploadProfilePicture/:owner_id', function (req, res) {
     })
 });
 
-router.post('/uploadUserPostPhoto/:post_id', function (req, res) {
+router.post('/uploadUserPostPhoto/:owner_id', function (req, res) {
     owner_id = req.params.owner_id;
     uploadPostPhoto(req, res, function (err) {
         if (err) {
