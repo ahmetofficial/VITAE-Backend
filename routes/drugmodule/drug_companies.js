@@ -14,5 +14,4 @@ router.get('/drugCompanies/getAll', function(req, res) {
         })
 });
 
-
 module.exports = router;

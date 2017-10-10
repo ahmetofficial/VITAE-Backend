@@ -37,16 +37,22 @@ router.post('/conversation/createConversation', function (req, res, next) {
 router.get('/conversation/getConversations/:user_id', function (req, res, next) {
     var user_id = req.params.user_id;
     models.MESSAGE_CONVERSATION.findAll({
+        include: [
+            {
+                attributes: ['user_id','user_name', 'profile_picture_id'],
+                model: models.USERS
+            }
+        ],
         where: {
             $or: [
                 {
                     sender_id: user_id,
-                    conversation_active_for_sender : 1
+                    conversation_active_for_sender: 1
                 }
                 ,
                 {
                     receiver_id: user_id,
-                    conversation_active_for_sender : 1
+                    conversation_active_for_sender: 1
                 }
             ]
         },
