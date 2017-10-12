@@ -31,6 +31,9 @@ router.post('/bloodAlarm/create', function (req, res, next) {
 //get blood alarms
 router.get('/bloodAlarm/getAllBloodAlarms', function (req, res, next) {
     models.BLOOD_ALARM.findAll({
+        where:{
+            alarm_status:1
+        },
         include:[
             {
                 model: models.BLOOD_TYPES
@@ -59,6 +62,33 @@ router.post('/bloodAlarm/updateBloodAlarmLevel', function (req, res, next) {
         },
         {
             fields: ['alarm_level'],
+            where: {
+                blood_alarm_id: blood_alarm_id
+            }
+        }).then(function () {
+        res.status(200).json({
+            status: 'true'
+        });
+    }).catch(function (error) {
+        res.status(500).json({
+            status: 'false'
+        })
+    });
+});
+
+//finish of blood alarm
+router.post('/bloodAlarm/finishBloodAlarm', function (req, res, next) {
+    var blood_alarm_id = req.body.blood_alarm_id;
+    var alarm_result = req.body.alarm_result;
+    var user_review = req.body.user_review;
+    models.BLOOD_ALARM.update(
+        {
+            alarm_result: alarm_result,
+            user_review:user_review,
+            alarm_status:0
+        },
+        {
+            fields: ['alarm_result','user_review','alarm_status'],
             where: {
                 blood_alarm_id: blood_alarm_id
             }
