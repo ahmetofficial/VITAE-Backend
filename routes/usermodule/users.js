@@ -283,4 +283,52 @@ router.get('/users/getUserInformation/:user_id', function (req, res, next) {
     });
 });
 
+//save user location
+router.post('/users/saveLocation', function (req, res) {
+    var user_id = req.body.user_id;
+    var latitude = req.body.latitude;
+    var longitude = req.body.longitude;
+    models.USER_LOCATION.findOne({
+        where: {
+            user_id: user_id
+        }
+    }).then(function (foundItem) {
+        if (!foundItem) {
+            models.USER_LOCATION.create({
+                user_id: user_id,
+                latitude: latitude,
+                longitude: longitude
+            }).then(function () {
+                res.status(200).json({
+                    status: 'true'
+                });
+            }).catch(function (error) {
+                res.status(500).json({
+                    status: 'false'
+                })
+            })
+        } else {
+            models.USER_LOCATION.update(
+                {
+                    latitude: latitude,
+                    longitude: longitude
+                },
+                {
+                    fields: ['latitude','longitude'],
+                    where: {
+                        user_id: user_id
+                    }
+                }).then(function () {
+                res.status(200).json({
+                    status: 'true'
+                });
+            }).catch(function (error) {
+                res.status(500).json({
+                    status: 'false'
+                })
+            });
+        }
+    })
+});
+
 module.exports = router;

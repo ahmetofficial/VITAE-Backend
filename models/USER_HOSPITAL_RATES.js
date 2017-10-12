@@ -4,7 +4,7 @@
 'use strict';
 
 module.exports = function (sequelize, DataTypes) {
-    return sequelize.define('USERS_HOSPITAL_RATES', {
+    return sequelize.define('USER_HOSPITAL_RATES', {
         user_id: {
             type: DataTypes.STRING,
             allowNull: false,

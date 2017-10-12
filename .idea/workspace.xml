@@ -23,29 +23,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="conversation.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/routes/messagemodule/conversation.js">
+      <file leaf-file-name="users.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/routes/usermodule/users.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="67" column="16" lean-forward="false" selection-start-line="67" selection-start-column="16" selection-end-line="67" selection-end-column="16" />
+            <state relative-caret-position="425">
+              <caret line="296" column="10" lean-forward="true" selection-start-line="296" selection-start-column="10" selection-end-line="296" selection-end-column="10" />
               <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="e#541#1097#0" expanded="false" />
-                <element signature="e#1201#2012#0" expanded="false" />
-                <element signature="e#2134#3774#0" expanded="false" />
+                <element signature="e#1978#3564#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="posts.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/postmodule/posts.js">
+      <file leaf-file-name="user_hospital_rates.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/hospitalmodule/user_hospital_rates.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="63" column="35" lean-forward="true" selection-start-line="62" selection-start-column="16" selection-end-line="63" selection-end-column="35" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
+            <state relative-caret-position="-859">
+              <caret line="17" column="9" lean-forward="false" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -65,6 +60,8 @@
       <find>sear</find>
       <find>creat</find>
       <find>update</find>
+      <find>upda</find>
+      <find>user_ho</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -73,9 +70,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/models/STATES.js" />
-        <option value="$PROJECT_DIR$/models/TOWNS.js" />
-        <option value="$PROJECT_DIR$/models/NEIGHBORHOODS.js" />
         <option value="$PROJECT_DIR$/routes/diseasemodule/diseases.js" />
         <option value="$PROJECT_DIR$/routes/drugmodule/drugs.js" />
         <option value="$PROJECT_DIR$/routes/treatmentmodule.js" />
@@ -108,7 +102,6 @@
         <option value="$PROJECT_DIR$/routes/messagemodule/index.html" />
         <option value="$PROJECT_DIR$/bin/www" />
         <option value="$PROJECT_DIR$/routes/usermodule/relationships.js" />
-        <option value="$PROJECT_DIR$/routes/usermodule/users.js" />
         <option value="$PROJECT_DIR$/routes/messagemodule/message.js" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/models/USERS_HOSPITAL_RATES.js" />
@@ -116,14 +109,18 @@
         <option value="$PROJECT_DIR$/routes/hospitalmodule/hospitals.js" />
         <option value="$PROJECT_DIR$/routes/hospitalmodule/user_hospital_rates.js" />
         <option value="$PROJECT_DIR$/models/USER_POST_HAVE_PHOTOS.js" />
-        <option value="$PROJECT_DIR$/models/index.js" />
         <option value="$PROJECT_DIR$/routes/imagemodule/image_input.js" />
-        <option value="$PROJECT_DIR$/routes/postmodule/posts.js" />
         <option value="$PROJECT_DIR$/routes/usermodule/patients.js" />
         <option value="$PROJECT_DIR$/models/BLOOD_TYPES.js" />
         <option value="$PROJECT_DIR$/models/ORGANS.js" />
         <option value="$PROJECT_DIR$/routes/drugmodule/drug_companies.js" />
         <option value="$PROJECT_DIR$/routes/messagemodule/conversation.js" />
+        <option value="$PROJECT_DIR$/routes/postmodule/posts.js" />
+        <option value="$PROJECT_DIR$/models/USERS_LAST_LOCATION.js" />
+        <option value="$PROJECT_DIR$/models/USER_HOSPITAL_RATES.js" />
+        <option value="$PROJECT_DIR$/models/index.js" />
+        <option value="$PROJECT_DIR$/models/USER_LOCATION.js" />
+        <option value="$PROJECT_DIR$/routes/usermodule/users.js" />
       </list>
     </option>
   </component>
@@ -217,6 +214,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="treatmentmodule" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="VITAE-Backend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="VITAE-Backend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="routes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="postmodule" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -235,14 +250,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="messagemodule" />
+              <option name="myItemId" value="hospitalmodule" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="VITAE-Backend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="VITAE-Backend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -260,17 +289,17 @@
     <property name="nodejs.mocha.mocha_node_package_dir" value="C:\Users\SAMSUNG\Desktop\VITAE-Backend\node_modules\mocha" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\SAMSUNG\Desktop\VITAE-Backend\models" />
+      <recent name="C:\Users\SAMSUNG\Desktop\VITAE-Backend\routes\messagemodule" />
+      <recent name="C:\Users\SAMSUNG\Desktop\VITAE-Backend" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\SAMSUNG\Desktop\VITAE-Backend\routes\messagemodule" />
       <recent name="C:\Users\SAMSUNG\Desktop\VITAE-Backend\uploads\2\4\4\d\b\2\e\0\7\5\e\2" />
       <recent name="C:\Users\SAMSUNG\Desktop\VITAE-Backend\uploads" />
       <recent name="C:\Users\SAMSUNG\Desktop\VITAE-Backend\routes\treatmentmodule" />
       <recent name="C:\Users\SAMSUNG\Desktop\VITAE-Backend\routes\diseasemodule" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\SAMSUNG\Desktop\VITAE-Backend\models" />
-      <recent name="C:\Users\SAMSUNG\Desktop\VITAE-Backend\routes\messagemodule" />
-      <recent name="C:\Users\SAMSUNG\Desktop\VITAE-Backend" />
     </key>
   </component>
   <component name="RunManager" selected="Node.js.bin/www">
@@ -487,12 +516,13 @@
       <workItem from="1507298565900" duration="10990000" />
       <workItem from="1507381622922" duration="1198000" />
       <workItem from="1507414536973" duration="2731000" />
-      <workItem from="1507659387144" duration="975000" />
+      <workItem from="1507659387144" duration="3848000" />
+      <workItem from="1507807151551" duration="3157000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="429293000" />
+    <option name="totallyTimeSpent" value="435323000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -503,7 +533,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39817232" sideWeight="0.5195214" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39817232" sideWeight="0.47921914" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39817232" sideWeight="0.47921914" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39817232" sideWeight="0.5025" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -552,25 +582,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="44" />
+      <option name="time" value="45" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/models/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="173" column="34" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="198" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/MESSAGE_CONVERSATION.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="21" column="20" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/MESSAGES.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -704,13 +720,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/USERS_HOSPITAL_RATES.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="25" column="10" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/diseasemodule/diseases.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -816,13 +825,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/hospitalmodule/user_hospital_rates.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="15" column="60" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/hospitalmodule/hospitals.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -851,31 +853,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/usermodule/patients.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="112" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/usermodule/relationships.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" column="25" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="64" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/usermodule/users.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="29" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="285" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/users.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -898,29 +879,84 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/messagemodule/conversation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="602">
+          <caret line="61" column="35" lean-forward="true" selection-start-line="61" selection-start-column="35" selection-end-line="61" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/users.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/postmodule/posts.js">
+    <entry file="file://$PROJECT_DIR$/routes/usermodule/patients.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="63" column="35" lean-forward="true" selection-start-line="62" selection-start-column="16" selection-end-line="63" selection-end-column="35" />
+        <state relative-caret-position="-265">
+          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/messagemodule/conversation.js">
+    <entry file="file://$PROJECT_DIR$/routes/postmodule/posts.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="67" column="16" lean-forward="false" selection-start-line="67" selection-start-column="16" selection-end-line="67" selection-end-column="16" />
+        <state relative-caret-position="355">
+          <caret line="154" column="10" lean-forward="true" selection-start-line="147" selection-start-column="4" selection-end-line="154" selection-end-column="10" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <element signature="e#541#1097#0" expanded="false" />
-            <element signature="e#1201#2012#0" expanded="false" />
-            <element signature="e#2134#3774#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-39">
+          <caret line="165" column="33" lean-forward="false" selection-start-line="165" selection-start-column="33" selection-end-line="165" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/USER_HOSPITAL_RATES.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="28" column="27" lean-forward="true" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/hospitalmodule/user_hospital_rates.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-859">
+          <caret line="17" column="9" lean-forward="false" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/USER_LOCATION.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/usermodule/users.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="296" column="10" lean-forward="true" selection-start-line="296" selection-start-column="10" selection-end-line="296" selection-end-column="10" />
+          <folding>
+            <element signature="e#1978#3564#0" expanded="false" />
           </folding>
         </state>
       </provider>

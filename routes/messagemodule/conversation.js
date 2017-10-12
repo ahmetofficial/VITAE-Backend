@@ -37,12 +37,6 @@ router.post('/conversation/createConversation', function (req, res, next) {
 router.get('/conversation/getConversations/:user_id', function (req, res, next) {
     var user_id = req.params.user_id;
     models.MESSAGE_CONVERSATION.findAll({
-        include: [
-            {
-                attributes: ['user_id','user_name', 'profile_picture_id'],
-                model: models.USERS
-            }
-        ],
         where: {
             $or: [
                 {
@@ -55,7 +49,12 @@ router.get('/conversation/getConversations/:user_id', function (req, res, next) 
                     conversation_active_for_sender: 1
                 }
             ]
-        },
+        },include: [
+            {
+                attributes: ['user_id','user_name', 'profile_picture_id'],
+                model: models.USERS
+            }
+        ],
         order: [['updated_at', 'DESC']]
     }).then(function (MESSAGE_CONVERSATION) {
         res.send({conversation: MESSAGE_CONVERSATION});
