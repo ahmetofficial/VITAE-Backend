@@ -34,6 +34,7 @@ db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
 //Models
+db.BLOOD_ALARM = require('../models/BLOOD_ALARM.js')(sequelize, Sequelize);
 db.BLOOD_TYPES = require('../models/BLOOD_TYPES.js')(sequelize, Sequelize);
 db.BODY_SYSTEM = require('../models/BODY_SYSTEMS')(sequelize, Sequelize);
 db.CITIES = require('../models/CITIES')(sequelize, Sequelize);
@@ -79,6 +80,14 @@ db.USER_HOSPITAL_RATES = require('../models/USER_HOSPITAL_RATES')(sequelize, Seq
 
 ///////////////////////////////////ASSOCIATIONS///////////////////////////////////////
 
+//BLOOD_TYPES
+db.BLOOD_TYPES.hasMany(db.BLOOD_ALARM, {foreignKey: 'blood_type_id', targetKey: 'blood_type_id'});
+
+//BLOOD_ALARM
+db.BLOOD_ALARM.belongsTo(db.BLOOD_TYPES, {foreignKey: 'blood_type_id', targetKey: 'blood_type_id'});
+db.BLOOD_ALARM.belongsTo(db.HOSPITALS, {foreignKey: 'hospital_id', targetKey: 'hospital_id'});
+db.BLOOD_ALARM.belongsTo(db.USERS, {foreignKey: 'user_id', targetKey: 'user_id'});
+
 //DISEASES
 db.DISEASES.hasMany(db.USER_DISEASE_HISTORY, {foreignKey: 'disease_id', targetKey: 'disease_id'});
 db.DISEASES.hasMany(db.USER_DRUG_USAGE_HISTORY, {foreignKey: 'disease_id', targetKey: 'disease_id'});
@@ -94,6 +103,7 @@ db.DISEASES.hasMany(db.USER_DRUG_USAGE_HISTORY, {foreignKey: 'drug_id', targetKe
 
 //HOSPITAL
 db.HOSPITALS.hasMany(db.USER_HOSPITAL_RATES, {foreignKey: 'hospital_id', targetKey: 'hospital_id'});
+db.HOSPITALS.hasMany(db.BLOOD_ALARM, {foreignKey: 'hospital_id', targetKey: 'hospital_id'});
 
 //GENERAL_DRUG_TYPE_GROUPS
 
@@ -153,6 +163,7 @@ db.USER_TREATMENT_HISTORY.belongsTo(db.DISEASES, {foreignKey: 'disease_id', targ
 db.USER_TREATMENT_HISTORY.belongsTo(db.TREATMENTS, {foreignKey: 'treatment_id', targetKey: 'treatment_id'});
 
 //USERS
+db.USERS.hasMany(db.BLOOD_ALARM, {foreignKey: 'user_id', targetKey: 'user_id'});
 db.USERS.hasMany(db.USER_BLOCKED_USERS, {foreignKey: 'active_user_id', targetKey: 'user_id'});
 db.USERS.hasMany(db.USER_BLOCKED_USERS, {foreignKey: 'passive_user_id', targetKey: 'user_id'});
 db.USERS.hasMany(db.USER_CONNECTION_REQUESTS, {foreignKey: 'active_user_id', targetKey: 'user_id'});

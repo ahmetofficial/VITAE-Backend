@@ -49,6 +49,15 @@ module.exports = function (sequelize, DataTypes) {
         profile_picture_id: {
             type: DataTypes.UUID,
             allowNull: false
+        },
+        device_id: {
+            type: DataTypes.STRING,
+            allowNull: true,
+            primaryKey: true
+        },
+        device_name: {
+            type: DataTypes.STRING,
+            allowNull: true
         }
     }, {
         tableName: 'USERS',

@@ -75,6 +75,8 @@ router.post('/users/registerPatient', function (req, res) {
     var phone_number = req.body.phone_number;
     var about_me = req.body.about_me;
     var profile_picture_id = req.body.profile_picture_id;
+    var device_id = req.body.device_id;
+    var device_name = req.body.device_name;
     var gender = req.body.gender;
     var blood_type_id = req.body.blood_type_id;
     var birthday = req.body.birthday;
@@ -90,7 +92,9 @@ router.post('/users/registerPatient', function (req, res) {
             about_me: about_me,
             friend_count: 0,
             is_official_user: false,
-            profile_picture_id: profile_picture_id
+            profile_picture_id: profile_picture_id,
+            device_id:device_id,
+            device_name: device_name
         });
         models.PATIENTS.create({
             user_id: user_id,
@@ -285,6 +289,54 @@ router.get('/users/getUserInformation/:user_id', function (req, res, next) {
 
 //save user location
 router.post('/users/saveLocation', function (req, res) {
+    var user_id = req.body.user_id;
+    var latitude = req.body.latitude;
+    var longitude = req.body.longitude;
+    models.USER_LOCATION.findOne({
+        where: {
+            user_id: user_id
+        }
+    }).then(function (foundItem) {
+        if (!foundItem) {
+            models.USER_LOCATION.create({
+                user_id: user_id,
+                latitude: latitude,
+                longitude: longitude
+            }).then(function () {
+                res.status(200).json({
+                    status: 'true'
+                });
+            }).catch(function (error) {
+                res.status(500).json({
+                    status: 'false'
+                })
+            })
+        } else {
+            models.USER_LOCATION.update(
+                {
+                    latitude: latitude,
+                    longitude: longitude
+                },
+                {
+                    fields: ['latitude','longitude'],
+                    where: {
+                        user_id: user_id
+                    }
+                }).then(function () {
+                res.status(200).json({
+                    status: 'true'
+                });
+            }).catch(function (error) {
+                res.status(500).json({
+                    status: 'false'
+                })
+            });
+        }
+    })
+});
+
+//check user device
+router.post('/users/checkUserDevice', function (req, res) {
     var user_id = req.body.user_id;
     var latitude = req.body.latitude;
     var longitude = req.body.longitude;

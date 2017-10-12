@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var app = express();
 
 //Modules
+var blood_alarm = require('./routes/generalhealthmodule/blood_alarm');
 var blood_types = require('./routes/generalhealthmodule/blood_types');
 var drug_companies = require('./routes/drugmodule/drug_companies');
 var drugs = require('./routes/drugmodule/drugs');
@@ -43,6 +44,7 @@ app.use('/drugModule', drugs);
 app.use('/drugModule', form_of_drugs);
 app.use('/drugModule', prescription_types);
 app.use('/diseaseModule', diseases);
+app.use('/generalHealthModule', blood_alarm);
 app.use('/generalHealthModule', blood_types);
 app.use('/generalHealthModule', user_disease_history);
 app.use('/generalHealthModule', user_drug_usage_history);
