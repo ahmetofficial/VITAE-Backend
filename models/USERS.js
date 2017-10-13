@@ -50,12 +50,7 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.UUID,
             allowNull: false
         },
-        device_id: {
-            type: DataTypes.STRING,
-            allowNull: true,
-            primaryKey: true
-        },
-        device_name: {
+        device_token: {
             type: DataTypes.STRING,
             allowNull: true
         }
