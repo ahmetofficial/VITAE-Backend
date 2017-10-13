@@ -44,4 +44,16 @@ router.get('/hospitals/getHospitalGeneralRank/:hospital_id', function (req, res,
     });
 });
 
+//get all hospitals
+router.get('/hospitals/getAllHospitals', function (req, res, next) {
+    models.HOSPITALS.findAll({
+        attributes:['hospital_id','hospital_name'],
+        order: [['hospital_name', 'ASC']]
+    }).then(function (HOSPITALS) {
+        res.send({hospitals: HOSPITALS});
+    }).catch(function (error) {
+        res.status(500).json(error)
+    });
+});
+
 module.exports = router;
