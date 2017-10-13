@@ -31,6 +31,10 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.INTEGER(11),
             allowNull: false
         },
+        contact_number:{
+            type: DataTypes.STRING,
+            allowNull: true
+        },
         alarm_result: {
             type: DataTypes.INTEGER(11),
             allowNull: true

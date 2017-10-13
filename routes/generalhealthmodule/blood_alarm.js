@@ -14,13 +14,15 @@ router.post('/bloodAlarm/create', function (req, res, next) {
     var blood_type_id = req.body.blood_type_id;
     var hospital_id = req.body.hospital_id;
     var alarm_level = req.body.alarm_level;
+    var contact_number = req.body.contact_number;
     models.BLOOD_ALARM.create({
         blood_alarm_id: uuidv1(),
         user_id: user_id,
         blood_type_id: blood_type_id,
         hospital_id: hospital_id,
         alarm_status: 1,
-        alarm_level: alarm_level
+        alarm_level: alarm_level,
+        contact_number: contact_number
     }).then(function () {
         res.send({status: true});
     }).catch(function (error) {
