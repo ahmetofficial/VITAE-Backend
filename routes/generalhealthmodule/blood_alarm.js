@@ -12,9 +12,9 @@ var env = process.env.NODE_ENV || 'development';
 var config = require(__dirname + '/../../config/config.json')[env];
 var sequelize = new Sequelize(config.database, config.username, config.password, config);
 
-var serverKey = "AAAATo6KBmk:APA91bH90b6T6ta3vTC58SpfJGlftEDofRcba1H0SFQT_Z85WBSM69AAllBTbiWqdlXc-X-8lFzcdzCmtCyDXJYcPwavrvVNu3bNxd7ub2r_CATjLWM68HMNxTYEiTFxipNAnx7ki6nT";
-var FCM = require('fcm-node');
-var fcm = new FCM(serverKey);
+//var serverKey = "AAAATo6KBmk:APA91bH90b6T6ta3vTC58SpfJGlftEDofRcba1H0SFQT_Z85WBSM69AAllBTbiWqdlXc-X-8lFzcdzCmtCyDXJYcPwavrvVNu3bNxd7ub2r_CATjLWM68HMNxTYEiTFxipNAnx7ki6nT";
+//var FCM = require('fcm-node');
+//var fcm = new FCM(serverKey);
 
 var bloodTypes = ['undefined', '0 Rh+', 'O Rh-', 'A Rh+', 'A Rh-', 'B Rh+', 'B Rh-', 'AB Rh+', 'AB Rh-'];
 
@@ -34,6 +34,7 @@ router.post('/bloodAlarm/create', function (req, res, next) {
         alarm_level: alarm_level,
         contact_number: contact_number
     }).then(function () {
+        /*
         models.HOSPITALS.findAll({
             where: {
                 hospital_id: hospital_id
@@ -81,6 +82,7 @@ router.post('/bloodAlarm/create', function (req, res, next) {
         }).catch(function (error) {
             res.status(500).json(error)
         });
+        */
         res.send({status: true});
     }).catch(function (error) {
         res.status(500).json(error)
