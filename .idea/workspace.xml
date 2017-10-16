@@ -26,8 +26,8 @@
       <file leaf-file-name="blood_alarm.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/generalhealthmodule/blood_alarm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="64" column="54" lean-forward="false" selection-start-line="64" selection-start-column="54" selection-end-line="64" selection-end-column="54" />
+            <state relative-caret-position="279">
+              <caret line="121" column="49" lean-forward="false" selection-start-line="121" selection-start-column="24" selection-end-line="121" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -138,7 +138,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1612" />
+    <option name="width" value="1604" />
     <option name="height" value="876" />
   </component>
   <component name="ProjectView">
@@ -156,6 +156,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -203,7 +204,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -455,23 +455,25 @@
       <workItem from="1508103532211" duration="1333000" />
       <workItem from="1508106635325" duration="1095000" />
       <workItem from="1508108735693" duration="1000" />
-      <workItem from="1508149240481" duration="923000" />
+      <workItem from="1508149240481" duration="1903000" />
+      <workItem from="1508159789368" duration="1778000" />
+      <workItem from="1508186851013" duration="228000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="452600000" />
+    <option name="totallyTimeSpent" value="455586000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1612" height="876" extended-state="0" />
+    <frame x="-8" y="-8" width="1604" height="876" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22681704" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22670025" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39817232" sideWeight="0.5195214" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39817232" sideWeight="0.4830827" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39817232" sideWeight="0.4830827" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39817232" sideWeight="0.5169173" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -833,7 +835,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="35" lean-forward="false" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -841,7 +842,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="714">
           <caret line="42" column="18" lean-forward="false" selection-start-line="42" selection-start-column="18" selection-end-line="42" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -855,8 +855,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/generalhealthmodule/blood_alarm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="64" column="54" lean-forward="false" selection-start-line="64" selection-start-column="54" selection-end-line="64" selection-end-column="54" />
+        <state relative-caret-position="279">
+          <caret line="121" column="49" lean-forward="false" selection-start-line="121" selection-start-column="24" selection-end-line="121" selection-end-column="49" />
           <folding />
         </state>
       </provider>

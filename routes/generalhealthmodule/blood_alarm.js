@@ -118,6 +118,32 @@ router.get('/bloodAlarm/getAllBloodAlarms', function (req, res, next) {
     });
 });
 
+//get blood alarms
+router.get('/bloodAlarm/getBloodAlarmsByBloodType/:blood_type_id', function (req, res, next) {
+    var blood_type_id=req.params.blood_type_id;
+    models.BLOOD_ALARM.findAll({
+        where: {
+            alarm_status: 1,
+            blood_type_id:blood_type_id
+        },
+        include: [
+            {
+                model: models.BLOOD_TYPES
+            }, {
+                attributes: ['hospital_id', 'hospital_name', 'latitude', 'longitude'],
+                model: models.HOSPITALS
+            }
+        ]
+
+    }).then(function (BLOOD_ALARM) {
+        res.send({
+            blood_alarms: BLOOD_ALARM
+        });
+    }).catch(function (error) {
+        res.status(500).json(error)
+    });
+});
+
 //update level of blood alarm
 router.post('/bloodAlarm/updateBloodAlarmLevel', function (req, res, next) {
     var blood_alarm_id = req.body.blood_alarm_id;
