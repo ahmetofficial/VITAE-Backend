@@ -12,9 +12,12 @@ var env = process.env.NODE_ENV || 'development';
 var config = require(__dirname + '/../../config/config.json')[env];
 var sequelize = new Sequelize(config.database, config.username, config.password, config);
 
-//var serverKey = "AAAATo6KBmk:APA91bH90b6T6ta3vTC58SpfJGlftEDofRcba1H0SFQT_Z85WBSM69AAllBTbiWqdlXc-X-8lFzcdzCmtCyDXJYcPwavrvVNu3bNxd7ub2r_CATjLWM68HMNxTYEiTFxipNAnx7ki6nT";
-//var FCM = require('fcm-node');
+////var FCM = require('fcm-node');
 //var fcm = new FCM(serverKey);
+
+var FCM = require('fcm-push');
+var serverKey = 'AAAATo6KBmk:APA91bH90b6T6ta3vTC58SpfJGlftEDofRcba1H0SFQT_Z85WBSM69AAllBTbiWqdlXc-X-8lFzcdzCmtCyDXJYcPwavrvVNu3bNxd7ub2r_CATjLWM68HMNxTYEiTFxipNAnx7ki6nT';
+var fcm = new FCM(serverKey);
 
 var bloodTypes = ['undefined', '0 Rh+', 'O Rh-', 'A Rh+', 'A Rh-', 'B Rh+', 'B Rh-', 'AB Rh+', 'AB Rh-'];
 
@@ -34,7 +37,6 @@ router.post('/bloodAlarm/create', function (req, res, next) {
         alarm_level: alarm_level,
         contact_number: contact_number
     }).then(function () {
-        /*
         models.HOSPITALS.findAll({
             where: {
                 hospital_id: hospital_id
@@ -63,16 +65,20 @@ router.post('/bloodAlarm/create', function (req, res, next) {
                     var token = USERS[i].device_token;
                     var message = {
                         to: token,
+                        //collapse_key: 'your_collapse_key',
+                        data: {
+                            your_custom_data_key: 'your_custom_data_value'
+                        },
                         notification: {
                             title: bloodTypes[blood_type_id],
                             body: hospital_name
                         }
                     };
-                    fcm.send(message, function (err, response) {
+                    fcm.send(message, function(err, response){
                         if (err) {
-                            //console.log("Notification not sent");
+                            console.log("Something has gone wrong!");
                         } else {
-                            //console.log("Successfully sent with response: ", response);
+                            console.log("Successfully sent with response: ", response);
                         }
                     });
                 }
@@ -82,7 +88,6 @@ router.post('/bloodAlarm/create', function (req, res, next) {
         }).catch(function (error) {
             res.status(500).json(error)
         });
-        */
         res.send({status: true});
     }).catch(function (error) {
         res.status(500).json(error)
