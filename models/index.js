@@ -209,6 +209,7 @@ db.USER_TYPES.hasMany(db.USERS, {foreignKey: 'user_type_id', targetKey: 'user_ty
 
 //USER_HOSPITAL_RATES
 db.USER_HOSPITAL_RATES.belongsTo(db.DISEASES, {foreignKey: 'disease_id', targetKey: 'disease_id'});
+db.USER_HOSPITAL_RATES.belongsTo(db.USERS, {foreignKey: 'user_id', targetKey: 'user_id'});
 db.USER_HOSPITAL_RATES.belongsTo(db.HOSPITALS, {foreignKey: 'hospital_id', targetKey: 'hospital_id'});
 
 module.exports = db;

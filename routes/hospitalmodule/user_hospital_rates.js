@@ -51,6 +51,15 @@ function updateHospitalTotalRatingParameter(hospital_id, new_vote, res) {
 router.get('/hospitals/getUserHospitalRates/:hospital_id', function (req, res, next) {
     var hospital_id = req.params.hospital_id;
     models.USER_HOSPITAL_RATES.findAll({
+        include: [
+            {
+                attributes: ['user_id', 'user_name', 'profile_picture_id'],
+                model: models.USERS
+            },{
+                attributes: ['disease_id', 'disease_name'],
+                model: models.DISEASES
+            }
+        ],
         where: {
             hospital_id: hospital_id
         }
