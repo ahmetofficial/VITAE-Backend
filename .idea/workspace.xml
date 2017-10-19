@@ -53,12 +53,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="conversation.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="conversation.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/messagemodule/conversation.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="313">
               <caret line="55" column="29" lean-forward="false" selection-start-line="55" selection-start-column="29" selection-end-line="55" selection-end-column="29" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="message.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/messagemodule/message.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="483">
+              <caret line="30" column="31" lean-forward="true" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MESSAGES.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/models/MESSAGES.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="493">
+              <caret line="29" column="27" lean-forward="false" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -108,14 +130,12 @@
         <option value="$PROJECT_DIR$/models/USER_POSTS.js" />
         <option value="$PROJECT_DIR$/models/USER_POST.js" />
         <option value="$PROJECT_DIR$/models/USER_POST_COMMENT.js" />
-        <option value="$PROJECT_DIR$/models/MESSAGES.js" />
         <option value="$PROJECT_DIR$/models/MESSAGE_CONVERSATION.js" />
         <option value="$PROJECT_DIR$/models/USER_POST_LIKE.js" />
         <option value="$PROJECT_DIR$/config/config.json" />
         <option value="$PROJECT_DIR$/bin/index.html" />
         <option value="$PROJECT_DIR$/routes/messagemodule/index.html" />
         <option value="$PROJECT_DIR$/routes/usermodule/relationships.js" />
-        <option value="$PROJECT_DIR$/routes/messagemodule/message.js" />
         <option value="$PROJECT_DIR$/models/USERS_HOSPITAL_RATES.js" />
         <option value="$PROJECT_DIR$/models/HOSPITALS.js" />
         <option value="$PROJECT_DIR$/models/USER_POST_HAVE_PHOTOS.js" />
@@ -142,6 +162,8 @@
         <option value="$PROJECT_DIR$/routes/hospitalmodule/user_hospital_rates.js" />
         <option value="$PROJECT_DIR$/models/index.js" />
         <option value="$PROJECT_DIR$/routes/messagemodule/conversation.js" />
+        <option value="$PROJECT_DIR$/routes/messagemodule/message.js" />
+        <option value="$PROJECT_DIR$/models/MESSAGES.js" />
       </list>
     </option>
   </component>
@@ -237,24 +259,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="messagemodule" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="VITAE-Backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="VITAE-Backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="routes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hospitalmodule" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -530,12 +534,12 @@
       <workItem from="1508159789368" duration="1778000" />
       <workItem from="1508186851013" duration="815000" />
       <workItem from="1508276030621" duration="1271000" />
-      <workItem from="1508422148829" duration="1647000" />
+      <workItem from="1508422148829" duration="3420000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="459091000" />
+    <option name="totallyTimeSpent" value="460864000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1604" height="876" extended-state="0" />
@@ -581,13 +585,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/models/TREATMENT_GAP_PERIODS.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="23" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/TREATMENT_STATE_HISTORY.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -739,13 +736,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="246">
           <caret line="15" column="54" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="108" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/messagemodule/message.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="19" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="41" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -933,6 +923,24 @@
         <state relative-caret-position="313">
           <caret line="55" column="29" lean-forward="false" selection-start-line="55" selection-start-column="29" selection-end-line="55" selection-end-column="29" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/messagemodule/message.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="30" column="31" lean-forward="true" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/MESSAGES.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="27" lean-forward="false" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -27,7 +27,7 @@ module.exports = function (sequelize, DataTypes) {
         },
         sender_ip: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         },
         message_text: {
             type: DataTypes.STRING,
