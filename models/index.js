@@ -113,8 +113,8 @@ db.MESSAGES.belongsTo(db.USERS, {foreignKey: 'receiver_id', targetKey: 'user_id'
 db.MESSAGES.belongsTo(db.MESSAGE_CONVERSATION, {foreignKey: 'conversation_id', targetKey: 'conversation_id'});
 
 //MESSAGE_CONVERSATION
-db.MESSAGE_CONVERSATION.belongsTo(db.USERS, {foreignKey: 'sender_id', targetKey: 'user_id'});
-db.MESSAGE_CONVERSATION.belongsTo(db.USERS, {foreignKey: 'receiver_id', targetKey: 'user_id'});
+db.MESSAGE_CONVERSATION.belongsTo(db.USERS, {as: 'SENDER', foreignKey: 'sender_id', targetKey: 'user_id'});
+db.MESSAGE_CONVERSATION.belongsTo(db.USERS, {as: 'RECEIVER', foreignKey: 'receiver_id', targetKey: 'user_id'});
 db.MESSAGE_CONVERSATION.hasMany(db.MESSAGES, {foreignKey: 'conversation_id', targetKey: 'conversation_id'});
 
 //PATIENTS
@@ -182,7 +182,7 @@ db.USERS.hasMany(db.USER_TREATMENT_HISTORY, {foreignKey: 'user_id', targetKey: '
 db.USERS.hasMany(db.MESSAGES, {foreignKey: 'sender_id', targetKey: 'user_id'});
 db.USERS.hasMany(db.MESSAGES, {foreignKey: 'receiver_id', targetKey: 'user_id'});
 db.USERS.hasMany(db.MESSAGE_CONVERSATION, {foreignKey: 'receiver_id', targetKey: 'user_id'});
-db.USERS.hasMany(db.MESSAGE_CONVERSATION, {foreignKey: 'receiver_id', targetKey: 'user_id'});
+db.USERS.hasMany(db.MESSAGE_CONVERSATION, {foreignKey: 'sender_id', targetKey: 'user_id'});
 db.USERS.belongsTo(db.USER_TYPES, {foreignKey: 'user_type_id', targetKey: 'user_type_id'});
 
 //USER_POST

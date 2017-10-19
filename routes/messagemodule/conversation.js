@@ -46,13 +46,19 @@ router.get('/conversation/getConversations/:user_id', function (req, res, next) 
                 ,
                 {
                     receiver_id: user_id,
-                    conversation_active_for_sender: 1
+                    conversation_active_for_receiver: 1
                 }
             ]
-        },include: [
+        }, include: [
             {
-                attributes: ['user_id','user_name', 'profile_picture_id'],
-                model: models.USERS
+                attributes: ['user_id', 'user_name', 'profile_picture_id'],
+                model: models.USERS,
+                as: 'RECEIVER'
+            },
+            {
+                attributes: ['user_id', 'user_name', 'profile_picture_id'],
+                model: models.USERS,
+                as: 'SENDER'
             }
         ],
         order: [['updated_at', 'DESC']]
