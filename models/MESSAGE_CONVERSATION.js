@@ -21,7 +21,7 @@ module.exports = function (sequelize, DataTypes) {
         },
         sender_ip: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         },
         conversation_active_for_sender: {
             type: DataTypes.INTEGER,
