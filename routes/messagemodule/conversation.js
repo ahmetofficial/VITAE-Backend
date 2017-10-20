@@ -17,8 +17,9 @@ router.post('/conversation/createConversation', function (req, res, next) {
     var sender_id = req.body.sender_id;
     var receiver_id = req.body.receiver_id;
     var sender_ip = req.body.sender_ip;
+    var conversation_id = uuidv1();
     models.MESSAGE_CONVERSATION.create({
-        conversation_id: uuidv1(),
+        conversation_id: conversation_id,
         sender_id: sender_id,
         receiver_id: receiver_id,
         sender_ip: sender_ip,
@@ -26,7 +27,8 @@ router.post('/conversation/createConversation', function (req, res, next) {
         conversation_active_for_receiver: 1
     }).then(function () {
         res.status(200).json({
-            status: 'true'
+            status: 'true',
+            conversation_id:conversation_id
         });
     }).catch(function (error) {
         res.status(500).json(error)

@@ -53,7 +53,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MESSAGE_CONVERSATION.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MESSAGE_CONVERSATION.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/MESSAGE_CONVERSATION.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="391">
@@ -65,13 +65,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="conversation.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="conversation.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/messagemodule/conversation.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="19" column="25" lean-forward="false" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
+            <state relative-caret-position="544">
+              <caret line="33" column="35" lean-forward="true" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
               <folding>
-                <element signature="e#1201#2210#0" expanded="false" />
+                <element signature="e#1289#2298#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -152,10 +152,10 @@
         <option value="$PROJECT_DIR$/routes/generalhealthmodule/blood_alarm.js" />
         <option value="$PROJECT_DIR$/routes/hospitalmodule/user_hospital_rates.js" />
         <option value="$PROJECT_DIR$/models/index.js" />
-        <option value="$PROJECT_DIR$/routes/messagemodule/conversation.js" />
         <option value="$PROJECT_DIR$/routes/messagemodule/message.js" />
         <option value="$PROJECT_DIR$/models/MESSAGES.js" />
         <option value="$PROJECT_DIR$/models/MESSAGE_CONVERSATION.js" />
+        <option value="$PROJECT_DIR$/routes/messagemodule/conversation.js" />
       </list>
     </option>
   </component>
@@ -527,15 +527,15 @@
       <workItem from="1508186851013" duration="815000" />
       <workItem from="1508276030621" duration="1271000" />
       <workItem from="1508422148829" duration="3797000" />
-      <workItem from="1508533874055" duration="68000" />
+      <workItem from="1508533874055" duration="343000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="461309000" />
+    <option name="totallyTimeSpent" value="461584000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1604" height="876" extended-state="1" />
+    <frame x="-8" y="-8" width="1604" height="876" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22670025" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -914,16 +914,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/messagemodule/conversation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="19" column="25" lean-forward="false" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
-          <folding>
-            <element signature="e#1201#2210#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="313">
@@ -938,6 +928,16 @@
           <caret line="23" column="27" lean-forward="false" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/messagemodule/conversation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="33" column="35" lean-forward="true" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
+          <folding>
+            <element signature="e#1289#2298#0" expanded="false" />
           </folding>
         </state>
       </provider>
