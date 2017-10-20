@@ -181,8 +181,8 @@ db.USERS.hasMany(db.USER_DRUG_USAGE_HISTORY, {foreignKey: 'user_id', targetKey: 
 db.USERS.hasMany(db.USER_TREATMENT_HISTORY, {foreignKey: 'user_id', targetKey: 'user_id'});
 db.USERS.hasMany(db.MESSAGES, {foreignKey: 'sender_id', targetKey: 'user_id'});
 db.USERS.hasMany(db.MESSAGES, {foreignKey: 'receiver_id', targetKey: 'user_id'});
-db.USERS.hasMany(db.MESSAGE_CONVERSATION, {foreignKey: 'receiver_id', targetKey: 'user_id'});
-db.USERS.hasMany(db.MESSAGE_CONVERSATION, {foreignKey: 'sender_id', targetKey: 'user_id'});
+db.USERS.hasMany(db.MESSAGE_CONVERSATION, {as: 'RECEIVER',foreignKey: 'receiver_id', targetKey: 'user_id'});
+db.USERS.hasMany(db.MESSAGE_CONVERSATION, {as: 'SENDER',foreignKey: 'sender_id', targetKey: 'user_id'});
 db.USERS.belongsTo(db.USER_TYPES, {foreignKey: 'user_type_id', targetKey: 'user_type_id'});
 
 //USER_POST
