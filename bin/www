@@ -35,7 +35,7 @@ var io = require('socket.io')(server);
 
 io.on('connection', function(socket){
     socket.on('new message', function(message){
-        io.emit('new message', message.message_text,message.sender_id);
+        io.emit('new message', message.message_text,message.sender_id,message.receiver_id);
         var conversation_id = message.conversation_id;
         var sender_id = message.sender_id;
         var receiver_id = message.receiver_id;
