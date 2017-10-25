@@ -98,10 +98,9 @@ router.post('/users/registerPatient', function (req, res) {
             blood_type_id: blood_type_id,
             birthday: birthday
         });
-        models.RELATIONSHIPS.create({
+        models.USER_CONNECTIONS.create({
             active_user_id: user_id,
-            passive_user_id: user_id,
-            status_id: 1
+            passive_user_id: user_id
         }).then(function () {
                 res.status(200).json({
                     status: 'true',
