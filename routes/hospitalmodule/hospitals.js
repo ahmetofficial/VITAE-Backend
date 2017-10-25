@@ -56,4 +56,14 @@ router.get('/hospitals/getAllHospitals', function (req, res, next) {
     });
 });
 
+//get all clinics
+router.get('/clinics/getAllClinics', function (req, res, next) {
+    models.CLINICS.findAll({
+    }).then(function (CLINICS) {
+        res.send({clinics: CLINICS});
+    }).catch(function (error) {
+        res.status(500).json(error)
+    });
+});
+
 module.exports = router;
