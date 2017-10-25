@@ -75,8 +75,6 @@ router.post('/users/registerPatient', function (req, res) {
     var phone_number = req.body.phone_number;
     var about_me = req.body.about_me;
     var profile_picture_id = req.body.profile_picture_id;
-    var device_id = req.body.device_id;
-    var device_name = req.body.device_name;
     var gender = req.body.gender;
     var blood_type_id = req.body.blood_type_id;
     var birthday = req.body.birthday;
@@ -92,9 +90,7 @@ router.post('/users/registerPatient', function (req, res) {
             about_me: about_me,
             friend_count: 0,
             is_official_user: false,
-            profile_picture_id: profile_picture_id,
-            device_id:device_id,
-            device_name: device_name
+            profile_picture_id: profile_picture_id
         });
         models.PATIENTS.create({
             user_id: user_id,
@@ -106,8 +102,7 @@ router.post('/users/registerPatient', function (req, res) {
             active_user_id: user_id,
             passive_user_id: user_id,
             status_id: 1
-        })
-            .then(function () {
+        }).then(function () {
                 res.status(200).json({
                     status: 'true',
                     message: 'creating a patient is succesful'
