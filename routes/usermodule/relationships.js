@@ -59,7 +59,7 @@ router.post('/users/areUsersConnected', function (req, res, next) {
 
 function increaseConnectionCount(user_id, res) {
     models.USERS.update(
-        {comment_count: sequelize.literal('friend_count + 1')},
+        {friend_count: sequelize.literal('friend_count + 1')},
         {
             fields: ['friend_count'],
             where: {
@@ -68,8 +68,8 @@ function increaseConnectionCount(user_id, res) {
         })
 }
 function decreaseConnectionCount(user_id, res) {
-    models.USER_POST.update(
-        {comment_count: sequelize.literal('friend_count - 1')},
+    models.USERS.update(
+        {friend_count: sequelize.literal('friend_count - 1')},
         {
             fields: ['friend_count'],
             where: {

@@ -23,15 +23,50 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="doctors.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/routes/usermodule/doctors.js">
+      <file leaf-file-name="patients.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/usermodule/patients.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="610">
-              <caret line="85" column="25" lean-forward="false" selection-start-line="85" selection-start-column="25" selection-end-line="85" selection-end-column="25" />
+            <state relative-caret-position="238">
+              <caret line="15" column="22" lean-forward="false" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="22" />
               <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="e#542#1679#0" expanded="false" />
+                <element signature="e#523#2053#0" expanded="false" />
+                <element signature="e#2166#2760#0" expanded="false" />
+                <element signature="e#2855#5163#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="users.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/usermodule/users.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="89" column="28" lean-forward="false" selection-start-line="89" selection-start-column="27" selection-end-line="89" selection-end-column="28" />
+              <folding>
+                <element signature="e#507#1101#0" expanded="false" />
+                <element signature="e#1179#1943#0" expanded="false" />
+                <element signature="e#2034#2559#0" expanded="false" />
+                <element signature="e#2696#3544#0" expanded="false" />
+                <element signature="e#3637#4402#0" expanded="false" />
+                <element signature="e#4499#4948#0" expanded="false" />
+                <element signature="e#5028#5775#0" expanded="false" />
+                <element signature="e#5864#6636#0" expanded="false" />
+                <element signature="e#6723#7489#0" expanded="false" />
+                <element signature="e#7578#7956#0" expanded="false" />
+                <element signature="e#8069#8364#0" expanded="false" />
+                <element signature="e#8444#9778#0" expanded="false" />
+                <element signature="e#9860#11194#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="relationships.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/routes/usermodule/relationships.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="561">
+              <caret line="71" column="21" lean-forward="false" selection-start-line="71" selection-start-column="21" selection-end-line="71" selection-end-column="21" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -113,8 +148,8 @@
         <option value="$PROJECT_DIR$/routes/usermodule/users.js" />
         <option value="$PROJECT_DIR$/routes/usermodule/patients.js" />
         <option value="$PROJECT_DIR$/models/index.js" />
-        <option value="$PROJECT_DIR$/routes/usermodule/relationships.js" />
         <option value="$PROJECT_DIR$/routes/usermodule/doctors.js" />
+        <option value="$PROJECT_DIR$/routes/usermodule/relationships.js" />
       </list>
     </option>
   </component>
@@ -505,12 +540,12 @@
       <workItem from="1508695874702" duration="1065000" />
       <workItem from="1508879531518" duration="165000" />
       <workItem from="1508954722781" duration="4219000" />
-      <workItem from="1509039108305" duration="5857000" />
+      <workItem from="1509039108305" duration="6215000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="477718000" />
+    <option name="totallyTimeSpent" value="478076000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1604" height="876" extended-state="0" />
@@ -839,18 +874,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/usermodule/patients.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="15" column="22" lean-forward="false" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="22" />
-          <folding>
-            <element signature="e#523#2053#0" expanded="false" />
-            <element signature="e#2166#2760#0" expanded="false" />
-            <element signature="e#2855#5163#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="194">
@@ -899,11 +922,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/usermodule/relationships.js">
+    <entry file="file://$PROJECT_DIR$/routes/usermodule/doctors.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-146">
-          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="610">
+          <caret line="85" column="25" lean-forward="false" selection-start-line="85" selection-start-column="25" selection-end-line="85" selection-end-column="25" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#542#1679#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/usermodule/patients.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="15" column="22" lean-forward="false" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="22" />
+          <folding>
+            <element signature="e#523#2053#0" expanded="false" />
+            <element signature="e#2166#2760#0" expanded="false" />
+            <element signature="e#2855#5163#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -929,14 +967,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/usermodule/doctors.js">
+    <entry file="file://$PROJECT_DIR$/routes/usermodule/relationships.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="610">
-          <caret line="85" column="25" lean-forward="false" selection-start-line="85" selection-start-column="25" selection-end-line="85" selection-end-column="25" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#542#1679#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="561">
+          <caret line="71" column="21" lean-forward="false" selection-start-line="71" selection-start-column="21" selection-end-line="71" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
