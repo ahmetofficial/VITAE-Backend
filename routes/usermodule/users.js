@@ -25,7 +25,8 @@ router.post('/users/login', function (req, res) {
         if (isNaN(USERS)) {
             res.send({
                 status: 'true',
-                user_id: user_id
+                user_id: user_id,
+                user_type_id: USERS[0].user_type_id
             });
         } else {
             res.status(200).json({
@@ -117,11 +118,11 @@ router.post('/users/registerPatient', function (req, res) {
     }
 });
 
-//registering new patient
+//registering new doctor
 router.post('/users/registerDoctor', function (req, res) {
     var user_id = req.body.user_id;
     var user_name = req.body.user_name;
-    var user_type_id = 1;
+    var user_type_id = 2;
     var mail = req.body.mail;
     var password = req.body.password;
     var phone_number = req.body.phone_number;
