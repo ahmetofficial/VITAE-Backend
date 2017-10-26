@@ -109,4 +109,15 @@ router.post('/doctors/registerDoctor', function (req, res) {
     }
 });
 
+//search doctor with full text search
+router.post('/doctors/searchDoctorsFullTextSearch', function (req, res, next) {
+    var search_text = req.body.search_text;
+    sequelize.query('SELECT user_id,user_name, user_type_id, is_official_user,profile_picture_id FROM USERS WHERE user_type_id=2 and MATCH(user_name) AGAINST("' + search_text + '"IN NATURAL LANGUAGE MODE);'
+    ).then(function (USERS) {
+        res.send({users: USERS[0]});
+    }).catch(function (error) {
+        res.status(500).json(error)
+    });
+});
+
 module.exports = router;

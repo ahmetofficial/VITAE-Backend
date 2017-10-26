@@ -255,17 +255,6 @@ router.put('/users/resetAboutMe/:user_id', function (req, res) {
     });
 });
 
-//search by user_id
-router.post('/users/searchByUserInfo', function (req, res, next) {
-    var search_text = req.body.search_text;
-    sequelize.query('SELECT user_id,user_name, user_type_id, is_official_user,profile_picture_id FROM USERS WHERE MATCH(user_name) AGAINST("' + search_text + '"IN NATURAL LANGUAGE MODE);'
-    ).then(function (USERS) {
-        res.send({users: USERS[0]});
-    }).catch(function (error) {
-        res.status(500).json(error)
-    });
-});
-
 //get user information by user_id
 router.get('/users/getUserInformation/:user_id', function (req, res, next) {
     var user_id = req.params.user_id;
