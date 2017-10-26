@@ -7,7 +7,7 @@ var models = require('../../models');
 var express = require('express');
 var router = express.Router();
 
-//create connection
+//delete connection
 router.delete('/users/unfollow', function (req, res) {
     var active_user_id = req.body.active_user_id;
     var passive_user_id = req.body.passive_user_id;
@@ -17,6 +17,7 @@ router.delete('/users/unfollow', function (req, res) {
             passive_user_id: passive_user_id
         }
     }).then(function () {
+        decreaseConnectionCount(active_user_id);
         res.status(200).json({
             status: 'true'
         });
@@ -25,7 +26,7 @@ router.delete('/users/unfollow', function (req, res) {
     });
 });
 
-//delete connection
+//create connection
 router.post('/users/follow', function (req, res) {
     var active_user_id = req.body.active_user_id;
     var passive_user_id = req.body.passive_user_id;
@@ -33,6 +34,7 @@ router.post('/users/follow', function (req, res) {
         active_user_id: active_user_id,
         passive_user_id: passive_user_id
     }).then(function () {
+        increaseConnectionCount(active_user_id);
         res.status(200).json({
             status: 'true'
         });
@@ -55,11 +57,25 @@ router.post('/users/areUsersConnected', function (req, res, next) {
     });
 });
 
-function createConnection(user_id, res) {
-    models.USER_CONNECTIONS.create({
-        active_user_id: user_id,
-        passive_user_id: user_id
-    });
+function increaseConnectionCount(user_id, res) {
+    models.USERS.update(
+        {comment_count: sequelize.literal('friend_count + 1')},
+        {
+            fields: ['friend_count'],
+            where: {
+                user_id: user_id
+            }
+        })
+}
+function decreaseConnectionCount(user_id, res) {
+    models.USER_POST.update(
+        {comment_count: sequelize.literal('friend_count - 1')},
+        {
+            fields: ['friend_count'],
+            where: {
+                user_id: user_id
+            }
+        })
 }
 
 module.exports = router;

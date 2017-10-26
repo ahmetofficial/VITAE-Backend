@@ -118,7 +118,7 @@ db.DISEASES.hasMany(db.USER_DRUG_USAGE_HISTORY, {foreignKey: 'drug_id', targetKe
 //HOSPITAL
 db.HOSPITALS.hasMany(db.USER_HOSPITAL_RATES, {foreignKey: 'hospital_id', targetKey: 'hospital_id'});
 db.HOSPITALS.hasMany(db.BLOOD_ALARM, {foreignKey: 'hospital_id', targetKey: 'hospital_id'});
-db.HOSPITALS.hasMany(db.CLINICS, {foreignKey: 'hospital_id', targetKey: 'hospital_id'});
+db.HOSPITALS.hasMany(db.DOCTOR_HAVE_HOSPITAL, {foreignKey: 'hospital_id', targetKey: 'hospital_id'});
 
 //GENERAL_DRUG_TYPE_GROUPS
 
