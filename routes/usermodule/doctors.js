@@ -82,7 +82,8 @@ router.post('/doctors/registerDoctor', function (req, res) {
             user_id: user_id,
             gender: gender,
             blood_type_id: blood_type_id,
-            birthday: birthday
+            birthday: birthday,
+            is_verified:0
         });
         models.DOCTOR_HAVE_HOSPITAL.create({
             user_id: user_id,
