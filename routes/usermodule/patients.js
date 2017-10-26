@@ -12,57 +12,56 @@ var env = process.env.NODE_ENV || 'development';
 var config = require(__dirname + '/../../config/config.json')[env];
 var sequelize = new Sequelize(config.database, config.username, config.password, config);
 
+//registering new patient
+router.post('/patients/registerPatient', function (req, res) {
+    var user_id = req.body.user_id;
+    var user_name = req.body.user_name;
+    var user_type_id = 1;
+    var mail = req.body.mail;
+    var password = req.body.password;
+    var phone_number = req.body.phone_number;
+    var about_me = req.body.about_me;
+    var profile_picture_id = req.body.profile_picture_id;
+    var gender = req.body.gender;
+    var blood_type_id = req.body.blood_type_id;
+    var birthday = req.body.birthday;
+    {
+        models.USERS.create({
+            user_id: user_id,
+            user_name: user_name,
+            user_type_id: user_type_id,
+            mail: mail,
+            password: password,
+            mail_activation: false,
+            phone_number: phone_number,
+            about_me: about_me,
+            friend_count: 0,
+            is_official_user: false,
+            profile_picture_id: profile_picture_id
+        });
+        models.PATIENTS.create({
+            user_id: user_id,
+            gender: gender,
+            blood_type_id: blood_type_id,
+            birthday: birthday
+        });
+        models.USER_CONNECTIONS.create({
+            active_user_id: user_id,
+            passive_user_id: user_id
+        }).then(function () {
+            res.status(200).json({
+                status: 'true',
+                message: 'creating a patient is succesful'
+            });
+        }).catch(function (error) {
+            //noinspection JSAnnotator
+            res.status(500).json({
+                status: 'false',
+                error
+            })
+        });
 
-//get users friends
-router.get('/patients/getFriends/:user_id', function (req, res, next) {
-    var user_id = req.params.user_id;
-    models.USERS.findAll({
-        attributes: ['user_id', 'user_name', 'profile_picture_id'],
-        include: [
-            {
-                attributes: [],
-                model: models.USER_CONNECTIONS,
-                where: {
-                    active_user_id: user_id,
-                    passive_user_id: {$ne: user_id}
-                }
-            }
-        ],
-        order: [['user_name', 'ASC']]
-    }).then(function (USERS) {
-        res.send({users: USERS});
-    });
-});
-
-
-//get user patient friends for conversation
-router.get('/patients/getFriendsWithConversationStatus/:user_id', function (req, res, next) {
-    var user_id = req.params.user_id;
-    models.USERS.findAll({
-        attributes: ['user_id', 'user_name', 'profile_picture_id'],
-        include: [
-            {
-                attributes: [],
-                model: models.USER_CONNECTIONS,
-                where: {
-                    active_user_id: user_id,
-                    passive_user_id: {$ne: user_id}
-                }
-            },
-            {
-                attributes:['conversation_id'],
-                model: models.MESSAGE_CONVERSATION,
-                as: 'RECEIVER'
-            }, {
-                attributes:['conversation_id'],
-                model: models.MESSAGE_CONVERSATION,
-                as: 'SENDER'
-            }
-        ],
-        order: [['user_name', 'ASC']]
-    }).then(function (USERS) {
-        res.send({users_for_conversation: USERS});
-    });
+    }
 });
 
 //get patient profile data data

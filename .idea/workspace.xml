@@ -36,21 +36,35 @@
       <file leaf-file-name="users.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/usermodule/users.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="30" column="16" lean-forward="true" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
+            <state relative-caret-position="75">
+              <caret line="68" column="4" lean-forward="false" selection-start-line="68" selection-start-column="4" selection-end-line="68" selection-end-column="4" />
               <folding>
+                <element signature="e#507#1101#0" expanded="false" />
                 <element signature="e#1179#1943#0" expanded="false" />
-                <element signature="e#2031#3581#0" expanded="false" />
-                <element signature="e#3667#5437#0" expanded="false" />
-                <element signature="e#5530#6295#0" expanded="false" />
-                <element signature="e#6392#6841#0" expanded="false" />
-                <element signature="e#6921#7668#0" expanded="false" />
-                <element signature="e#7757#8529#0" expanded="false" />
-                <element signature="e#8616#9382#0" expanded="false" />
-                <element signature="e#9471#9849#0" expanded="false" />
-                <element signature="e#9962#10257#0" expanded="false" />
-                <element signature="e#10337#11671#0" expanded="false" />
-                <element signature="e#11753#13087#0" expanded="false" />
+                <element signature="e#2034#2559#0" expanded="false" />
+                <element signature="e#2696#3544#0" expanded="false" />
+                <element signature="e#3637#4402#0" expanded="false" />
+                <element signature="e#4499#4948#0" expanded="false" />
+                <element signature="e#5028#5775#0" expanded="false" />
+                <element signature="e#5864#6636#0" expanded="false" />
+                <element signature="e#6723#7489#0" expanded="false" />
+                <element signature="e#7578#7956#0" expanded="false" />
+                <element signature="e#8069#8364#0" expanded="false" />
+                <element signature="e#8444#9778#0" expanded="false" />
+                <element signature="e#9860#11194#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="doctors.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/usermodule/doctors.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="47" lean-forward="false" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="47" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+                <element signature="e#1767#3537#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -94,7 +108,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/routes/generalhealthmodule/user_treatment_history.js" />
         <option value="$PROJECT_DIR$/routes/imageIOmodule/image_input.js" />
         <option value="$PROJECT_DIR$/routes/generalhealthmodule/user_drug_usage_history.js" />
         <option value="$PROJECT_DIR$/models/USER_BLOCKED_USERS.js" />
@@ -129,7 +142,6 @@
         <option value="$PROJECT_DIR$/models/BLOOD_ALARM.js" />
         <option value="$PROJECT_DIR$/models/USERS.js" />
         <option value="$PROJECT_DIR$/routes/index.js" />
-        <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/routes/generalhealthmodule/blood_alarm.js" />
         <option value="$PROJECT_DIR$/routes/hospitalmodule/user_hospital_rates.js" />
@@ -137,14 +149,16 @@
         <option value="$PROJECT_DIR$/models/MESSAGES.js" />
         <option value="$PROJECT_DIR$/models/MESSAGE_CONVERSATION.js" />
         <option value="$PROJECT_DIR$/routes/messagemodule/conversation.js" />
-        <option value="$PROJECT_DIR$/routes/usermodule/patients.js" />
         <option value="$PROJECT_DIR$/bin/www" />
         <option value="$PROJECT_DIR$/models/CLINICS.js" />
         <option value="$PROJECT_DIR$/routes/hospitalmodule/hospitals.js" />
-        <option value="$PROJECT_DIR$/models/DOCTORS.js" />
         <option value="$PROJECT_DIR$/models/DOCTOR_HAVE_HOSPITAL.js" />
+        <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/models/index.js" />
+        <option value="$PROJECT_DIR$/models/DOCTORS.js" />
         <option value="$PROJECT_DIR$/routes/usermodule/users.js" />
+        <option value="$PROJECT_DIR$/routes/usermodule/patients.js" />
+        <option value="$PROJECT_DIR$/routes/usermodule/doctors.js" />
       </list>
     </option>
   </component>
@@ -517,12 +531,12 @@
       <workItem from="1508695874702" duration="1065000" />
       <workItem from="1508879531518" duration="165000" />
       <workItem from="1508954722781" duration="4219000" />
-      <workItem from="1509039108305" duration="431000" />
+      <workItem from="1509039108305" duration="3975000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="472292000" />
+    <option name="totallyTimeSpent" value="475836000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1604" height="876" extended-state="0" />
@@ -568,13 +582,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/models/USER_POST_LIKE.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="29" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/USER_TREATMENT_HISTORY.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -807,24 +814,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="42" column="18" lean-forward="false" selection-start-line="42" selection-start-column="18" selection-end-line="42" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bin/www">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="629">
           <caret line="37" column="89" lean-forward="false" selection-start-line="37" selection-start-column="89" selection-end-line="37" selection-end-column="89" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/usermodule/patients.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="71" column="71" lean-forward="false" selection-start-line="71" selection-start-column="71" selection-end-line="71" selection-end-column="71" />
         </state>
       </provider>
     </entry>
@@ -886,24 +879,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/DOCTORS.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="25" column="27" lean-forward="false" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/DOCTOR_HAVE_HOSPITAL.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" column="40" lean-forward="false" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="43" column="63" lean-forward="false" selection-start-line="43" selection-start-column="63" selection-end-line="43" selection-end-column="63" />
         </state>
       </provider>
     </entry>
@@ -915,23 +894,71 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="59" column="30" lean-forward="false" selection-start-line="59" selection-start-column="30" selection-end-line="59" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1843">
+          <caret line="201" column="27" lean-forward="false" selection-start-line="201" selection-start-column="27" selection-end-line="201" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/usermodule/patients.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="15" column="22" lean-forward="false" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="22" />
+          <folding>
+            <element signature="e#523#2053#0" expanded="false" />
+            <element signature="e#2166#2760#0" expanded="false" />
+            <element signature="e#2855#5163#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/DOCTORS.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="25" column="37" lean-forward="false" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/usermodule/doctors.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="47" lean-forward="false" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="47" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#1767#3537#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/routes/usermodule/users.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="30" column="16" lean-forward="true" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
+        <state relative-caret-position="75">
+          <caret line="68" column="4" lean-forward="false" selection-start-line="68" selection-start-column="4" selection-end-line="68" selection-end-column="4" />
           <folding>
+            <element signature="e#507#1101#0" expanded="false" />
             <element signature="e#1179#1943#0" expanded="false" />
-            <element signature="e#2031#3581#0" expanded="false" />
-            <element signature="e#3667#5437#0" expanded="false" />
-            <element signature="e#5530#6295#0" expanded="false" />
-            <element signature="e#6392#6841#0" expanded="false" />
-            <element signature="e#6921#7668#0" expanded="false" />
-            <element signature="e#7757#8529#0" expanded="false" />
-            <element signature="e#8616#9382#0" expanded="false" />
-            <element signature="e#9471#9849#0" expanded="false" />
-            <element signature="e#9962#10257#0" expanded="false" />
-            <element signature="e#10337#11671#0" expanded="false" />
-            <element signature="e#11753#13087#0" expanded="false" />
+            <element signature="e#2034#2559#0" expanded="false" />
+            <element signature="e#2696#3544#0" expanded="false" />
+            <element signature="e#3637#4402#0" expanded="false" />
+            <element signature="e#4499#4948#0" expanded="false" />
+            <element signature="e#5028#5775#0" expanded="false" />
+            <element signature="e#5864#6636#0" expanded="false" />
+            <element signature="e#6723#7489#0" expanded="false" />
+            <element signature="e#7578#7956#0" expanded="false" />
+            <element signature="e#8069#8364#0" expanded="false" />
+            <element signature="e#8444#9778#0" expanded="false" />
+            <element signature="e#9860#11194#0" expanded="false" />
           </folding>
         </state>
       </provider>

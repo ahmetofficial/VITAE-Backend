@@ -21,6 +21,10 @@ module.exports = function (sequelize, DataTypes) {
         birthday: {
             type: DataTypes.DATE,
             allowNull: false
+        },
+        is_verified:{
+            type: DataTypes.INTEGER(1),
+            allowNull: false
         }
     }, {
         tableName: 'DOCTORS',

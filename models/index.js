@@ -91,11 +91,22 @@ db.BLOOD_ALARM.belongsTo(db.BLOOD_TYPES, {foreignKey: 'blood_type_id', targetKey
 db.BLOOD_ALARM.belongsTo(db.HOSPITALS, {foreignKey: 'hospital_id', targetKey: 'hospital_id'});
 db.BLOOD_ALARM.belongsTo(db.USERS, {foreignKey: 'user_id', targetKey: 'user_id'});
 
+//CLINICS
+db.CLINICS.hasMany(db.DOCTOR_HAVE_HOSPITAL, {foreignKey: 'clinic_id', targetKey: 'clinic_id'});
+
 //DISEASES
 db.DISEASES.hasMany(db.USER_DISEASE_HISTORY, {foreignKey: 'disease_id', targetKey: 'disease_id'});
 db.DISEASES.hasMany(db.USER_DRUG_USAGE_HISTORY, {foreignKey: 'disease_id', targetKey: 'disease_id'});
 db.DISEASES.hasMany(db.USER_TREATMENT_HISTORY, {foreignKey: 'disease_id', targetKey: 'disease_id'});
 db.DISEASES.hasMany(db.USER_HOSPITAL_RATES, {foreignKey: 'disease_id', targetKey: 'disease_id'});
+
+//DOCTOR_HAVE_HOSPITAL
+db.DOCTOR_HAVE_HOSPITAL.belongsTo(db.CLINICS, {foreignKey: 'clinic_id', targetKey: 'clinic_id'});
+db.DOCTOR_HAVE_HOSPITAL.belongsTo(db.HOSPITALS, {foreignKey: 'hospital_id', targetKey: 'hospital_id'});
+db.DOCTOR_HAVE_HOSPITAL.belongsTo(db.USERS, {foreignKey: 'user_id', targetKey: 'user_id'});
+
+//DOCTORS
+db.DOCTORS.belongsTo(db.USERS, {foreignKey: 'user_id', targetKey: 'user_id'});
 
 //DRUG_COMPANIES
 
@@ -107,6 +118,7 @@ db.DISEASES.hasMany(db.USER_DRUG_USAGE_HISTORY, {foreignKey: 'drug_id', targetKe
 //HOSPITAL
 db.HOSPITALS.hasMany(db.USER_HOSPITAL_RATES, {foreignKey: 'hospital_id', targetKey: 'hospital_id'});
 db.HOSPITALS.hasMany(db.BLOOD_ALARM, {foreignKey: 'hospital_id', targetKey: 'hospital_id'});
+db.HOSPITALS.hasMany(db.CLINICS, {foreignKey: 'hospital_id', targetKey: 'hospital_id'});
 
 //GENERAL_DRUG_TYPE_GROUPS
 
@@ -186,6 +198,8 @@ db.USERS.hasMany(db.MESSAGES, {foreignKey: 'sender_id', targetKey: 'user_id'});
 db.USERS.hasMany(db.MESSAGES, {foreignKey: 'receiver_id', targetKey: 'user_id'});
 db.USERS.hasMany(db.MESSAGE_CONVERSATION, {as: 'RECEIVER',foreignKey: 'receiver_id', targetKey: 'user_id'});
 db.USERS.hasMany(db.MESSAGE_CONVERSATION, {as: 'SENDER',foreignKey: 'sender_id', targetKey: 'user_id'});
+db.USERS.hasMany(db.DOCTOR_HAVE_HOSPITAL, {foreignKey: 'user_id', targetKey: 'user_id'});
+db.USERS.hasMany(db.DOCTORS, {foreignKey: 'user_id', targetKey: 'user_id'});
 db.USERS.belongsTo(db.USER_TYPES, {foreignKey: 'user_type_id', targetKey: 'user_type_id'});
 
 //USER_POST
