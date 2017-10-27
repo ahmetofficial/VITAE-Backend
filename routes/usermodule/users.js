@@ -70,7 +70,7 @@ router.post('/users/register', function (req, res) {
 router.get('/users/getFriends/:user_id', function (req, res, next) {
     var user_id = req.params.user_id;
     models.USERS.findAll({
-        attributes: ['user_id', 'user_name', 'profile_picture_id'],
+        attributes: ['user_id', 'user_name', 'profile_picture_id','user_type_id'],
         include: [
             {
                 attributes: [],
