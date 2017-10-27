@@ -23,53 +23,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="users.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/usermodule/users.js">
+      <file leaf-file-name="posts.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/routes/postmodule/posts.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="466">
-              <caret line="256" column="0" lean-forward="false" selection-start-line="256" selection-start-column="0" selection-end-line="256" selection-end-column="0" />
-              <folding>
-                <element signature="e#507#1101#0" expanded="false" />
-                <element signature="e#1179#1943#0" expanded="false" />
-                <element signature="e#2034#2559#0" expanded="false" />
-                <element signature="e#2696#3544#0" expanded="false" />
-                <element signature="e#3637#4402#0" expanded="false" />
-                <element signature="e#4499#4948#0" expanded="false" />
-                <element signature="e#5028#5775#0" expanded="false" />
-                <element signature="e#5864#6636#0" expanded="false" />
-                <element signature="e#6723#7489#0" expanded="false" />
-                <element signature="e#7602#7897#0" expanded="false" />
-                <element signature="e#7977#9311#0" expanded="false" />
-                <element signature="e#9393#10727#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="patients.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/usermodule/patients.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="143" column="37" lean-forward="false" selection-start-line="143" selection-start-column="37" selection-end-line="143" selection-end-column="37" />
-              <folding>
-                <element signature="e#523#2053#0" expanded="false" />
-                <element signature="e#2166#2760#0" expanded="false" />
-                <element signature="e#2855#5163#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="doctors.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/routes/usermodule/doctors.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="114" column="128" lean-forward="false" selection-start-line="114" selection-start-column="128" selection-end-line="114" selection-end-column="128" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="e#542#1679#0" expanded="false" />
-                <element signature="e#1767#3564#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="287">
+              <caret line="62" column="76" lean-forward="false" selection-start-line="62" selection-start-column="76" selection-end-line="62" selection-end-column="76" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -131,7 +90,6 @@
         <option value="$PROJECT_DIR$/models/USER_LOCATION.js" />
         <option value="$PROJECT_DIR$/constants/package.json" />
         <option value="$PROJECT_DIR$/constants/constants.json" />
-        <option value="$PROJECT_DIR$/routes/postmodule/posts.js" />
         <option value="$PROJECT_DIR$/models/BLOOD_ALARM.js" />
         <option value="$PROJECT_DIR$/models/USERS.js" />
         <option value="$PROJECT_DIR$/routes/index.js" />
@@ -153,6 +111,7 @@
         <option value="$PROJECT_DIR$/routes/usermodule/users.js" />
         <option value="$PROJECT_DIR$/routes/usermodule/patients.js" />
         <option value="$PROJECT_DIR$/routes/usermodule/doctors.js" />
+        <option value="$PROJECT_DIR$/routes/postmodule/posts.js" />
       </list>
     </option>
   </component>
@@ -543,12 +502,12 @@
       <workItem from="1508695874702" duration="1065000" />
       <workItem from="1508879531518" duration="165000" />
       <workItem from="1508954722781" duration="4219000" />
-      <workItem from="1509039108305" duration="7780000" />
+      <workItem from="1509039108305" duration="8700000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="479641000" />
+    <option name="totallyTimeSpent" value="480561000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1604" height="876" extended-state="0" />
@@ -559,7 +518,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39817232" sideWeight="0.5195214" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39817232" sideWeight="0.4830827" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39817232" sideWeight="0.4830827" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39817232" sideWeight="0.5169173" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -901,14 +860,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/postmodule/posts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="146" column="0" lean-forward="true" selection-start-line="146" selection-start-column="0" selection-end-line="165" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/USERS.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="279">
@@ -933,6 +884,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/routes/usermodule/patients.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="143" column="48" lean-forward="false" selection-start-line="143" selection-start-column="13" selection-end-line="143" selection-end-column="51" />
+          <folding>
+            <element signature="e#523#2053#0" expanded="false" />
+            <element signature="e#2166#2760#0" expanded="false" />
+            <element signature="e#2855#5163#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/routes/usermodule/users.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="466">
@@ -954,27 +917,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/usermodule/patients.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="143" column="37" lean-forward="false" selection-start-line="143" selection-start-column="37" selection-end-line="143" selection-end-column="37" />
-          <folding>
-            <element signature="e#523#2053#0" expanded="false" />
-            <element signature="e#2166#2760#0" expanded="false" />
-            <element signature="e#2855#5163#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/usermodule/doctors.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="114" column="128" lean-forward="false" selection-start-line="114" selection-start-column="128" selection-end-line="114" selection-end-column="128" />
+        <state relative-caret-position="255">
+          <caret line="112" column="49" lean-forward="false" selection-start-line="112" selection-start-column="13" selection-end-line="112" selection-end-column="49" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="e#542#1679#0" expanded="false" />
             <element signature="e#1767#3564#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/postmodule/posts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="62" column="76" lean-forward="false" selection-start-line="62" selection-start-column="76" selection-end-line="62" selection-end-column="76" />
+          <folding />
         </state>
       </provider>
     </entry>
