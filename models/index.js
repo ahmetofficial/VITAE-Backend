@@ -56,6 +56,7 @@ db.MESSAGE_CONVERSATION = require('../models/MESSAGE_CONVERSATION')(sequelize, S
 db.MESSAGES = require('../models/MESSAGES')(sequelize, Sequelize);
 db.NEIGHBORHOODS = require('../models/NEIGHBORHOODS')(sequelize, Sequelize);
 db.ORGANS = require('../models/ORGANS.js')(sequelize, Sequelize);
+db.PATIENT_DOCTOR_RATES = require('../models/PATIENT_DOCTOR_RATES')(sequelize, Sequelize);
 db.PATIENTS = require('../models/PATIENTS.js')(sequelize, Sequelize);
 db.PHOTOS = require('../models/PHOTOS.js')(sequelize, Sequelize);
 db.PRESCRIPTION_TYPE = require('../models/PRESCRIPTION_TYPE.js')(sequelize, Sequelize);
@@ -99,6 +100,7 @@ db.DISEASES.hasMany(db.USER_DISEASE_HISTORY, {foreignKey: 'disease_id', targetKe
 db.DISEASES.hasMany(db.USER_DRUG_USAGE_HISTORY, {foreignKey: 'disease_id', targetKey: 'disease_id'});
 db.DISEASES.hasMany(db.USER_TREATMENT_HISTORY, {foreignKey: 'disease_id', targetKey: 'disease_id'});
 db.DISEASES.hasMany(db.USER_HOSPITAL_RATES, {foreignKey: 'disease_id', targetKey: 'disease_id'});
+db.DISEASES.hasMany(db.PATIENT_DOCTOR_RATES, {foreignKey: 'disease_id', targetKey: 'disease_id'});
 
 //DOCTOR_HAVE_HOSPITAL
 db.DOCTOR_HAVE_HOSPITAL.belongsTo(db.CLINICS, {foreignKey: 'clinic_id', targetKey: 'clinic_id'});
@@ -107,6 +109,8 @@ db.DOCTOR_HAVE_HOSPITAL.belongsTo(db.USERS, {foreignKey: 'user_id', targetKey: '
 
 //DOCTORS
 db.DOCTORS.belongsTo(db.USERS, {foreignKey: 'user_id', targetKey: 'user_id'});
+db.DOCTORS.hasMany(db.PATIENT_DOCTOR_RATES, {foreignKey: 'user_id', targetKey: 'doctor_id'});
+db.DOCTORS.hasMany(db.DOCTOR_HAVE_HOSPITAL, {foreignKey: 'user_id', targetKey: 'user_id'});
 
 //DRUG_COMPANIES
 
@@ -132,8 +136,16 @@ db.MESSAGE_CONVERSATION.belongsTo(db.USERS, {as: 'SENDER', foreignKey: 'sender_i
 db.MESSAGE_CONVERSATION.belongsTo(db.USERS, {as: 'RECEIVER', foreignKey: 'receiver_id', targetKey: 'user_id'});
 db.MESSAGE_CONVERSATION.hasMany(db.MESSAGES, {foreignKey: 'conversation_id', targetKey: 'conversation_id'});
 
+//PATIENT_DOCTOR_RATES
+db.PATIENT_DOCTOR_RATES.belongsTo(db.PATIENTS, {foreignKey: 'patient_id', targetKey: 'user_id'});
+db.PATIENT_DOCTOR_RATES.belongsTo(db.DOCTORS, {foreignKey: 'doctor_id', targetKey: 'user_id'});
+db.PATIENT_DOCTOR_RATES.belongsTo(db.USERS, {foreignKey: 'doctor_id', targetKey: 'user_id'});
+db.PATIENT_DOCTOR_RATES.belongsTo(db.USERS, {foreignKey: 'patient_id', targetKey: 'user_id'});
+db.PATIENT_DOCTOR_RATES.belongsTo(db.DISEASES, {foreignKey: 'disease_id', targetKey: 'disease_id'});
+
 //PATIENTS
 db.PATIENTS.hasMany(db.USER_POST, {foreignKey: 'user_id', targetKey: 'user_id'});
+db.PATIENTS.hasMany(db.PATIENT_DOCTOR_RATES, {foreignKey: 'patient_id', targetKey: 'user_id'});
 
 //PHOTOS
 db.PHOTOS.hasMany(db.USER_POST_HAVE_PHOTOS, {foreignKey: 'photo_id', targetKey: 'photo_id'});
@@ -200,6 +212,9 @@ db.USERS.hasMany(db.MESSAGE_CONVERSATION, {as: 'RECEIVER',foreignKey: 'receiver_
 db.USERS.hasMany(db.MESSAGE_CONVERSATION, {as: 'SENDER',foreignKey: 'sender_id', targetKey: 'user_id'});
 db.USERS.hasMany(db.DOCTOR_HAVE_HOSPITAL, {foreignKey: 'user_id', targetKey: 'user_id'});
 db.USERS.hasMany(db.DOCTORS, {foreignKey: 'user_id', targetKey: 'user_id'});
+db.USERS.hasMany(db.PATIENT_DOCTOR_RATES, {foreignKey: 'doctor_id', targetKey: 'user_id'});
+db.USERS.hasMany(db.PATIENT_DOCTOR_RATES, {foreignKey: 'patient_id', targetKey: 'user_id'});
+db.USERS.hasMany(db.DOCTOR_HAVE_HOSPITAL, {foreignKey: 'user_id', targetKey: 'user_id'});
 db.USERS.belongsTo(db.USER_TYPES, {foreignKey: 'user_type_id', targetKey: 'user_type_id'});
 
 //USER_POST
