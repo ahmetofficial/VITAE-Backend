@@ -56,7 +56,7 @@ router.get('/doctors/getPatientDoctorRates/:doctor_id', function (req, res, next
 router.get('/doctors/getDoctorRankingByDiseaseId/:disease_id', function (req, res, next) {
     var disease_id = req.params.disease_id;
     models.PATIENT_DOCTOR_RATES.findAll({
-        attributes: ['doctor_id', [models.sequelize.fn('AVG', models.sequelize.col('user_rate')), 'hospital_overal_score']],
+        attributes: ['doctor_id', [models.sequelize.fn('AVG', models.sequelize.col('user_rate')), 'doctor_overall_score']],
         where: {
             disease_id: disease_id
         },

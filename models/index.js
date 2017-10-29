@@ -109,7 +109,7 @@ db.DOCTOR_HAVE_HOSPITAL.belongsTo(db.USERS, {foreignKey: 'user_id', targetKey: '
 
 //DOCTORS
 db.DOCTORS.belongsTo(db.USERS, {foreignKey: 'user_id', targetKey: 'user_id'});
-db.DOCTORS.hasMany(db.PATIENT_DOCTOR_RATES, {foreignKey: 'user_id', targetKey: 'doctor_id'});
+db.DOCTORS.hasMany(db.PATIENT_DOCTOR_RATES, {foreignKey: 'doctor_id', targetKey: 'user_id'});
 db.DOCTORS.hasMany(db.DOCTOR_HAVE_HOSPITAL, {foreignKey: 'user_id', targetKey: 'user_id'});
 
 //DRUG_COMPANIES
@@ -139,8 +139,6 @@ db.MESSAGE_CONVERSATION.hasMany(db.MESSAGES, {foreignKey: 'conversation_id', tar
 //PATIENT_DOCTOR_RATES
 db.PATIENT_DOCTOR_RATES.belongsTo(db.PATIENTS, {foreignKey: 'patient_id', targetKey: 'user_id'});
 db.PATIENT_DOCTOR_RATES.belongsTo(db.DOCTORS, {foreignKey: 'doctor_id', targetKey: 'user_id'});
-db.PATIENT_DOCTOR_RATES.belongsTo(db.USERS, {foreignKey: 'doctor_id', targetKey: 'user_id'});
-db.PATIENT_DOCTOR_RATES.belongsTo(db.USERS, {foreignKey: 'patient_id', targetKey: 'user_id'});
 db.PATIENT_DOCTOR_RATES.belongsTo(db.DISEASES, {foreignKey: 'disease_id', targetKey: 'disease_id'});
 
 //PATIENTS
@@ -212,8 +210,6 @@ db.USERS.hasMany(db.MESSAGE_CONVERSATION, {as: 'RECEIVER',foreignKey: 'receiver_
 db.USERS.hasMany(db.MESSAGE_CONVERSATION, {as: 'SENDER',foreignKey: 'sender_id', targetKey: 'user_id'});
 db.USERS.hasMany(db.DOCTOR_HAVE_HOSPITAL, {foreignKey: 'user_id', targetKey: 'user_id'});
 db.USERS.hasMany(db.DOCTORS, {foreignKey: 'user_id', targetKey: 'user_id'});
-db.USERS.hasMany(db.PATIENT_DOCTOR_RATES, {foreignKey: 'doctor_id', targetKey: 'user_id'});
-db.USERS.hasMany(db.PATIENT_DOCTOR_RATES, {foreignKey: 'patient_id', targetKey: 'user_id'});
 db.USERS.hasMany(db.DOCTOR_HAVE_HOSPITAL, {foreignKey: 'user_id', targetKey: 'user_id'});
 db.USERS.belongsTo(db.USER_TYPES, {foreignKey: 'user_type_id', targetKey: 'user_type_id'});
 
