@@ -25,6 +25,34 @@ module.exports = function (sequelize, DataTypes) {
         is_verified:{
             type: DataTypes.INTEGER(1),
             allowNull: false
+        },
+        total_score: {
+            type: DataTypes.BIGINT,
+            allowNull: false
+        },
+        total_vote_number: {
+            type: DataTypes.INTEGER(11),
+            allowNull: false
+        },
+        vote_1_count:{
+            type: DataTypes.INTEGER(11),
+            allowNull: false
+        },
+        vote_2_count:{
+            type: DataTypes.INTEGER(11),
+            allowNull: false
+        },
+        vote_3_count:{
+            type: DataTypes.INTEGER(11),
+            allowNull: false
+        },
+        vote_4_count:{
+            type: DataTypes.INTEGER(11),
+            allowNull: false
+        },
+        vote_5_count:{
+            type: DataTypes.INTEGER(11),
+            allowNull: false
         }
     }, {
         tableName: 'DOCTORS',

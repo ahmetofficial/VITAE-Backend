@@ -26,11 +26,82 @@ router.post('/doctors/createPatientDoctorRates', function (req, res, next) {
         user_comment: user_comment,
         user_rate: user_rate
     }).then(function () {
+        updateDoctorRatingParameters(doctor_id, user_rate, res);
         res.send({status: 'true'});
     }).catch(function (error) {
         res.status(500).json(error)
     });
 });
+
+function updateDoctorRatingParameters(doctor_id, new_vote, res) {
+    if (new_vote == 1) {
+        models.DOCTORS.update(
+            {
+                total_score: sequelize.literal('total_score+' + new_vote),
+                total_vote_number: sequelize.literal('total_vote_number+1'),
+                vote_1_count: sequelize.literal('vote_1_count+1')
+            },
+            {
+                fields: ['total_score', 'total_vote_number', 'vote_1_count'],
+                where: {
+                    user_id: doctor_id
+                }
+            })
+    } else if (new_vote == 2) {
+        models.DOCTORS.update(
+            {
+                total_score: sequelize.literal('total_score+' + new_vote),
+                total_vote_number: sequelize.literal('total_vote_number+1'),
+                vote_2_count: sequelize.literal('vote_2_count+1')
+            },
+            {
+                fields: ['total_score', 'total_vote_number', 'vote_2_count'],
+                where: {
+                    user_id: doctor_id
+                }
+            })
+    } else if (new_vote == 3) {
+        models.DOCTORS.update(
+            {
+                total_score: sequelize.literal('total_score+' + new_vote),
+                total_vote_number: sequelize.literal('total_vote_number+1'),
+                vote_3_count: sequelize.literal('vote_3_count+1')
+            },
+            {
+                fields: ['total_score', 'total_vote_number', 'vote_3_count'],
+                where: {
+                    user_id: doctor_id
+                }
+            })
+    } else if (new_vote == 4) {
+        models.DOCTORS.update(
+            {
+                total_score: sequelize.literal('total_score+' + new_vote),
+                total_vote_number: sequelize.literal('total_vote_number+1'),
+                vote_4_count: sequelize.literal('vote_4_count+1')
+            },
+            {
+                fields: ['total_score', 'total_vote_number', 'vote_4_count'],
+                where: {
+                    user_id: doctor_id
+                }
+            })
+    } else {
+        models.DOCTORS.update(
+            {
+                total_score: sequelize.literal('total_score+' + new_vote),
+                total_vote_number: sequelize.literal('total_vote_number+1'),
+                vote_5_count: sequelize.literal('vote_5_count+1')
+            },
+            {
+                fields: ['total_score', 'total_vote_number', 'vote_5_count'],
+                where: {
+                    user_id: doctor_id
+                }
+            })
+    }
+}
+
 
 //doctor rates by doctor_id
 router.get('/doctors/getPatientDoctorRates/:doctor_id', function (req, res, next) {
@@ -38,9 +109,9 @@ router.get('/doctors/getPatientDoctorRates/:doctor_id', function (req, res, next
     models.PATIENT_DOCTOR_RATES.findAll({
         include: [
             {
-                attributes: ['user_id', 'user_name','profile_picture_id'],
+                attributes: ['user_id', 'user_name', 'profile_picture_id'],
                 model: models.USERS,
-                as:'PATIENT'
+                as: 'PATIENT'
             },
             {
                 attributes: ['disease_id', 'disease_name'],
@@ -71,9 +142,9 @@ router.get('/doctors/getDoctorRankingByDiseaseId/:disease_id', function (req, re
             {
                 attributes: ['user_id'],
                 model: models.DOCTORS,
-                include:[
+                include: [
                     {
-                        attributes: ['user_id','user_name','profile_picture_id'],
+                        attributes: ['user_id', 'user_name', 'profile_picture_id'],
                         model: models.USERS,
                         include: [
                             {

@@ -20,28 +20,41 @@ router.get('/doctors/getDoctorProfile/:user_id', function (req, res, next) {
         model: models.USERS,
         include: [
             {
-                attributes: ['birthday','is_verified'],
+                attributes: ['birthday', 'is_verified'],
                 model: models.DOCTORS,
                 where: {
                     user_id: user_id
                 }
-            },{
-                attributes: ['user_id','hospital_id','clinic_id'],
+            }, {
+                attributes: ['user_id', 'hospital_id', 'clinic_id'],
                 model: models.DOCTOR_HAVE_HOSPITAL,
                 where: {
                     user_id: user_id
                 },
-                include:[
+                include: [
                     {
                         attributes: ['hospital_name'],
                         model: models.HOSPITALS
-                    },{
+                    }, {
                         attributes: ['clinic_name'],
                         model: models.CLINICS
                     }
                 ]
             }
         ]
+    }).then(function (USERS) {
+        res.send(USERS);
+    }).catch(function (error) {
+        res.status(500).json(error)
+    });
+});
+
+//get doctor general rating data
+router.get('/doctors/getDoctorGeneralRatingParameters/:user_id', function (req, res, next) {
+    var user_id = req.params.user_id;
+    models.DOCTORS.findById(user_id, {
+        attributes: ['user_id', 'total_score', 'total_vote_number', 'vote_1_count', 'vote_2_count', 'vote_3_count', 'vote_4_count', 'vote_5_count'],
+        model: models.USERS
     }).then(function (USERS) {
         res.send(USERS);
     }).catch(function (error) {
@@ -83,7 +96,14 @@ router.post('/doctors/registerDoctor', function (req, res) {
             gender: gender,
             blood_type_id: blood_type_id,
             birthday: birthday,
-            is_verified:0
+            is_verified: 0,
+            total_score: 0,
+            total_vote_number: 0,
+            vote_1_count: 0,
+            vote_2_count: 0,
+            vote_3_count: 0,
+            vote_4_count: 0,
+            vote_5_count: 0
         });
         models.DOCTOR_HAVE_HOSPITAL.create({
             user_id: user_id,
