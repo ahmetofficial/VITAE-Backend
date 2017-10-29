@@ -137,8 +137,10 @@ db.MESSAGE_CONVERSATION.belongsTo(db.USERS, {as: 'RECEIVER', foreignKey: 'receiv
 db.MESSAGE_CONVERSATION.hasMany(db.MESSAGES, {foreignKey: 'conversation_id', targetKey: 'conversation_id'});
 
 //PATIENT_DOCTOR_RATES
-db.PATIENT_DOCTOR_RATES.belongsTo(db.PATIENTS, {foreignKey: 'patient_id', targetKey: 'user_id'});
-db.PATIENT_DOCTOR_RATES.belongsTo(db.DOCTORS, {foreignKey: 'doctor_id', targetKey: 'user_id'});
+db.PATIENT_DOCTOR_RATES.belongsTo(db.PATIENTS, {as:'PATIENT',foreignKey: 'patient_id', targetKey: 'user_id'});
+db.PATIENT_DOCTOR_RATES.belongsTo(db.DOCTORS, {as:'DOCTOR',foreignKey: 'doctor_id', targetKey: 'user_id'});
+db.PATIENT_DOCTOR_RATES.belongsTo(db.USERS, {as:'PATIENT',foreignKey: 'patient_id', targetKey: 'user_id'});
+db.PATIENT_DOCTOR_RATES.belongsTo(db.USERS, {as:'DOCTOR',foreignKey: 'doctor_id', targetKey: 'user_id'});
 db.PATIENT_DOCTOR_RATES.belongsTo(db.DISEASES, {foreignKey: 'disease_id', targetKey: 'disease_id'});
 
 //PATIENTS

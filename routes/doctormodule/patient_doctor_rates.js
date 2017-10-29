@@ -38,6 +38,11 @@ router.get('/doctors/getPatientDoctorRates/:doctor_id', function (req, res, next
     models.PATIENT_DOCTOR_RATES.findAll({
         include: [
             {
+                attributes: ['user_id', 'user_name','profile_picture_id'],
+                model: models.USERS,
+                as:'PATIENT'
+            },
+            {
                 attributes: ['disease_id', 'disease_name'],
                 model: models.DISEASES
             }
