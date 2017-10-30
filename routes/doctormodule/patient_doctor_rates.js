@@ -140,26 +140,22 @@ router.get('/doctors/getDoctorRankingByDiseaseId/:disease_id', function (req, re
         order: [[models.sequelize.fn('AVG', models.sequelize.col('user_rate')), 'DESC']],
         include: [
             {
-                attributes: ['user_id'],
-                model: models.DOCTORS,
+
+                attributes: ['user_id', 'user_name', 'profile_picture_id'],
+                model: models.USERS,
+                as: 'DOCTOR',
                 include: [
                     {
-                        attributes: ['user_id', 'user_name', 'profile_picture_id'],
-                        model: models.USERS,
+                        attributes: ['user_id', 'clinic_id', 'hospital_id'],
+                        model: models.DOCTOR_HAVE_HOSPITAL,
                         include: [
                             {
-                                attributes: ['user_id', 'clinic_id', 'hospital_id'],
-                                model: models.DOCTOR_HAVE_HOSPITAL,
-                                include: [
-                                    {
-                                        attributes: ['clinic_name'],
-                                        model: models.CLINICS
-                                    },
-                                    {
-                                        attributes: ['hospital_name', 'latitude', 'longitude'],
-                                        model: models.HOSPITALS
-                                    }
-                                ]
+                                attributes: ['clinic_name'],
+                                model: models.CLINICS
+                            },
+                            {
+                                attributes: ['hospital_name', 'latitude', 'longitude'],
+                                model: models.HOSPITALS
                             }
                         ]
                     }
