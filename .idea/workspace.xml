@@ -26,24 +26,9 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="140" column="55" lean-forward="true" selection-start-line="140" selection-start-column="47" selection-end-line="140" selection-end-column="58" />
+            <state relative-caret-position="501">
+              <caret line="192" column="105" lean-forward="false" selection-start-line="192" selection-start-column="105" selection-end-line="192" selection-end-column="105" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="patient_doctor_rates.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/routes/doctormodule/patient_doctor_rates.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="637">
-              <caret line="161" column="17" lean-forward="false" selection-start-line="161" selection-start-column="17" selection-end-line="161" selection-end-column="17" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="e#540#1156#0" expanded="false" />
-                <element signature="n#!!block;n#updateDoctorRatingParameters#0" expanded="false" />
-                <element signature="e#3815#4436#0" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -51,12 +36,24 @@
       <file leaf-file-name="doctors.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/doctormodule/doctors.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
+            <state relative-caret-position="204">
               <caret line="52" column="54" lean-forward="false" selection-start-line="52" selection-start-column="12" selection-end-line="52" selection-end-column="54" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="e#548#1691#0" expanded="false" />
                 <element signature="e#2296#4301#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user_disease_history.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/routes/generalhealthmodule/user_disease_history.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="212">
+              <caret line="36" column="61" lean-forward="false" selection-start-line="36" selection-start-column="61" selection-end-line="36" selection-end-column="61" />
+              <folding>
+                <element signature="e#2154#2866#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -94,7 +91,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/models/USER_CONNECTIONS.js" />
         <option value="$PROJECT_DIR$/models/USER_CONNECTION_REQUESTS.js" />
         <option value="$PROJECT_DIR$/routes/imageIO/image_input.js" />
         <option value="$PROJECT_DIR$/models/PHOTOS.js" />
@@ -135,16 +131,17 @@
         <option value="$PROJECT_DIR$/routes/hospitalmodule/hospitals.js" />
         <option value="$PROJECT_DIR$/models/DOCTOR_HAVE_HOSPITAL.js" />
         <option value="$PROJECT_DIR$/routes/usermodule/relationships.js" />
-        <option value="$PROJECT_DIR$/routes/usermodule/patients.js" />
         <option value="$PROJECT_DIR$/routes/usermodule/doctors.js" />
         <option value="$PROJECT_DIR$/routes/postmodule/posts.js" />
         <option value="$PROJECT_DIR$/routes/usermodule/users.js" />
         <option value="$PROJECT_DIR$/models/PATIENT_DOCTOR_RATES.js" />
         <option value="$PROJECT_DIR$/app.js" />
-        <option value="$PROJECT_DIR$/models/index.js" />
         <option value="$PROJECT_DIR$/models/DOCTORS.js" />
         <option value="$PROJECT_DIR$/routes/doctormodule/doctors.js" />
         <option value="$PROJECT_DIR$/routes/doctormodule/patient_doctor_rates.js" />
+        <option value="$PROJECT_DIR$/routes/usermodule/patients.js" />
+        <option value="$PROJECT_DIR$/models/index.js" />
+        <option value="$PROJECT_DIR$/routes/generalhealthmodule/user_disease_history.js" />
       </list>
     </option>
   </component>
@@ -162,7 +159,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1616" />
+    <option name="width" value="1612" />
     <option name="height" value="876" />
   </component>
   <component name="ProjectView">
@@ -180,8 +177,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -258,6 +253,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="generalhealthmodule" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="VITAE-Backend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="VITAE-Backend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="routes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="doctormodule" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -276,22 +289,10 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="VITAE-Backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="VITAE-Backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -556,23 +557,24 @@
       <workItem from="1508954722781" duration="4219000" />
       <workItem from="1509039108305" duration="18610000" />
       <workItem from="1509288924317" duration="6593000" />
-      <workItem from="1509385599814" duration="275000" />
+      <workItem from="1509385599814" duration="1169000" />
+      <workItem from="1509560223719" duration="4481000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="497339000" />
+    <option name="totallyTimeSpent" value="502714000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <frame x="-8" y="-8" width="1612" height="876" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.225" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22493735" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39817232" sideWeight="0.5195214" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39817232" sideWeight="0.5206767" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39817232" sideWeight="0.4830827" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39817232" sideWeight="0.4793233" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39817232" sideWeight="0.5169173" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -639,13 +641,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="3" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="16" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/generalhealthmodule/user_disease_history.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="28" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="101" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -902,13 +897,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/usermodule/patients.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="143" column="48" lean-forward="false" selection-start-line="143" selection-start-column="13" selection-end-line="143" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/postmodule/posts.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="389">
@@ -937,9 +925,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/routes/doctormodule/patient_doctor_rates.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="586">
+          <caret line="161" column="17" lean-forward="false" selection-start-line="161" selection-start-column="17" selection-end-line="161" selection-end-column="17" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#540#1156#0" expanded="false" />
+            <element signature="n#!!block;n#updateDoctorRatingParameters#0" expanded="false" />
+            <element signature="e#3815#4436#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/usermodule/patients.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="93" column="118" lean-forward="true" selection-start-line="93" selection-start-column="118" selection-end-line="93" selection-end-column="118" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/routes/doctormodule/doctors.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
+        <state relative-caret-position="204">
           <caret line="52" column="54" lean-forward="false" selection-start-line="52" selection-start-column="12" selection-end-line="52" selection-end-column="54" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
@@ -951,21 +960,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/models/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="140" column="55" lean-forward="true" selection-start-line="140" selection-start-column="47" selection-end-line="140" selection-end-column="58" />
+        <state relative-caret-position="501">
+          <caret line="192" column="105" lean-forward="false" selection-start-line="192" selection-start-column="105" selection-end-line="192" selection-end-column="105" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/doctormodule/patient_doctor_rates.js">
+    <entry file="file://$PROJECT_DIR$/routes/generalhealthmodule/user_disease_history.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="637">
-          <caret line="161" column="17" lean-forward="false" selection-start-line="161" selection-start-column="17" selection-end-line="161" selection-end-column="17" />
+        <state relative-caret-position="212">
+          <caret line="36" column="61" lean-forward="false" selection-start-line="36" selection-start-column="61" selection-end-line="36" selection-end-column="61" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#540#1156#0" expanded="false" />
-            <element signature="n#!!block;n#updateDoctorRatingParameters#0" expanded="false" />
-            <element signature="e#3815#4436#0" expanded="false" />
+            <element signature="e#2154#2866#0" expanded="false" />
           </folding>
         </state>
       </provider>

@@ -174,6 +174,8 @@ db.USER_CONNECTIONS.belongsTo(db.USERS, {foreignKey: 'passive_user_id', targetKe
 //USER_DISEASE_HISTORY
 db.USER_DISEASE_HISTORY.belongsTo(db.USERS, {foreignKey: 'user_id', targetKey: 'user_id'});
 db.USER_DISEASE_HISTORY.belongsTo(db.DISEASES, {foreignKey: 'disease_id', targetKey: 'disease_id'});
+db.USER_DISEASE_HISTORY.hasMany(db.USER_TREATMENT_HISTORY, {foreignKey: 'disease_id', targetKey: 'disease_id'});
+db.USER_DISEASE_HISTORY.hasMany(db.USER_TREATMENT_HISTORY, {foreignKey: 'user_id', targetKey: 'user_id'});
 
 //USER_DRUG_USAGE_HISTORY
 db.USER_DRUG_USAGE_HISTORY.belongsTo(db.USERS, {foreignKey: 'user_id', targetKey: 'user_id'});
@@ -188,6 +190,9 @@ db.USER_LOCATION.belongsTo(db.USERS, {foreignKey: 'user_id', targetKey: 'user_id
 db.USER_TREATMENT_HISTORY.belongsTo(db.USERS, {foreignKey: 'user_id', targetKey: 'user_id'});
 db.USER_TREATMENT_HISTORY.belongsTo(db.DISEASES, {foreignKey: 'disease_id', targetKey: 'disease_id'});
 db.USER_TREATMENT_HISTORY.belongsTo(db.TREATMENTS, {foreignKey: 'treatment_id', targetKey: 'treatment_id'});
+db.USER_TREATMENT_HISTORY.hasMany(db.USER_DRUG_USAGE_HISTORY, {foreignKey: 'user_id', targetKey: 'user_id'});
+db.USER_TREATMENT_HISTORY.hasMany(db.USER_DRUG_USAGE_HISTORY, {foreignKey: 'disease_id', targetKey: 'disease_id'});
+db.USER_TREATMENT_HISTORY.hasMany(db.USER_DRUG_USAGE_HISTORY, {foreignKey: 'treatment_id', targetKey: 'treatment_id'});
 
 //USERS
 db.USERS.hasMany(db.BLOOD_ALARM, {foreignKey: 'user_id', targetKey: 'user_id'});
