@@ -69,7 +69,7 @@ router.post('/patients/registerPatient', function (req, res) {
 router.get('/patients/getPatientProfile/:user_id', function (req, res, next) {
     var user_id = req.params.user_id;
     models.USERS.findById(user_id, {
-        attributes: ['user_id', 'user_name', 'about_me', 'friend_count', 'is_official_user', 'is_official_user', 'profile_picture_id'],
+        attributes: ['user_id', 'user_name', 'about_me','mail','password', 'friend_count','is_official_user', 'is_official_user', 'profile_picture_id'],
         model: models.USERS,
         include: [
             {
