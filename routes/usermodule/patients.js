@@ -73,7 +73,7 @@ router.get('/patients/getPatientProfile/:user_id', function (req, res, next) {
         model: models.USERS,
         include: [
             {
-                attributes: ['birthday'],
+                attributes: ['birthday','is_blood_alarm_notification_open'],
                 model: models.PATIENTS,
                 where: {
                     user_id: user_id
@@ -99,7 +99,11 @@ router.get('/patients/enableBloodAlarms/:user_id', function (req, res, next) {
                 user_id: user_id
             }
         }).then(function (USERS) {
-        res.send(USERS);
+        res.send(
+            {
+                status: true
+            }
+        );
     }).catch(function (error) {
         res.status(500).json(error)
     });
@@ -116,7 +120,11 @@ router.get('/patients/disableBloodAlarms/:user_id', function (req, res, next) {
                 user_id: user_id
             }
         }).then(function (USERS) {
-        res.send(USERS);
+        res.send(
+            {
+                status: true
+            }
+        );
     }).catch(function (error) {
         res.status(500).json(error)
     });
