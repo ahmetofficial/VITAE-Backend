@@ -43,7 +43,8 @@ router.post('/patients/registerPatient', function (req, res) {
             user_id: user_id,
             gender: gender,
             blood_type_id: blood_type_id,
-            birthday: birthday
+            birthday: birthday,
+            is_blood_alarm_notification_open: 1
         });
         models.USER_CONNECTIONS.create({
             active_user_id: user_id,
@@ -80,6 +81,41 @@ router.get('/patients/getPatientProfile/:user_id', function (req, res, next) {
             }
         ]
     }).then(function (USERS) {
+        res.send(USERS);
+    }).catch(function (error) {
+        res.status(500).json(error)
+    });
+});
+
+
+//enable blood alarms
+router.get('/patients/enableBloodAlarms/:user_id', function (req, res, next) {
+    var user_id = req.params.user_id;
+    models.PATIENTS.update(
+        {is_blood_alarm_notification_open: 1},
+        {
+            fields: ['is_blood_alarm_notification_open'],
+            where: {
+                user_id: user_id
+            }
+        }).then(function (USERS) {
+        res.send(USERS);
+    }).catch(function (error) {
+        res.status(500).json(error)
+    });
+});
+
+//disable blood alarms
+router.get('/patients/disableBloodAlarms/:user_id', function (req, res, next) {
+    var user_id = req.params.user_id;
+    models.PATIENTS.update(
+        {is_blood_alarm_notification_open: 0},
+        {
+            fields: ['is_blood_alarm_notification_open'],
+            where: {
+                user_id: user_id
+            }
+        }).then(function (USERS) {
         res.send(USERS);
     }).catch(function (error) {
         res.status(500).json(error)

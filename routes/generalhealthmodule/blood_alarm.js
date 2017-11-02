@@ -58,6 +58,7 @@ router.post('/bloodAlarm/create', function (req, res, next) {
                 ' JOIN PATIENTS ' +
                 ' ON USERS.user_id=PATIENTS.user_id ' +
                 ' WHERE PATIENTS.blood_type_id=' + blood_type_id + ' ' +
+                ' AND PATIENTS.is_blood_alarm_notification_open=1' +
                 ' HAVING distance < 10 ',
                 {type: sequelize.QueryTypes.SELECT}
             ).then(function (USERS) {
@@ -74,7 +75,7 @@ router.post('/bloodAlarm/create', function (req, res, next) {
                             body: hospital_name
                         }
                     };
-                    fcm.send(message, function(err, response){
+                    fcm.send(message, function (err, response) {
                         if (err) {
                             console.log("Something has gone wrong!");
                         } else {
@@ -120,11 +121,11 @@ router.get('/bloodAlarm/getAllBloodAlarms', function (req, res, next) {
 
 //get blood alarms
 router.get('/bloodAlarm/getBloodAlarmsByBloodType/:blood_type_id', function (req, res, next) {
-    var blood_type_id=req.params.blood_type_id;
+    var blood_type_id = req.params.blood_type_id;
     models.BLOOD_ALARM.findAll({
         where: {
             alarm_status: 1,
-            blood_type_id:blood_type_id
+            blood_type_id: blood_type_id
         },
         include: [
             {

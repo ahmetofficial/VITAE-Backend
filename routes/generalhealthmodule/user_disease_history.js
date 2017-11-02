@@ -12,54 +12,6 @@ var env = process.env.NODE_ENV || 'development';
 var config = require(__dirname + '/../../config/config.json')[env];
 var sequelize = new Sequelize(config.database, config.username, config.password, config);
 
-router.get('/userHealthHistory/getHistory/:user_id', function (req, res, next) {
-    var user_id = req.params.user_id;
-    models.USER_DISEASE_HISTORY.findAndCountAll({
-        attributes: ['disease_start_date', 'disease_level_id', 'disease_state_id', 'count_of_treatments', 'count_of_drugs'],
-        where: {user_id: user_id},
-        include: [
-            {
-                attributes: ['disease_name'],
-                model: models.DISEASES
-            },
-            {
-                attributes: ['treatment_start_date', 'count_of_drugs'],
-                model: models.USER_TREATMENT_HISTORY,
-                where: {
-                    user_id: user_id
-                },
-                include: [
-                    {
-                        attributes: ['treatment_name'],
-                        model: models.TREATMENTS
-                    },
-                    {
-                        attributes:['drug_usage_start_date'],
-                        model: models.USER_DRUG_USAGE_HISTORY,
-                        where: {
-                            user_id: user_id
-                        },
-                        include: [
-                            {
-                                attributes:['commercial_name'],
-                                model: models.DRUGS
-                            }
-                        ]
-                    }
-                ]
-
-            }
-        ]
-    }).then(function (result) {
-        res.send({
-                user_disease_history: result.rows
-            }
-        )
-    }).catch(function (error) {
-        res.status(500).json(error)
-    });
-});
-
 //create user disease history
 router.post('/userDiseaseHistory/create', function (req, res, next) {
     var user_id = req.body.user_id;

@@ -21,6 +21,10 @@ module.exports = function (sequelize, DataTypes) {
         birthday: {
             type: DataTypes.DATE,
             allowNull: false
+        },
+        is_blood_alarm_notification_open: {
+            type: DataTypes.INTEGER(2),
+            allowNull: false
         }
     }, {
         tableName: 'PATIENTS',
