@@ -25,6 +25,10 @@ module.exports = function (sequelize, DataTypes) {
         is_blood_alarm_notification_open: {
             type: DataTypes.INTEGER(2),
             allowNull: false
+        },
+        is_similar_patient_search_open: {
+            type: DataTypes.INTEGER(2),
+            allowNull: false
         }
     }, {
         tableName: 'PATIENTS',

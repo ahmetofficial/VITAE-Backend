@@ -44,7 +44,8 @@ router.post('/patients/registerPatient', function (req, res) {
             gender: gender,
             blood_type_id: blood_type_id,
             birthday: birthday,
-            is_blood_alarm_notification_open: 1
+            is_blood_alarm_notification_open: 1,
+            is_similar_patient_search_open:1
         });
         models.USER_CONNECTIONS.create({
             active_user_id: user_id,
@@ -73,7 +74,7 @@ router.get('/patients/getPatientProfile/:user_id', function (req, res, next) {
         model: models.USERS,
         include: [
             {
-                attributes: ['birthday','is_blood_alarm_notification_open'],
+                attributes: ['birthday','is_blood_alarm_notification_open','is_similar_patient_search_open'],
                 model: models.PATIENTS,
                 where: {
                     user_id: user_id
@@ -129,6 +130,49 @@ router.get('/patients/disableBloodAlarms/:user_id', function (req, res, next) {
         res.status(500).json(error)
     });
 });
+
+//enable similar patient seach
+router.get('/patients/enableSimilarUserSearch/:user_id', function (req, res, next) {
+    var user_id = req.params.user_id;
+    models.PATIENTS.update(
+        {is_similar_patient_search_open: 1},
+        {
+            fields: ['is_similar_patient_search_open'],
+            where: {
+                user_id: user_id
+            }
+        }).then(function (USERS) {
+        res.send(
+            {
+                status: true
+            }
+        );
+    }).catch(function (error) {
+        res.status(500).json(error)
+    });
+});
+
+//disable similar patient seach
+router.get('/patients/disableSimilarUserSearch/:user_id', function (req, res, next) {
+    var user_id = req.params.user_id;
+    models.PATIENTS.update(
+        {is_similar_patient_search_open: 0},
+        {
+            fields: ['is_similar_patient_search_open'],
+            where: {
+                user_id: user_id
+            }
+        }).then(function (USERS) {
+        res.send(
+            {
+                status: true
+            }
+        );
+    }).catch(function (error) {
+        res.status(500).json(error)
+    });
+});
+
 
 //Search similar patient
 router.post('/patients/searchSimilarPatient', function (req, res) {
