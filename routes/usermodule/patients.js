@@ -88,7 +88,6 @@ router.get('/patients/getPatientProfile/:user_id', function (req, res, next) {
     });
 });
 
-
 //enable blood alarms
 router.get('/patients/enableBloodAlarms/:user_id', function (req, res, next) {
     var user_id = req.params.user_id;
@@ -173,7 +172,6 @@ router.get('/patients/disableSimilarUserSearch/:user_id', function (req, res, ne
     });
 });
 
-
 //Search similar patient
 router.post('/patients/searchSimilarPatient', function (req, res) {
     var search_text = req.body.search_text;
@@ -217,6 +215,9 @@ router.post('/patients/searchSimilarPatient', function (req, res) {
         ' WHERE user_id IN' +
         ' (SELECT user_id FROM USERS' +
         ' WHERE MATCH (user_name) AGAINST (\'' + search_text + '\' IN NATURAL LANGUAGE MODE))' +
+        ' AND user_id IN ' +
+        '(SELECT user_id FROM PATIENTS '+
+        ' WHERE is_similar_patient_search_open = 1)' +
         ' GROUP BY user_id' +
         ' ORDER BY similarity_count DESC)SIMILARITYTABLE' +
         ' INNER JOIN USERS ON USERS.user_id=SIMILARITYTABLE.user_id',
